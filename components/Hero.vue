@@ -1,5 +1,5 @@
 <template>
-    <div class="-mt-[70px] h-[710px] w-full mx-auto bg-center bg-no-repeat bg-[length:1440px_710px]" v-bind:style="{ 'background-image': 'url(./hero.png)' }">
+    <div class="-mt-[70px] h-[710px] w-full mx-auto bg-center bg-no-repeat bg-[length:1440px] bg-black" v-bind:style="{ 'background-image': 'url(./hero.png)' }">
         <div class="max-w-[1160px] w-full max-h-[251px] mx-auto">
             <h1 class="relative z-10 text-white font-montserrat font-bold text-[50px] leading-[61px] text-center pt-[265px]">Descubre el potencial de tu empresa con nuestra automatización impulsada por IA.</h1>
             <p class="relative font-raleway font-normal text-[18px] leading-[21px] text-center mt-[24px] text-white">Explora cómo podemos llevar tu negocio al siguiente nivel.</p>
