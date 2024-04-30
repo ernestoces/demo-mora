@@ -11,7 +11,7 @@ const links = [
 </script>
 
 <template>
-    <nav class="px-[56px] z-10 sticky top-0 py-3 flex">
+    <nav class="max-w-[1440px] mx-auto px-[56px] z-10 sticky top-0 py-3 flex bg-transparent">
         <div>
             <img src="/logo.png" class="w-[161px] h-[44px]"/>
         </div>
