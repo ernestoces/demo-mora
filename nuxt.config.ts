@@ -7,13 +7,17 @@ export default defineNuxtConfig({
         wght: '200..900',
         ital: [100]
       },
+      Montserrat: {
+        wght: '200..900'
+      }
     }
   }]],
   tailwindcss: {
     config: {
       theme: {
         fontFamily: {
-          raleway: ["Raleway"]
+          raleway: ["Raleway"],
+          montserrat: ["Montserrat"]
         },
         extend: {
           colors: {
