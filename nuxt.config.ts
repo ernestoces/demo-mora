@@ -22,7 +22,8 @@ export default defineNuxtConfig({
         extend: {
           colors: {
             mora: "#5820E7",
-            dark: "#18131e"
+            dark: "#18131e",
+            purple: "#372B47"
           }
         }
       }

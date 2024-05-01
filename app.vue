@@ -1,7 +1,8 @@
 <template>
   <div>
-   <Navbar/>
-   <Hero/>
-   <Ally/>
+    <Navbar />
+    <Hero />
+    <Ally />
+    <Solutions />
   </div>
 </template>
