@@ -8,7 +8,7 @@ const industries = [
 ]
 
 const currentIndustryIndex = useState('currentIndustryIndex', () => 0)
-const textCenter = ref("text-center")
+const centerAligned = ref("text-center items-center ")
 </script>
 
 <template>
@@ -27,12 +27,16 @@ const textCenter = ref("text-center")
                 <img class="object-cover" :src="industries[currentIndustryIndex].cover" width="591" height="352"
                     alt="banca">
             </div>
-            <div :class="[{ [textCenter]: currentIndustryIndex === 0 }]" class="space-y-[16px]">
+            <div :class="[{ [centerAligned]: currentIndustryIndex === 0 }]"
+                class="flex flex-col space-y-[16px] items-start">
                 <h3 class="max-w-[521px] w-full font-montserrat font-semibold text-[22px] leading-[26px]
                     -tracking-[1%] mx-auto">
                     {{ industries[currentIndustryIndex].heading }}</h3>
                 <p class="font-raleway text-base font-normal leading-[21px] mx-auto"
                     v-html="industries[currentIndustryIndex].description" />
+                <button
+                    class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] -tracking-[1%] rounded-[3px]">Conoce
+                    más</button>
             </div>
         </div>
     </section>
