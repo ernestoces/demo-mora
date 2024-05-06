@@ -23,7 +23,12 @@ export default defineNuxtConfig({
           colors: {
             mora: "#5820E7",
             dark: "#18131e",
-            purple: "#372B47"
+            purple: "#372B47",
+            lightPurple: "#B8A2D6",
+            aaBlue: "#133A65",
+            aaOrange: "#FF5A10",
+            aaDark: "#333333"
+
           }
         }
       }

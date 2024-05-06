@@ -4,5 +4,6 @@
     <Hero />
     <Ally />
     <Solutions />
+    <HowItWorks />
   </div>
 </template>

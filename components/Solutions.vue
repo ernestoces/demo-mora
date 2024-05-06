@@ -12,7 +12,7 @@ const centerAligned = ref("text-center items-center ")
 </script>
 
 <template>
-    <section class="pt-[80px] px-[24px] max-w-[1160px] mx-auto">
+    <section class="py-[80px] px-[24px] max-w-[1160px] mx-auto">
         <h3 class="font-montserrat font-bold text-[33px] leading-[40px]">Soluciones por Industria</h3>
         <ul class="flex mt-[24px]">
             <li class="capitalize cursor-pointer" v-for="(industry, index) in industries"
@@ -32,7 +32,7 @@ const centerAligned = ref("text-center items-center ")
                 <h3 class="max-w-[521px] w-full font-montserrat font-semibold text-[22px] leading-[26px]
                     -tracking-[1%] mx-auto">
                     {{ industries[currentIndustryIndex].heading }}</h3>
-                <p class="font-raleway text-base font-normal leading-[21px] mx-auto"
+                <div class="font-raleway text-base font-normal leading-[21px] mx-auto"
                     v-html="industries[currentIndustryIndex].description" />
                 <button
                     class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] -tracking-[1%] rounded-[3px]">Conoce
