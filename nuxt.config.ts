@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: true },
-  modules: ["@nuxtjs/tailwindcss", 'nuxt-icons', ['@nuxtjs/google-fonts', {
+  modules: ['@vueuse/nuxt', "@nuxtjs/tailwindcss", 'nuxt-icons', ['@nuxtjs/google-fonts', {
     families: {
       Raleway: {
         wght: '200..900',
@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         wght: '200..900'
       }
     }
-  }]],
+  }], "@nuxtjs/sanity"],
   tailwindcss: {
     config: {
       theme: {
@@ -29,4 +29,8 @@ export default defineNuxtConfig({
       }
     }
   },
+  sanity: {
+    projectId: 'sqk82n5u',
+    dataset: 'production',
+  }
 })
