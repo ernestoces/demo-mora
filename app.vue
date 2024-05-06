@@ -6,5 +6,6 @@
     <Solutions />
     <HowItWorks />
     <Services />
+    <Brands />
   </div>
 </template>
