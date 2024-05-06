@@ -5,5 +5,6 @@
     <Ally />
     <Solutions />
     <HowItWorks />
+    <Services />
   </div>
 </template>
