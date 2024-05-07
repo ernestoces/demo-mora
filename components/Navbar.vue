@@ -18,10 +18,10 @@ const defaultClass = ref(" px-[56px] sticky top-0 py-3 z-[1000] w-full")
 <template>
 
     <nav v-bind:class="{ [defaultClass]: true, [scrolledClass]: scroll.y > 710 }">
-        <div class="max-w-[1440px] flex   mx-auto">
-            <div>
+        <div class="max-w-[1440px] flex mx-auto">
+            <a href="/">
                 <img src="/logo.png" class="w-[161px] h-[44px]" />
-            </div>
+            </a>
             <ul class="flex space-x-[48px] text-white capitalize mx-auto items-center">
                 <a :href="link.href" v-for="link in links" class="flex space-x-[4px] relative font-raleway">
                     <span class="hover:text-lightPurple"> {{ link.label }}</span> <nuxt-icon

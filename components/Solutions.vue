@@ -1,18 +1,25 @@
 <script setup lang="ts">
-const industries = [
-    { label: "banca", cover: "./banca.png", heading: "Automatización inteligente para servicios financieros", description: `<p>Con la automatización inteligente, los bancos y las empresas de servicios financieros pueden transformar las operaciones manuales que usan muchos datos, <span class="font-bold">sin dejar de cumplir con los requisitos normativos</span> en constante cambio.</p>`, ctaUrl: `/` },
-    { label: "minería", cover: "./mineria.png", heading: "Automatización Inteligente para la Industria Minera", description: `<p>Revolucionamos la industria minera al abordar los desafíos en todas las etapas de la cadena de valor. Desde la optimización de los procesos hasta la gestión eficiente de la logística, nuestra tecnología transforma los procesos mineros para <span class="font-bold">aumentar la eficiencia y la seguridad.</span></p>`, ctaUrl: `/` },
-    { label: "salud", cover: "./salud.png", heading: "Automatización inteligente para la atención sanitaria", description: `<p>Revitalizamos la atención sanitaria al abordar los desafíos en todas las etapas de la cadena de valor. Desde la gestión de pacientes hasta la optimización de procesos clínicos, nuestra tecnología transforma la atención médica para <span class="font-bold">aumentar la eficiencia y mejorar</span> la experiencia del paciente.</p>`, ctaUrl: `/` },
-    { label: "manufactura", heading: "Automatización inteligente para la fabricación", cover: "./manufactura.png", description: `<p>Confía en nuestra tecnología para automatizar tus procesos y operaciones en la industria. Al eliminar errores y desperdicios, reducimos costos y aceleramos tu entrada al mercado,<span class="font-bold">manteniéndote competitivo en un entorno cambiante.</span></p>`, ctaUrl: `/` },
-    { label: "retail", cover: "./retail.png", heading: "Automatización inteligente para el comercio", description: `<p>Desde la gestión de inventarios hasta la seguridad en tienda, optimizamos procesos para impulsar las ventas y la lealtad del cliente. <span class="font-bold">Reforzamos la seguridad y prevenimos pérdidas</span> con monitoreo inteligente y alertas ante actividades sospechosas.</p>`, ctaUrl: `/` },
-]
+const industries = ref([
+    { highlightedClient: "interbank", label: "banca", cover: "./banca.png", heading: "Automatización inteligente para servicios financieros", description: `<p>Con la automatización inteligente, los bancos y las empresas de servicios financieros pueden transformar las operaciones manuales que usan muchos datos, <span class="font-bold">sin dejar de cumplir con los requisitos normativos</span> en constante cambio.</p>`, ctaUrl: `/` },
+    { highlightedClient: "vale", label: "minería", cover: "./mineria.png", heading: "Automatización Inteligente para la Industria Minera", description: `<p>Revolucionamos la industria minera al abordar los desafíos en todas las etapas de la cadena de valor. Desde la optimización de los procesos hasta la gestión eficiente de la logística, nuestra tecnología transforma los procesos mineros para <span class="font-bold">aumentar la eficiencia y la seguridad.</span></p>`, ctaUrl: `/` },
+    { highlightedClient: "achs", label: "salud", cover: "./salud.png", heading: "Automatización inteligente para la atención sanitaria", description: `<p>Revitalizamos la atención sanitaria al abordar los desafíos en todas las etapas de la cadena de valor. Desde la gestión de pacientes hasta la optimización de procesos clínicos, nuestra tecnología transforma la atención médica para <span class="font-bold">aumentar la eficiencia y mejorar</span> la experiencia del paciente.</p>`, ctaUrl: `/` },
+    { highlightedClient: "aceros", label: "manufactura", heading: "Automatización inteligente para la fabricación", cover: "./manufactura.png", description: `<p>Confía en nuestra tecnología para automatizar tus procesos y operaciones en la industria. Al eliminar errores y desperdicios, reducimos costos y aceleramos tu entrada al mercado,<span class="font-bold">manteniéndote competitivo en un entorno cambiante.</span></p>`, ctaUrl: `/` },
+    { highlightedClient: "oechsle", label: "retail", cover: "./retail.png", heading: "Automatización inteligente para el comercio", description: `<p>Desde la gestión de inventarios hasta la seguridad en tienda, optimizamos procesos para impulsar las ventas y la lealtad del cliente. <span class="font-bold">Reforzamos la seguridad y prevenimos pérdidas</span> con monitoreo inteligente y alertas ante actividades sospechosas.</p>`, ctaUrl: `/` },
+])
 
 const currentIndustryIndex = useState('currentIndustryIndex', () => 0)
-const centerAligned = ref("text-center items-center ")
+const centerAligned = ref("items-start ")
 </script>
 
 <template>
-    <section class="py-[80px] px-[24px] max-w-[1160px] mx-auto">
+    <section class="relative py-[80px] px-[24px] max-w-[1160px] mx-auto">
+        <div class="absolute right-0 top-[116px] flex flex-col gap-[4px]">
+            <div class="flex gap-[2.5px] items-center">
+                <nuxt-icon filled name="verified" class="text-[38px]" />
+                <nuxt-icon filled :name="industries[currentIndustryIndex].highlightedClient" class="text-[2em]" />
+            </div>
+            <p class="font-raleway text-[18px] leading-[21px] text-dark">Cliente Top en el Sector</p>
+        </div>
         <h3 class="font-montserrat font-bold text-[33px] leading-[40px]">Soluciones por Industria</h3>
         <ul class="flex mt-[24px]">
             <li class="capitalize cursor-pointer" v-for="(industry, index) in industries"

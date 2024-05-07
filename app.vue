@@ -9,5 +9,7 @@
     <Brands />
     <Testimonies />
     <TheNews />
+    <CallToAction />
+    <FooterLinks />
   </div>
 </template>
