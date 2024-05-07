@@ -7,5 +7,6 @@
     <HowItWorks />
     <Services />
     <Brands />
+    <Testimonies />
   </div>
 </template>

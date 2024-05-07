@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useWindowScroll } from '@vueuse/core';
 
-const { x, y } = useWindowScroll()
+const scroll = ref(useWindowScroll())
 const links = [
     { label: "home", href: "/" },
     { label: "automation anywhere", href: "/" },
@@ -17,7 +17,7 @@ const defaultClass = ref(" px-[56px] sticky top-0 py-3 z-[1000] w-full")
 
 <template>
 
-    <nav v-bind:class="{ [defaultClass]: true, [scrolledClass]: y.valueOf() > 710 }">
+    <nav v-bind:class="{ [defaultClass]: true, [scrolledClass]: scroll.y > 710 }">
         <div class="max-w-[1440px] flex   mx-auto">
             <div>
                 <img src="/logo.png" class="w-[161px] h-[44px]" />

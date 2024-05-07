@@ -19,7 +19,7 @@ const brands = [
 </script>
 
 <template>
-    <div class="flex flex-col gap-[48px] pb-[180px]">
+    <div class="flex flex-col gap-[48px] pb-[180px] w-full px-[140px] max-w-[1160px] mx-auto">
         <h3 class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-center">Conoce algunas
             de las
             compañías que confían en nosotros.</h3>
