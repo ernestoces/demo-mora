@@ -32,7 +32,7 @@ const services = [
                     <div class="flex flex-col ">
                         <p class="font-montserrat font-black text-[40px] leading-[48px] text-dark">{{
                             service.upperText }}</p>
-                        <smal class="font-raleway text-base text-dark leading-[21px]">{{ service.bottomText }}</smal>
+                        <small class="font-raleway text-base text-dark leading-[21px]">{{ service.bottomText }}</small>
                     </div>
                 </div>
             </div>

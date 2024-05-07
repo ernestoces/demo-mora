@@ -104,10 +104,10 @@ const { pause, resume, isActive } = useIntervalFn(() => {
             <div @click="scroll.x = 0"
                 :class="[testimonyPointClass, { [activeTestimonyPointClass]: scroll.arrivedState.left }]">
             </div>
-            <div @click="scroll.x = 1160"
+            <div @click="scroll.x = width + 72"
                 :class="[testimonyPointClass, { [activeTestimonyPointClass]: !scroll.arrivedState.right && !scroll.arrivedState.left }]">
             </div>
-            <div @click="scroll.x = 2320" :class="[testimonyPointClass, {
+            <div @click="scroll.x = 2 * (width + 72)" :class="[testimonyPointClass, {
                 [activeTestimonyPointClass]:
                     scroll.arrivedState.right
             }]">
