@@ -8,5 +8,6 @@
     <Services />
     <Brands />
     <Testimonies />
+    <TheNews />
   </div>
 </template>

@@ -29,15 +29,8 @@ const defaultClass = ref(" px-[56px] sticky top-0 py-3 z-[1000] w-full")
                     <div v-if="link.label === 'industrias'" class="hidden absolute top-0 left-0">dropdown</div>
                 </a>
             </ul>
-            <button class="bg-mora rounded-[3px] py-[8px] px-[22px] text-white">Contacto</button>
+            <button
+                class="bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">Contacto</button>
         </div>
     </nav>
 </template>
-
-<style scoped>
-.hello {
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: 3rem;
-    padding: 2rem;
-}
-</style>

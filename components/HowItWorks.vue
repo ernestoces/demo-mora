@@ -15,7 +15,7 @@
         </div>
         <div class="mt-[48px] mx-auto flex flex-col items-center">
             <button
-                class="font-raleway font-semibold leading-[27px] -tracking-[1%] p-[8px_22px] text-white bg-mora">Conoce
+                class="font-raleway font-semibold leading-[27px] -tracking-[1%] p-[8px_22px] text-white bg-mora rounded-[3px]">Conoce
                 más de
                 Automation Anywhere</button>
         </div>
