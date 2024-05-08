@@ -28,9 +28,9 @@ const pillars = ref([
         <div class="max-w-[1160px] mx-auto">
             <h2 class="text-center mx-auto font-montserrat font-bold text-[33px] leading-[40px]">Conoce Nuestros Pilares
             </h2>
-            <div class="flex gap-[33px]">
+            <div class="flex gap-[33px] mt-[48px]">
                 <div v-for="pillar in pillars"
-                    class="border-2 border-lightPurple h-[278px] w-[265px] p-[24px] flex flex-col justify-between">
+                    class="border-2 border-lightPurple w-[265px] p-[24px] flex flex-col gap-[56px]">
                     <div class="flex gap-[16px]">
                         <nuxt-icon :name="pillar.icon" filled class="text-[40px]" />
                         <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] text-dark">{{ pillar.heading
