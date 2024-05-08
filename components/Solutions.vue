@@ -12,38 +12,45 @@ const centerAligned = ref("items-start ")
 </script>
 
 <template>
-    <section class="relative py-[80px] px-[24px] max-w-[1160px] mx-auto">
-        <div class="absolute right-0 top-[116px] flex flex-col gap-[4px]">
-            <div class="flex gap-[2.5px] items-center">
-                <nuxt-icon filled name="verified" class="text-[38px]" />
-                <nuxt-icon filled :name="industries[currentIndustryIndex].highlightedClient" class="text-[2em]" />
+    <section class="py-[80px] px-[24px]  bg-white">
+        <div class=" mx-auto max-w-[1160px]">
+            <div class="flex justify-between items-center">
+                <div>
+                    <h3 class="font-montserrat font-bold text-[33px] leading-[40px]">Soluciones por Industria</h3>
+                    <ul class="flex mt-[24px]">
+                        <li class="capitalize cursor-pointer" v-for="(industry, index) in industries"
+                            @click="currentIndustryIndex = index">
+                            <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px]"
+                                v-bind:class="{ 'bg-purple text-white': index === currentIndustryIndex }">
+                                {{ industry.label }}</h4>
+                        </li>
+                    </ul>
+                </div>
+                <div class="ml-auto flex flex-col gap-[4px]">
+                    <div class="flex gap-[2.5px] items-center">
+                        <nuxt-icon filled name="verified" class="text-[38px]" />
+                        <nuxt-icon filled :name="industries[currentIndustryIndex].highlightedClient"
+                            class="text-[2em]" />
+                    </div>
+                    <p class="font-raleway text-[18px] leading-[21px] text-dark">Cliente Top en el Sector</p>
+                </div>
             </div>
-            <p class="font-raleway text-[18px] leading-[21px] text-dark">Cliente Top en el Sector</p>
-        </div>
-        <h3 class="font-montserrat font-bold text-[33px] leading-[40px]">Soluciones por Industria</h3>
-        <ul class="flex mt-[24px]">
-            <li class="capitalize cursor-pointer" v-for="(industry, index) in industries"
-                @click="currentIndustryIndex = index">
-                <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px]"
-                    v-bind:class="{ 'bg-purple text-white': index === currentIndustryIndex }">
-                    {{ industry.label }}</h4>
-            </li>
-        </ul>
-        <div class="flex gap-[48px] mt-[40px]">
-            <div class="max-w-[591px] max-h-[352px] w-full shrink-0">
-                <img class="object-cover" :src="industries[currentIndustryIndex].cover" width="591" height="352"
-                    alt="banca">
-            </div>
-            <div :class="[{ [centerAligned]: currentIndustryIndex === 0 }]"
-                class="flex flex-col space-y-[16px] items-start">
-                <h3 class="max-w-[521px] w-full font-montserrat font-semibold text-[22px] leading-[26px]
+            <div class="flex gap-[48px] mt-[40px]">
+                <div class="max-w-[591px] max-h-[352px] w-full shrink-0">
+                    <img class="object-cover" :src="industries[currentIndustryIndex].cover" width="591" height="352"
+                        alt="image of a selected industry in action">
+                </div>
+                <div :class="[{ [centerAligned]: currentIndustryIndex === 0 }]"
+                    class="flex flex-col space-y-[16px] items-start">
+                    <h3 class="max-w-[521px] w-full font-montserrat font-semibold text-[22px] leading-[26px]
                     -tracking-[1%] mx-auto">
-                    {{ industries[currentIndustryIndex].heading }}</h3>
-                <div class="font-raleway text-base font-normal leading-[21px] mx-auto"
-                    v-html="industries[currentIndustryIndex].description" />
-                <button
-                    class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] -tracking-[1%] rounded-[3px]">Conoce
-                    más</button>
+                        {{ industries[currentIndustryIndex].heading }}</h3>
+                    <div class="font-raleway text-base font-normal leading-[21px] mx-auto"
+                        v-html="industries[currentIndustryIndex].description" />
+                    <button
+                        class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] -tracking-[1%] rounded-[3px]">Conoce
+                        más</button>
+                </div>
             </div>
         </div>
     </section>

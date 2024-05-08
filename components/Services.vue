@@ -14,7 +14,7 @@ const services = [
 </script>
 
 <template>
-    <div class="py-[88px] flex gap-[48px] w-full px-[140px] justify-center">
+    <div class="py-[88px] flex gap-[48px] w-full px-[140px] justify-center bg-white">
         <div>
             <div class="pt-[49px] max-w-[604px]">
                 <h2 class="font-montserrat text-[33px] font-bold leading-[40px] text-dark max-w-[456px]">Servicios

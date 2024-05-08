@@ -1,15 +1,7 @@
 <template>
-  <div>
+  <div class="bg-dark">
     <Navbar />
-    <Hero />
-    <Ally />
-    <Solutions />
-    <HowItWorks />
-    <Services />
-    <Brands />
-    <Testimonies />
-    <TheNews />
-    <CallToAction />
+    <NuxtPage />
     <FooterLinks />
   </div>
 </template>
