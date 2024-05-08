@@ -1,6 +1,6 @@
 <template>
-    <div class="bg-dark py-[88px] px-[140px]">
-        <div class="max-w-[1160px] flex gap-[48px]">
+    <div class="bg-dark py-[88px] px-[140px] ">
+        <div class="max-w-[1160px] flex gap-[48px] mx-auto">
             <div class="w-[500px] h-[368px] shrink-0">
                 <img :src="'./automation.png'" alt="people discussing over a laptop" class="object-cover">
             </div>
