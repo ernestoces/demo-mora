@@ -31,8 +31,8 @@ const scrollThreshold = location?.value?.pathname?.includes("nosotros") ? 100 : 
                     <div v-if="link.label === 'industrias'" class="hidden absolute top-0 left-0">dropdown</div>
                 </a>
             </ul>
-            <button
-                class="bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">Contacto</button>
+            <a href="/contacto"
+                class="bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">Contacto</a>
         </div>
     </nav>
 </template>
