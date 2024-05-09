@@ -7,7 +7,7 @@ const links = [
     { label: "home", href: "/" },
     { label: "automation anywhere", href: "/" },
     { label: "industrias", href: "/" },
-    { label: "servicios", href: "/" },
+    { label: "servicios", href: "/servicios" },
     { label: "nosotros", href: "/nosotros" },
     { label: "novedades", href: "/novedades" },
 ]
@@ -18,7 +18,6 @@ const scrollThreshold = location?.value?.pathname?.includes("nosotros") ? 100 : 
 </script>
 
 <template>
-
     <nav v-bind:class="{ [defaultClass]: true, [scrolledClass]: scroll.y > scrollThreshold }">
         <div class="max-w-[1440px] flex mx-auto">
             <a href="/">
