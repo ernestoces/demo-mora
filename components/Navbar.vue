@@ -9,7 +9,7 @@ const links = [
     { label: "industrias", href: "/" },
     { label: "servicios", href: "/" },
     { label: "nosotros", href: "/nosotros" },
-    { label: "novedades", href: "/" },
+    { label: "novedades", href: "/novedades" },
 ]
 const location = ref(useBrowserLocation())
 const scrolledClass = ref('bg-dark')
