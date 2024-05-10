@@ -57,7 +57,8 @@ const branches = [
                     </div>
                 </div>
             </div>
-            <form class="w-full bg-white rounded-[5px]  px-[32px] py-[40px] flex flex-col gap-[24px]">
+            <form action="https://formspree.io/f/mjvnzkrd" method="POST"
+                class="w-full bg-white rounded-[5px]  px-[32px] py-[40px] flex flex-col gap-[24px]">
                 <div class="flex flex-col gap-[4px]">
                     <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark">
                         Nombres y Apellidos
