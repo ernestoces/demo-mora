@@ -7,6 +7,10 @@ const services = ref([
 ])
 
 const activeServiceIndex = ref(0)
+
+function handleSectionInView(payload) {
+    activeServiceIndex.value = payload.serviceIndex
+} 
 </script>
 
 <template>
@@ -14,14 +18,17 @@ const activeServiceIndex = ref(0)
         <div class="">
             <p class="text-center font-semibold font-raleway text-base leading-[21px] text-white">Nuestros Servicios</p>
             <ul class="mt-[24px] flex justify-center pb-[24px]">
-                <a :href="'/servicios#' + service.id"
-                    :class="[{ ['bg-white text-purple']: activeServiceIndex === index }]"
-                    class="px-[20px] py-[8px] text-white hover:cursor-pointer rounded-[20px]"
-                    v-for="(service, index) in services">
-                    <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] ">{{ service.label }}
+                <a :href="'/servicios#' + service.id" @click="activeServiceIndex = index"
+                    class="px-[20px] py-[8px] hover:cursor-pointer rounded-[20px] text-white"
+                    :class="[{ ['bg-white']: activeServiceIndex === index }]" v-for="(service, index) in services">
+                    <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] "
+                        :class="[{ ['text-purple']: activeServiceIndex === index }]">{{ service.label }}
                     </h4>
                 </a>
             </ul>
         </div>
+        <Consultoria @inView="handleSectionInView" />
+        <Analisis />
+        <Healthcheck />
     </div>
 </template>

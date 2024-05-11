@@ -7,6 +7,7 @@ const balls = ref(
 
     ]
 )
+
 </script>
 
 <template>
