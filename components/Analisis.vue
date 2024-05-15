@@ -19,8 +19,8 @@ const highlightedServices = [
 </script>
 
 <template>
-    <div class="bg-dark">
-        <div class="py-[88px] flex gap-[48px] px-[140px]">
+    <div class="bg-dark  px-[140px]">
+        <div class="py-[88px] flex gap-[48px] max-w-[1440px] mx-auto">
             <div class="flex flex-col gap-[24px] items-start">
                 <h3
                     class="text-white font-montserrat font-semibold text-[22px] leading-[27px] -tracking-[1%] text-center">

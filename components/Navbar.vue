@@ -5,8 +5,8 @@ import { useBrowserLocation } from '@vueuse/core'
 const scroll = ref(useWindowScroll())
 const links = [
     { label: "home", href: "/" },
-    { label: "automation anywhere", href: "/" },
-    { label: "industrias", href: "/" },
+    { label: "automation anywhere", href: "/automationanywhere" },
+    { label: "industrias", href: "/#industrias" },
     { label: "servicios", href: "/servicios" },
     { label: "nosotros", href: "/nosotros" },
     { label: "novedades", href: "/novedades" },

@@ -12,7 +12,7 @@ const centerAligned = ref("items-start ")
 </script>
 
 <template>
-    <section class="py-[80px] px-[24px]  bg-white">
+    <section class="py-[80px] px-[24px]  bg-white" id="industrias">
         <div class=" mx-auto max-w-[1160px]">
             <div class="flex justify-between items-center">
                 <div>

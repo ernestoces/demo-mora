@@ -26,7 +26,7 @@ const highlightedServices = [
 
 <template>
     <div ref="target" class=" bg-white py-[88px] px-[140px]">
-        <div class="flex gap-[48px] max-w-[1220px] mx-auto">
+        <div class="flex gap-[48px] max-w-[1440px] mx-auto">
             <div class="text-dark flex flex-col items-start ">
                 <h3 class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-center">
                     Consultoría RPA</h3>

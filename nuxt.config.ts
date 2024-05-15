@@ -9,7 +9,7 @@ export default defineNuxtConfig({
       },
       Montserrat: {
         wght: '200..900'
-      }
+      },
     }
   }], "@nuxtjs/sanity"],
   tailwindcss: {
@@ -27,7 +27,7 @@ export default defineNuxtConfig({
             lightPurple: "#B8A2D6",
             aaBlue: "#133A65",
             aaOrange: "#FF5A10",
-            aaDark: "#333333"
+            aaBlack: "#333333"
 
           }
         }

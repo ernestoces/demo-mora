@@ -1,0 +1,130 @@
+<script setup lang="ts">
+import { vIntersectionObserver } from '@vueuse/components'
+type Service = {
+    id: string,
+    name: string,
+    description: string,
+    keypoints: {
+        icon: string, title: string,
+    }[],
+    highlightedServices: {
+        icon: string, title: string, description: string
+    }[],
+    dark: boolean,
+    index: number
+}
+
+const props = defineProps<{
+    service: Service,
+}>()
+
+const emit = defineEmits({
+    inView(payload: { serviceIndex: number }) {
+        return true
+    }
+})
+
+function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[]) {
+    if (isIntersecting) {
+        emit("inView", { serviceIndex: props.service.index })
+    }
+}
+
+
+const trainingDetails = [
+    {
+        name: "Overview", items: [
+            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
+            "Generación y configuración de Dashboard de negocio."
+        ]
+    },
+    {
+        name: "Template A360", items: [
+            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
+            "Generación y configuración de Dashboard de negocio."
+        ]
+    },
+    {
+        name: "AARI", items: [
+            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
+            "Generación y configuración de Dashboard de negocio."
+        ]
+    },
+    {
+        name: "Input Data", items: [
+            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
+            "Generación y configuración de Dashboard de negocio."
+        ]
+    },
+    {
+        name: "Build a Bot", items: [
+            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
+            "Generación y configuración de Dashboard de negocio."
+        ]
+    },
+    {
+        name: "Caso de uso", items: [
+            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
+            "Generación y configuración de Dashboard de negocio."
+        ]
+    },
+]
+
+</script>
+
+<template>
+    <div v-intersection-observer="onIntersectionObserver" ref="target" class="w-full  pt-[88px] pb-[104px] px-[140px] "
+        :class="service.dark ? 'bg-dark' : 'bg-white '" v-bind:id="service.id">
+        <div class="max-w-[1160px] mx-auto flex gap-[48px]">
+            <div class="flex gap-6 flex-col font-raleway text-base leading-[21px] items-start max-w-[600px]">
+                <h3 :class="service.dark ? 'text-white' : 'text-dark'"
+                    class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%]  text-center text-dark">
+                    {{ service.name }}</h3>
+                <p class="font-raleway text-base leading-[31px]" :class="service.dark ? 'text-white' : 'text-dark'"
+                    v-html="service.description"></p>
+                <p class="font-bold" :class="service.dark ? 'text-white' : 'text-dark'">Puntos Clave:</p>
+                <ul v-if="service.id !== 'training'" class="flex gap-[16px] justify-center w-full">
+                    <li v-for="point in service.keypoints" class="flex flex-col gap-[8px]  max-w-[159px] items-center">
+                        <nuxt-icon :name="point.icon" filled class="text-[56px]" />
+                        <p class="font-raleway text-base leading-[21px] text-center"
+                            :class="service.dark ? 'text-white' : 'text-dark'">
+                            {{ point.title }}
+                        </p>
+                    </li>
+                </ul>
+                <ul v-else class="w-full grid grid-cols-2 gap-[24px] items-baseline">
+                    <template v-for="detail in trainingDetails">
+                        <li
+                            class="peer relative hover:mb-[120px] group cursor-pointer bg-purple rounded-[8px] flex justify-between py-[8px] px-[16px] items-center">
+                            <span class="text-white  font-semibold text-base leading-[21px] ">{{
+                                detail.name }}</span>
+                            <nuxt-icon name="arrowdown" filled class="text-[24px] group-hover:rotate-90" />
+                            <ul
+                                class="list-disc group-hover:max-h-[600px] transition-[max-height] absolute top-[40px] left-0 flex flex-col  mb-[32px] pt-[24px] pl-[32px] gap-[1px]">
+                                <li v-for="item in detail.items" class=" hidden group-hover:flex text-white">
+                                    {{ item }}
+                                </li>
+                            </ul>
+                        </li>
+
+                    </template>
+                </ul>
+            </div>
+            <div class="w-full">
+                <p class="font-raleway text-[18px] leading-[21px] text-center"
+                    :class="service.dark ? 'text-white' : 'text-dark'"
+                    v-text="service.id === 'training' ? 'Entrenamiento Completo' : 'Servicios Destacados'">
+                </p>
+                <ul class="mt-[24px] flex flex-col gap-[24px] shrink-0">
+                    <li class="text-dark font-raleway font-normal pb-[24px] py-[8px] items-center justify-start border-b-2 border-[#B8A2D6] border-opacity-50 flex gap-4 last:border-none"
+                        v-for="item in service.highlightedServices">
+                        <nuxt-icon :name="item.icon" filled class="text-[32px]" />
+                        <p class="font-normal font-raleway text-base leading-[21px]"
+                            :class="service.dark ? 'text-white' : 'text-dark'"><span class="font-semibold">{{
+                                item.title }}: </span>{{ item.description }}</p>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</template>
