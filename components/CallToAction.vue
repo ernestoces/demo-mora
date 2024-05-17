@@ -21,7 +21,7 @@ defineProps<{
         <div class="max-w-[949px] mx-auto">
             <h2
                 class="font-montserrat font-bold text-[33px] leading-[40px] text-[#133a65] text-center max-w-[949px] mx-auto">
-                Acelera el Éxito con nuestra<br /> Automatización Inteligente</h2>
+                Acelera el Éxito con nuestra Automatización Inteligente</h2>
             <button
                 class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-white bg-[#FF5A10] rounded-full p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] block mx-auto mt-[48px]">Contáctanos
                 Ahora</button>

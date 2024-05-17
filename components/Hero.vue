@@ -1,15 +1,20 @@
 <template>
-    <div class="-mt-[70px] h-[710px] w-full mx-auto bg-center bg-no-repeat bg-[length:1440px] bg-black"
+    <div class="xl:-mt-[70px] -mt-[92px] xl:h-[710px] pb-[56px] min-h-[590px] w-full mx-auto xl:bg-center bg-right-bottom bg-no-repeat bg-[length:1440px] bg-black"
         v-bind:style="{ 'background-image': 'url(./hero.png)' }">
         <div class="max-w-[1160px] w-full max-h-[251px] mx-auto">
             <h1
-                class="relative z-10 text-white font-montserrat font-bold text-[50px] leading-[61px] text-center pt-[265px]">
-                Descubre el potencial de tu empresa con nuestra automatización impulsada por IA.</h1>
-            <p class="relative font-raleway font-normal text-[18px] leading-[21px] text-center mt-[24px] text-white">
+                class="px-4 relative z-10 text-white font-montserrat font-bold text-[33px] leading-[40px] xl:text-[50px] xl:leading-[61px] text-left xl:text-center pt-[112px] xl:pt-[265px]">
+                Descubre el potencial de tu empresa con nuestra automatización impulsada por <span
+                    class="text-mora">IA</span>.</h1>
+            <p
+                class="relative font-raleway font-normal text-[18px] leading-[21px] xl:text-center text-left mt-[24px] text-white    px-4">
                 Explora cómo podemos llevar tu negocio al siguiente nivel.</p>
-            <button
-                class="relative font-raleway font-semibold text-base leading-[27px] tracking-tight bg-mora px-[22px] py-[8px] text-white rounded-[3px] mx-auto block mt-[40px]">Conoce
-                más de nuestros servicios</button>
+            <div class="relative px-4 ">
+                <button
+                    class=" font-raleway font-semibold text-base leading-[27px] tracking-tight bg-mora px-[22px] py-[8px]  text-white rounded-[3px] mx-auto block xl:mt-[40px] mt-[48px] w-full xl:w-auto">Conoce
+                    más de <span class="hidden xl:inline-block">nuestros servicios</span><span
+                        class="xl:hidden inline-block">nosotros</span></button>
+            </div>
         </div>
     </div>
 </template>

@@ -13,12 +13,14 @@ const branches = [
         location: "Av. Rivera Navarrete 395 of. 1692 - San Isidro, Perú"
     }
 ]
+
+const inputClass = ref("border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark placeholder:font-raleway placeholder:text-base placeholder:text-[#828282] placeholder:font-normal")
 </script>
 
 
 <template>
-    <div class="bg-dark py-[88px] px-[140px]">
-        <div class="max-w-[1160px] mx-auto flex gap-[48px]">
+    <div class="bg-dark py-[88px] px-[140px] border-b-[#B8A2D63B] border-b-2">
+        <div class=" max-w-[1160px] mx-auto flex gap-[48px] items-start">
             <div>
                 <h1 class="text-white font-montserrat font-bold text-[50px] leading-[61px]">Contacta con <p
                         class="text-mora">Nosotros</p>
@@ -58,35 +60,32 @@ const branches = [
                 </div>
             </div>
             <form action="https://formspree.io/f/mjvnzkrd" method="POST"
-                class="w-full bg-white rounded-[5px]  px-[32px] py-[40px] flex flex-col gap-[24px]">
+                class=" bg-white rounded-[5px]  px-[32px] py-[40px] flex flex-col gap-[24px]">
                 <div class="flex flex-col gap-[4px]">
                     <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark">
                         Nombres y Apellidos
                     </label>
-                    <input placeholder="Ingresa tu nombre"
-                        class="border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark" />
+                    <input placeholder="Ingresa tu nombre" :class="inputClass" />
                 </div>
                 <div class="flex gap-4 w-full">
                     <div class="flex flex-col gap-[4px] w-full">
                         <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark">
                             Correo electrónico
                         </label>
-                        <input placeholder="Correo electrónico"
-                            class="border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark" />
+                        <input placeholder="Correo electrónico" :class="inputClass" />
                     </div>
                     <div class="flex flex-col gap-[4px] w-full">
                         <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark">
                             Número de contacto
                         </label>
-                        <input placeholder="Número"
-                            class="border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark" />
+                        <input placeholder="Número" :class="inputClass" />
                     </div>
                 </div>
                 <div class="flex flex-col gap-[4px] w-full">
                     <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark" for="mensaje">Deja tu
                         mensaje</label>
                     <textarea
-                        class="border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark"
+                        class="border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark placeholder:font-raleway placeholder:text-base placeholder:text-[#828282] placeholder:font-normal"
                         id="mensaje" placeholder="Mensaje" rows="9"></textarea>
                 </div>
                 <button

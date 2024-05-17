@@ -8,7 +8,7 @@ const transformations = [
 
 <template>
     <div class="mt-[151px]">
-        <h2 class="font-semibold font-raleway text-[60px] leading-[72px] text-center text-[#333333]">Transforme su
+        <h2 class="font-bold font-montserrat text-[52px] leading-[63px] text-center text-[#333333]">Transforme su
             modelo operativo.
 
         </h2>
@@ -17,21 +17,21 @@ const transformations = [
             <div v-for="transformation in transformations" class="flex gap-[20px] items-start">
                 <nuxt-icon :name="transformation.icon" filled class="m-0 text-[80px]" />
                 <div class="flex flex-col gap-[15px] max-w-[246px]">
-                    <h6 class="font-normal font-raleway text-[24px] leading-[28px] text-[#133A65]"
+                    <h6 class="font-medium font-montserrat text-[24px] leading-[29px] text-[#133A65]"
                         v-text="transformation.heading">
                     </h6>
-                    <p class="font-normal text-[18px] leading-[21px] text-[aaBlack]"
+                    <p class="font-normal font-montserrat text-[18px] leading-[21px] text-[aaBlack]"
                         v-text="transformation.description">
                     </p>
                 </div>
             </div>
         </div>
-        <h2 class="font-semibold font-raleway text-[60px] leading-[72px] mt-[100px] text-center text-[#333333]">Con una
+        <h2 class="font-bold font-montserrat text-[52px] leading-[63px] mt-[100px] text-center text-[#333333]">Con una
             plataforma
             completa e inteligente.
         </h2>
         <p
-            class="font-normal font-raleway mt-[10px] text-[#333333] text-center text-[20px] leading-[24px] max-w-[1063px] mx-auto">
+            class="font-normal font-montserrat mt-[10px] text-[#333333] text-center text-[20px] leading-[24px] max-w-[1063px] mx-auto">
             Automation
             Success
             Platform
@@ -39,7 +39,7 @@ const transformations = [
             automatización nativa en la nube flexible
             respaldada por una comunidad global de miembros y un ecosistema de socios.</p>
         <div class="w-[928px] h-[610px] mx-auto pt-[50px]">
-            <img :src="'./platform.png'" class="object-cover" alt="">
+            <NuxtImg preload :src="'./platform.png'" class="object-cover" alt="process diagram" />
         </div>
     </div>
 </template>

@@ -78,15 +78,16 @@ const { pause, resume, isActive } = useIntervalFn(() => {
 </script>
 
 <template>
-    <div class="py-[88px] w-full px-[140px] bg-dark">
+    <div class="xl:pt-[127px] pt-[79px] pb-[88px] w-full px-4 xl:px-[140px] bg-dark">
         <div class="max-w-[949px] mx-auto flex flex-col gap-[24px]">
             <h2 class="font-montserrat font-bold text-[33px] leading-[40px] text-white text-center">Testimonios de
                 Clientes Satisfechos</h2>
             <p class="font-raleway text-[18px] leading-[21px] text-center text-white">Conoce lo que dicen nuestros
                 clientes sobre cómo nuestras soluciones han impulsado su éxito empresarial.</p>
         </div>
+
         <ul ref="testimoniesList"
-            class="mt-[64px] flex gap-[61px] w-full max-w-[1160px]  mx-auto overflow-x-hidden mb-[48px]">
+            class="mt-[64px] flex gap-[72px]  w-full max-w-[1160px] mx-auto  overflow-x-hidden mb-[48px]">
             <li v-for="testimony in testimonies"
                 class="shrink-0 gap-[31px] bg-white flex flex-col items-start p-[32px] rounded-[5px] w-full max-w-[346px] ">
                 <div>
@@ -100,6 +101,7 @@ const { pause, resume, isActive } = useIntervalFn(() => {
                 </div>
             </li>
         </ul>
+
         <div class="flex gap-4 items-center justify-center cursor-pointer">
             <div @click="scroll.x = 0"
                 :class="[testimonyPointClass, { [activeTestimonyPointClass]: scroll.arrivedState.left }]">
@@ -107,7 +109,7 @@ const { pause, resume, isActive } = useIntervalFn(() => {
             <div @click="scroll.x = width + 72"
                 :class="[testimonyPointClass, { [activeTestimonyPointClass]: !scroll.arrivedState.right && !scroll.arrivedState.left }]">
             </div>
-            <div @click="scroll.x = 2 * (width + 72)" :class="[testimonyPointClass, {
+            <div @click="scroll.x += width + 72" :class="[testimonyPointClass, {
                 [activeTestimonyPointClass]:
                     scroll.arrivedState.right
             }]">

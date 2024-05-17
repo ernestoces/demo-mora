@@ -87,55 +87,57 @@ const products = ref([
         image: `./discovery.png`,
         items: [
             {
-                icon: null,
-                heading: `Gane Visibilidad y Control`,
-                description: `Gestione los procesos, el ROI y todo el ciclo de vida de la automatización mediante el seguimiento de los datos del programa, los objetivos y el progreso desde la conceptualización hasta el cumplimiento del valor.`
+                icon: "file",
+                heading: `Transparencia y Precisión`,
+                description: `Proporciona una visión precisa de los procesos empresariales para identificar ineficiencias y optimizar la automatización.`
             },
             {
-                icon: null,
-                heading: `Aumente al Máximo la Creación de Valor`,
-                description: `Defina y capture los indicadores clave de rendimiento (KPI), como el tiempo y los costos ahorrados, la agilidad operativa, el flujo de caja o la sostenibilidad, y ayude a los directivos a comprender las ganancias de alto rendimiento del programa de automatización.`
+                icon: "velocity",
+                heading: `Documentación del Proceso`,
+                description: `Permite elegir el proceso mas optimo para generar la documentación integral del proceso.`
             },
             {
-                icon: null,
-                heading: `Acelere la Generación de Procesos`,
-                description: `Permita a los usuarios empresariales compartir ideas de automatización que construyan los procesos de automatización.`
-            },
-            {
-                icon: null,
-                heading: `Tome Mejores Decisiones`,
-                description: `Desarrolle una forma coherente y repetible de evaluar las oportunidades de automatización para agilizar la toma de decisiones.`
+                icon: "sensor",
+                heading: `Escala Segura con IA`,
+                description: `Amplía la transformación en toda la empresa con una arquitectura en la nube diseñada para recopilar y procesar big data, garantizando la seguridad y la precisión.`
             }
         ]
     },
 ])
-const currentSlideIndex = ref(1)
+const counter = useInterval(3500)
+
+const currentSlideIndex = computed(() => counter.value % 4)
 const activeSlideDotClass = "bg-[#FF5A10] opacity-100"
 const root = ref<HTMLElement | null>(null)
 
+
 </script>
 <template>
-    <div class="bg-white w-full pt-[100px]">
-        <h2 class="font-raleway font-semibold text-[40px] leading-[53px] text-center mx-auto">Conoce nuestros productos.
+    <div class="bg-white w-full ">
+        <h2 class="pt-[126px] font-montserrat font-bold text-[40px] leading-[53px] text-center mx-auto">Conoce nuestros
+            productos.
         </h2>
         <div class="w-[1332px] mx-auto">
             <div ref="root"
-                class="gap-[90px] snap-x snap-mandatory overflow-hidden w-full shrink-0  mt-[50px] flex items-center pb-[62px]">
+                class="gap-[90px] snap-x snap-mandatory overflow-hidden w-full shrink-0  mt-[50px] flex items-center justify-center pb-[62px]">
                 <div
-                    class="z-10 snap-always snap-center w-[1219px] shrink-0 pt-[50px] px-[70px] pb-[139px] shadow-2xl border  rounded-[20px]">
-                    <p class="font-semibold font-raleway text-[24px] leading-[32px] text-[#133A65] text-center">{{
+                    class="z-10 snap-always snap-center w-[1219px] shrink-0 pt-[50px] px-[70px] pb-[139px] shadow-2xl border  rounded-[20px] ">
+                    <p class="font-semibold font-montserrat text-[24px] leading-[32px] text-[#133A65] text-center">{{
                         products[currentSlideIndex].name }}</p>
-                    <p class="mt-[20px] text-center">{{ products[currentSlideIndex].description }}</p>
+                    <p class="mt-[20px] text-center font-montserrat font-normal text-[18px] leading-[24px]">{{
+                        products[currentSlideIndex].description }}</p>
                     <div class="flex gap-[40px] items-center">
                         <ul class="mt-[50px] gap-[50px] flex flex-col">
                             <li v-for="item in products[currentSlideIndex].items" class="flex gap-[25px] items-start">
                                 <div v-if="item.icon">
                                     <nuxt-icon :name="item.icon" filled class="text-[72px]" />
                                 </div>
-                                <div>
-                                    <p class="font-semibold font-raleway text-[18px] leading-[24px]">{{ item.heading }}
+                                <div class="flex flex-col space-y-[10px]">
+                                    <p class="font-semibold font-montserrat text-[18px] leading-[24px]">{{ item.heading
+                                        }}
                                     </p>
-                                    <p class="font-light text-base leading-[21px] text-[#333333]">{{ item.description }}
+                                    <p class="font-montserrat font-normal text-base leading-[21px] text-[#333333]">{{
+                                        item.description }}
                                     </p>
                                 </div>
                             </li>
@@ -156,7 +158,7 @@ const root = ref<HTMLElement | null>(null)
         </div>
         <div class="flex gap-4 mt-[25px] justify-center">
             <span v-for="n in 4" class="h-[12px] w-[12px] bg-[#666666] opacity-25 rounded-full cursor-pointer"
-                @click="currentSlideIndex = n - 1" :class="{ [activeSlideDotClass]: n === currentSlideIndex + 1 }">
+                @click="counter = n - 1" :class="{ [activeSlideDotClass]: n === currentSlideIndex + 1 }">
             </span>
         </div>
     </div>

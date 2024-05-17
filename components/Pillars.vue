@@ -30,12 +30,12 @@ const pillars = ref([
             </h2>
             <div class="flex gap-[33px] mt-[48px]">
                 <div v-for="pillar in pillars"
-                    class="border-2 border-lightPurple w-[265px] p-[24px] flex flex-col gap-[56px] rounded-[5px]">
+                    class=" bg-gradient-to-r hover:from-[#B8A2D633] hover:to-[#5820E733] hover:border-white border border-lightPurple w-[265px] p-[24px] flex flex-col gap-[56px] rounded-[5px] cursor-default">
                     <div class="flex gap-[16px]">
                         <nuxt-icon :name="pillar.icon" filled class="text-[40px]" />
                         <h4 class="max-w-[134px] font-montserrat font-semibold text-[18px] leading-[24px] text-dark">{{
                             pillar.heading
-                        }}
+                            }}
                         </h4>
                     </div>
                     <p class="font-raleway font-normal text-base leading-[21px] text-dark">{{ pillar.description }}</p>

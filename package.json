@@ -10,11 +10,13 @@
     "postinstall": "nuxt prepare"
   },
   "dependencies": {
+    "@nuxt/image": "^1.7.0",
     "@nuxtjs/sanity": "^1.11.3",
     "@nuxtjs/tailwindcss": "^6.12.0",
     "@vueuse/components": "^10.9.0",
     "nuxt": "^3.11.2",
     "nuxt-icons": "^3.2.1",
+    "nuxt-marquee": "^1.0.4",
     "vue": "^3.4.21",
     "vue-router": "^4.3.0"
   },

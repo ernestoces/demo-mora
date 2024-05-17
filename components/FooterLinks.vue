@@ -37,9 +37,9 @@ const links = [
             <div class="flex gap-[64px]">
                 <div class="flex flex-col">
                     <h4
-                        class="font-montserrat font-semibold text-[18px] leading-[24px]s pl-[16px] border-l-2 border-mora text-white">
+                        class="font-montserrat font-semibold text-[18px] leading-[24px]s pl-3 border-l-[4px] border-mora text-white">
                         Contacto</h4>
-                    <div v-for="presence in countries" class="flex flex-col mt-[16px] gap-[16px]">
+                    <div v-for="presence in countries" class="flex flex-col mt-[16px] gap-[16px] pl-4">
                         <p class="font-raleway text-[18px] leading-[21px] text-white ">{{ presence.name }}</p>
                         <div
                             class="flex flex-col gap-[8px] font-semibold font-raleway text-base leading-[21px] text-white">
@@ -50,11 +50,11 @@ const links = [
                 </div>
                 <div>
                     <h4
-                        class="font-montserrat font-semibold text-[18px] leading-[24px]s pl-[16px] border-l-2 border-mora text-white">
+                        class="font-montserrat font-semibold text-[18px] leading-[24px]s pl-3 border-l-[4px] border-mora text-white">
                         Menú</h4>
                     <ul class="mt-[16px] flex flex-col gap-[10px]">
                         <li v-for="link in links"
-                            class="text-white font-raleway text-base leading-[21px] hover:text-lightPurple">
+                            class="pl-4 text-white font-raleway text-base leading-[21px] hover:text-lightPurple">
                             <a :href="link.url">{{ link.label }}</a>
                         </li>
                     </ul>
@@ -66,8 +66,10 @@ const links = [
             <p class="text-white font-montserrat text-base font-semibold leading-[24px] -tracking-[1%]">© Mora Group
                 Technology
                 2024</p>
-            <p class="text-white font-montserrat text-base font-regular leading-[24px] -tracking-[1%]">Designed by <span
-                    class="font-semibold text-lightPurple">Andrómeda</span></p>
+            <a href="https://andromedacasadigital.netlify.app/" target="_blank"
+                class="group text-white font-montserrat text-base font-regular leading-[24px] -tracking-[1%]">Designed
+                by
+                <span class="font-semibold text-lightPurple cursor-pointer group-hover:underline">Andrómeda</span></a>
         </div>
     </div>
 </template>

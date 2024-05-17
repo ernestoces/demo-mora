@@ -1,10 +1,10 @@
 <script setup lang="ts">
 const industries = ref([
-    { highlightedClient: "interbank", label: "banca", cover: "./banca.png", heading: "Automatización inteligente para servicios financieros", description: `<p>Con la automatización inteligente, los bancos y las empresas de servicios financieros pueden transformar las operaciones manuales que usan muchos datos, <span class="font-bold">sin dejar de cumplir con los requisitos normativos</span> en constante cambio.</p>`, ctaUrl: `/` },
-    { highlightedClient: "vale", label: "minería", cover: "./mineria.png", heading: "Automatización Inteligente para la Industria Minera", description: `<p>Revolucionamos la industria minera al abordar los desafíos en todas las etapas de la cadena de valor. Desde la optimización de los procesos hasta la gestión eficiente de la logística, nuestra tecnología transforma los procesos mineros para <span class="font-bold">aumentar la eficiencia y la seguridad.</span></p>`, ctaUrl: `/` },
-    { highlightedClient: "achs", label: "salud", cover: "./salud.png", heading: "Automatización inteligente para la atención sanitaria", description: `<p>Revitalizamos la atención sanitaria al abordar los desafíos en todas las etapas de la cadena de valor. Desde la gestión de pacientes hasta la optimización de procesos clínicos, nuestra tecnología transforma la atención médica para <span class="font-bold">aumentar la eficiencia y mejorar</span> la experiencia del paciente.</p>`, ctaUrl: `/` },
-    { highlightedClient: "aceros", label: "manufactura", heading: "Automatización inteligente para la fabricación", cover: "./manufactura.png", description: `<p>Confía en nuestra tecnología para automatizar tus procesos y operaciones en la industria. Al eliminar errores y desperdicios, reducimos costos y aceleramos tu entrada al mercado,<span class="font-bold">manteniéndote competitivo en un entorno cambiante.</span></p>`, ctaUrl: `/` },
-    { highlightedClient: "oechsle", label: "retail", cover: "./retail.png", heading: "Automatización inteligente para el comercio", description: `<p>Desde la gestión de inventarios hasta la seguridad en tienda, optimizamos procesos para impulsar las ventas y la lealtad del cliente. <span class="font-bold">Reforzamos la seguridad y prevenimos pérdidas</span> con monitoreo inteligente y alertas ante actividades sospechosas.</p>`, ctaUrl: `/` },
+    { highlightedClients: ["interbank", "financiera", "interseguro", "bcp", "pichincha", "itau", "banchile"], label: "banca", cover: "./banca.png", heading: "Automatización inteligente para servicios financieros", description: `<p>Con la automatización inteligente, los bancos y las empresas de servicios financieros pueden transformar las operaciones manuales que usan muchos datos, <span class="font-bold">sin dejar de cumplir con los requisitos normativos</span> en constante cambio.</p>`, ctaUrl: `/` },
+    { highlightedClients: ["goldfields", "antofagasta"], label: "minería", cover: "./mineria.png", heading: "Automatización Inteligente para la Industria Minera", description: `<p>Revolucionamos la industria minera al abordar los desafíos en todas las etapas de la cadena de valor. Desde la optimización de los procesos hasta la gestión eficiente de la logística, nuestra tecnología transforma los procesos mineros para <span class="font-bold">aumentar la eficiencia y la seguridad.</span></p>`, ctaUrl: `/` },
+    { highlightedClients: ["consalud", "banmedica", "bayer", "clinica"], label: "salud", cover: "./salud.png", heading: "Automatización inteligente para la atención sanitaria", description: `<p>Revitalizamos la atención sanitaria al abordar los desafíos en todas las etapas de la cadena de valor. Desde la gestión de pacientes hasta la optimización de procesos clínicos, nuestra tecnología transforma la atención médica para <span class="font-bold">aumentar la eficiencia y mejorar</span> la experiencia del paciente.</p>`, ctaUrl: `/` },
+    { highlightedClients: ["copeinca", "enex", "aceros", "gloria", "centria", "pesquera"], label: "manufactura", heading: "Automatización inteligente para la fabricación", cover: "./manufactura.png", description: `<p>Confía en nuestra tecnología para automatizar tus procesos y operaciones en la industria. Al eliminar errores y desperdicios, reducimos costos y aceleramos tu entrada al mercado,<span class="font-bold">manteniéndote competitivo en un entorno cambiante.</span></p>`, ctaUrl: `/` },
+    { highlightedClients: ["inretail", "mass", "supermercados", "makro", "oechsle", "promart"], label: "retail", cover: "./retail.png", heading: "Automatización inteligente para el comercio", description: `<p>Desde la gestión de inventarios hasta la seguridad en tienda, optimizamos procesos para impulsar las ventas y la lealtad del cliente. <span class="font-bold">Reforzamos la seguridad y prevenimos pérdidas</span> con monitoreo inteligente y alertas ante actividades sospechosas.</p>`, ctaUrl: `/` },
 ])
 
 const currentIndustryIndex = useState('currentIndustryIndex', () => 0)
@@ -12,12 +12,16 @@ const centerAligned = ref("items-start ")
 </script>
 
 <template>
-    <section class="py-[80px] px-[24px]  bg-white" id="industrias">
-        <div class=" mx-auto max-w-[1160px]">
+    <section class="py-[56px] xl:py-[80px] px-4 xl:[px-[24px]  bg-white" id="industrias">
+        <div class=" mx-auto xl:max-w-[1160px]">
             <div class="flex justify-between items-center">
                 <div>
-                    <h3 class="font-montserrat font-bold text-[33px] leading-[40px]">Soluciones por Industria</h3>
-                    <ul class="flex mt-[24px]">
+                    <h2 class="font-montserrat font-bold text-[33px] leading-[40px] text-center xl:text-left">Soluciones
+                        por
+                        Industria <span class="capitalize hidden xl:inline-block"
+                            v-text="' - ' + industries[currentIndustryIndex].label" />
+                    </h2>
+                    <ul class="flex flex-wrap mt-[24px] items-center xl:justify-start justify-center">
                         <li class="capitalize cursor-pointer" v-for="(industry, index) in industries"
                             @click="currentIndustryIndex = index">
                             <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px]"
@@ -26,30 +30,40 @@ const centerAligned = ref("items-start ")
                         </li>
                     </ul>
                 </div>
-                <div class="ml-auto flex flex-col gap-[4px]">
-                    <div class="flex gap-[2.5px] items-center">
-                        <nuxt-icon filled name="verified" class="text-[38px]" />
-                        <nuxt-icon filled :name="industries[currentIndustryIndex].highlightedClient"
-                            class="text-[2em]" />
-                    </div>
-                    <p class="font-raleway text-[18px] leading-[21px] text-dark">Cliente Top en el Sector</p>
-                </div>
             </div>
-            <div class="flex gap-[48px] mt-[40px]">
-                <div class="max-w-[591px] max-h-[352px] w-full shrink-0">
-                    <img class="object-cover" :src="industries[currentIndustryIndex].cover" width="591" height="352"
-                        alt="image of a selected industry in action">
+            <div class="flex xl:flex-row flex-col xl:gap-[48px] gap-[24px] xl:mt-[40px] mt-[24px]">
+                <div class="max-w-[591px] max-h-[352px] w-full shrink-0 ">
+                    <NuxtImg preload class="object-cover" :src="industries[currentIndustryIndex].cover" width="591"
+                        height="352" alt="image of a selected industry in action" />
                 </div>
                 <div :class="[{ [centerAligned]: currentIndustryIndex === 0 }]"
-                    class="flex flex-col space-y-[16px] items-start">
+                    class="flex flex-col gap-[16px] items-end xl:pt-[65px]">
                     <h3 class="max-w-[521px] w-full font-montserrat font-semibold text-[22px] leading-[26px]
-                    -tracking-[1%] mx-auto">
-                        {{ industries[currentIndustryIndex].heading }}</h3>
-                    <div class="font-raleway text-base font-normal leading-[21px] mx-auto"
+                    -tracking-[1%] mx-auto mt-[8px] xl:mt-0 xl:text-right">
+                        {{ industries[currentIndustryIndex].heading }}
+                    </h3>
+                    <p class="font-raleway text-base font-normal leading-[21px] mx-auto xl:text-right"
                         v-html="industries[currentIndustryIndex].description" />
                     <button
-                        class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] -tracking-[1%] rounded-[3px]">Conoce
+                        class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] text-base -tracking-[1%] rounded-[3px] xl:w-auto  w-full">Conoce
                         más</button>
+                </div>
+            </div>
+            <marquee-carousel v-if="industries[currentIndustryIndex].highlightedClients.length > 4"
+                class="xl:mt-[40px] mt-[24px]" :images="industries[currentIndustryIndex].highlightedClients" />
+            <div v-else-if="industries[currentIndustryIndex].highlightedClients.length === 4"
+                class="flex gap-[88px] h-full justify-center mt-[40px]">
+                <div ref="marqueeItem" v-for="(image, index) in industries[currentIndustryIndex].highlightedClients"
+                    class="py-[10]  ml-[88px] ">
+                    <NuxtImg preload :key="image" :src="'./' + image + '.png'" :alt="'Image ' + (index + 1)"
+                        class="object-cover h-[26px]" />
+                </div>
+            </div>
+            <div v-else class="flex gap-[88px] h-full justify-end mt-[40px]">
+                <div ref="marqueeItem" v-for="(image, index) in industries[currentIndustryIndex].highlightedClients"
+                    class="py-[10]  ml-[88px] ">
+                    <NuxtImg preload :key="image" :src="'./' + image + '.png'" :alt="'Image ' + (index + 1)"
+                        class="object-cover h-[47px]" />
                 </div>
             </div>
         </div>

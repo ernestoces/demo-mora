@@ -1,17 +1,25 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  devtools: { enabled: true },
-  modules: ['@vueuse/nuxt', "@nuxtjs/tailwindcss", 'nuxt-icons', ['@nuxtjs/google-fonts', {
-    families: {
-      Raleway: {
-        wght: '200..900',
-        ital: [100]
-      },
-      Montserrat: {
-        wght: '200..900'
-      },
-    }
-  }], "@nuxtjs/sanity"],
+  devtools: { enabled: false },
+  modules: [
+    '@vueuse/nuxt',
+    "@nuxtjs/tailwindcss",
+    'nuxt-icons',
+    ['@nuxtjs/google-fonts', {
+      families: {
+        Raleway: {
+          wght: '200..900',
+          ital: [100]
+        },
+        Montserrat: {
+          wght: '200..900'
+        },
+      }
+    }],
+    "@nuxtjs/sanity",
+    "@nuxt/image",
+    "nuxt-marquee"
+  ],
   tailwindcss: {
     config: {
       theme: {

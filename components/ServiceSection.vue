@@ -69,7 +69,7 @@ const trainingDetails = [
         ]
     },
 ]
-
+const highlightedItemsClass = 'self-center'
 </script>
 
 <template>
@@ -80,7 +80,7 @@ const trainingDetails = [
                 <h3 :class="service.dark ? 'text-white' : 'text-dark'"
                     class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%]  text-center text-dark">
                     {{ service.name }}</h3>
-                <p class="font-raleway text-base leading-[31px]" :class="service.dark ? 'text-white' : 'text-dark'"
+                <p class="font-raleway text-base leading-[21px]" :class="service.dark ? 'text-white' : 'text-dark'"
                     v-html="service.description"></p>
                 <p class="font-bold" :class="service.dark ? 'text-white' : 'text-dark'">Puntos Clave:</p>
                 <ul v-if="service.id !== 'training'" class="flex gap-[16px] justify-center w-full">
@@ -110,7 +110,7 @@ const trainingDetails = [
                     </template>
                 </ul>
             </div>
-            <div class="w-full">
+            <div class="w-full" :class="{ [highlightedItemsClass]: service.id === 'training' }">
                 <p class="font-raleway text-[18px] leading-[21px] text-center"
                     :class="service.dark ? 'text-white' : 'text-dark'"
                     v-text="service.id === 'training' ? 'Entrenamiento Completo' : 'Servicios Destacados'">

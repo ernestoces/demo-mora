@@ -16,7 +16,7 @@
                     robótica de procesos. Esta combinación permite una rápida automatización completa de los procesos
                     empresariales, garantizando ejecuciones continuas, libres de errores y a una gran velocidad y
                     escala, sin requerir esfuerzos adicionales.</p>
-                <ul class="mt-[40px] flex gap-[40px] py-[16px] px-[62px] bg-[#372B4780] rounded-[5px]">
+                <ul class="mt-[40px] flex gap-[40px] py-[16px] px-[62px] bg-[#372B4780] rounded-[5px] items-center">
                     <li class="flex flex-col items-center">
                         <nuxt-icon name="lightbulb" filled class="text-[30px]" />
                         <p class="text-center font-raleway text-base leading-[21px] text-white">Inteligencia Artificial
@@ -38,6 +38,12 @@
                     </li>
                 </ul>
             </div>
+        </div>
+        <div class="flex justify-center">
+            <button
+                class="drop-shadow-sm mt-[24px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%] py-[8px] px-[22px] bg-mora rounded-[3px]">Conoce
+                más de
+                Automation Anywhere</button>
         </div>
     </div>
 </template>

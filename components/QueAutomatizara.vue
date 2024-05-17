@@ -8,26 +8,27 @@ const sectors = ref([
     { name: "Ventas y Marketing", image: "./marketing.png", message: `Libere tiempo de sus equipos para que puedan centrarse en llegar a más clientes.` },
 ])
 const currentSectorIndex = ref(0)
+
 const activeSectorClass = "border-[#ff5a10] border-t-[6px] text-[#ff5a10] font-semibold"
 </script>
 
 <template>
     <div class="mt-[100px]">
-        <h2 class="font-semibold text-[60px] text-[#333333] text-center">¿Qué automatizará?</h2>
-        <div class="mt-[50px] bg-white rounded-[20px] p-[50px_60px]">
+        <h2 class="font-bold font-montserrat text-[52px] leading-[63px] text-[#333333] text-center">¿Qué automatizará?
+        </h2>
+        <div class="mt-[50px] bg-white rounded-[20px] p-[50px_60px] drop-shadow-xl max-w-[1233px] mx-auto">
             <div class="flex gap-[30px] w-full max-w-[1113px] mx-auto">
                 <p v-for="(sector, index) in sectors" :class="{ [activeSectorClass]: currentSectorIndex === index }"
                     @click="currentSectorIndex = index"
-                    class="cursor-pointer pt-[20px] w-[150px] font-light text-[18px] leading-[24px] text-[#444444] border-t-2 border-[#cccccc] ">
-                    {{
-                        sector.name }}</p>
+                    class="cursor-pointer pt-[20px] w-[151px] font-light text-[18px] leading-[24px] text-[#444444] border-t-2 border-[#cccccc] ">
+                    {{ sector.name }}</p>
             </div>
             <div class="mt-[58px] flex gap-[31px] items-center max-w-[1113px] mx-auto">
-                <p class="max-w-[494px] font-semibold text-[30px] leading-[40px] text-[#444444]">{{
+                <p class="max-w-[494px] font-montserrat font-semibold text-[30px] leading-[40px] text-[#444444]">{{
                     sectors[currentSectorIndex].message
-                    }}</p>
+                }}</p>
                 <div class="w-[588px] h-[375px]">
-                    <img :src="sectors[currentSectorIndex].image" alt="sector image" class="object-cover">
+                    <NuxtImg preload :src="sectors[currentSectorIndex].image" alt="sector image" class="object-cover" />
                 </div>
             </div>
         </div>

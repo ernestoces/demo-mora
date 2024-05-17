@@ -23,6 +23,6 @@
                 </div>
             </template>
         </Brands>
-        <CallToAction />
+        <CallToAction :light="false" />
     </div>
 </template>
