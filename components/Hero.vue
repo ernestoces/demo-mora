@@ -1,7 +1,12 @@
 <template>
-    <div class="xl:-mt-[70px] -mt-[92px] xl:h-[710px] pb-[56px] min-h-[590px] w-full mx-auto xl:bg-center bg-right-bottom bg-no-repeat bg-[length:1440px] bg-black"
-        v-bind:style="{ 'background-image': 'url(./hero.png)' }">
-        <div class="max-w-[1160px] w-full max-h-[251px] mx-auto">
+    <div
+        class="xl:-mt-[70px] -mt-[92px] xl:h-[710px] pb-[56px] min-h-[590px] w-full mx-auto xl:bg-center bg-right-bottom bg-no-repeat bg-black relative overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+            <source :src="'./video.mp4'" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+
+        <div class="max-w-[1160px] w-full max-h-[251px] mx-auto relative z-10">
             <h1
                 class="px-4 relative z-10 text-white font-montserrat font-bold text-[33px] leading-[40px] xl:text-[50px] xl:leading-[61px] text-left xl:text-center pt-[112px] xl:pt-[265px]">
                 Descubre el potencial de tu empresa con nuestra automatización impulsada por <span
@@ -16,5 +21,6 @@
                         class="xl:hidden inline-block">nosotros</span></button>
             </div>
         </div>
+
     </div>
 </template>
