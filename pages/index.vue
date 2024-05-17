@@ -14,7 +14,7 @@
             </template>
             <template v-slot:footer>
                 <a href="/servicios"
-                    class="text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%] bg-mora drop-shadow-sm py-[8px] px-[22px] xl:max-w-[240px] text-center w-full mx-auto rounded-[3px]">
+                    class="text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%] bg-mora drop-shadow-sm py-[8px] px-[22px] xl:max-w-[315px] text-center w-full mx-auto rounded-[3px]">
                     Conoce
                     nuestros servicios</a>
             </template>
