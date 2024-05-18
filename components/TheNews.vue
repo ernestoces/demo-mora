@@ -42,7 +42,7 @@ Procesos (RPA), las empresas están logrando grandes avances.`
         </div>
 
         <button
-            class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-mora border-2 rounded-[3px] p-[8px_22px] border-mora mx-auto block mt-[8px] xl:mt-[64px] w-full xl:max-w-[247px]">Ver
+            class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-mora border-2 rounded-[3px] p-[8px_22px] border-mora mx-auto block mt-[8px] xl:mt-[64px] w-full xl:max-w-[251px]">Ver
             más noticias y eventos</button>
     </div>
 </template>

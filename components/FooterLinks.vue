@@ -35,10 +35,10 @@ const links = [
                     <nuxt-icon name="linkedin" filled width="20px" height="20px" class="text-[20px] cursor-pointer" />
                 </div>
             </div>
-            <div class="flex xl:flex-row flex-col gap-[64px]">
-                <div class="flex flex-col">
+            <div class="flex xl:flex-row flex-col xl:gap-[64px] gap-[32px] mt-[32px]">
+                <div class="flex flex-col gap-[16px]">
                     <h4
-                        class="font-montserrat font-semibold text-[18px] leading-[24px]s pl-3 border-l-[4px] border-mora text-white">
+                        class="fo nt-montserrat font-semibold text-[18px] leading-[24px]s pl-3 border-l-[4px] border-mora text-white">
                         Contacto</h4>
                     <div v-for="presence in countries" class="flex flex-col mt-[16px] gap-[16px] pl-4">
                         <p class="font-raleway text-[18px] leading-[21px] text-white ">{{ presence.name }}</p>
@@ -62,9 +62,11 @@ const links = [
                 </div>
             </div>
         </div>
-        <div class="w-full max-w-[95%] bg-white h-0.5 mx-auto rounded-full" />
-        <div class="flex justify-between p-[16px_66px_32px]">
-            <p class="text-white font-montserrat text-base font-semibold leading-[24px] -tracking-[1%]">© Mora Group
+        <div class="w-full max-w-[90%] bg-white h-0.5 mx-auto rounded-full" />
+        <div
+            class="flex xl:flex-row flex-col gap-[48px] justify-between xl:p-[16px_66px_32px] p-[16px_16px_56px] items-center xl:items-normal">
+            <p class="text-white font-montserrat text-base xl:font-semibold font-medium leading-[24px] -tracking-[1%]">©
+                Mora Group
                 Technology
                 2024</p>
             <a href="https://andromedacasadigital.netlify.app/" target="_blank"
