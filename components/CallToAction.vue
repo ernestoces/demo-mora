@@ -5,14 +5,18 @@ defineProps<{
 </script>
 
 <template>
-    <div v-if="!light" class="w-full mx-auto bg-center bg-no-repeat bg-[length:1440px] bg-black"
-        v-bind:style="{ 'background-image': 'url(./ctaImage.png)' }">
-        <div class="p-[148px_246px]">
+    <div v-if="!light"
+        class="xl:h-[468px] w-full mx-auto xl:bg-center bg-right-bottom bg-no-repeat bg-black relative overflow-hidden">
+        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+            <source :src="'./video.mp4'" type="video/mp4">
+            Your browser does not support the video tag.
+        </video>
+        <div class="xl:p-[148px_246px] relative z-10 p-[112px_24px]">
             <h2
-                class="font-montserrat font-bold text-[33px] leading-[40px] text-white text-center max-w-[949px] mx-auto">
+                class="font-montserrat font-bold text-[33px] leading-[40px] text-white text-left xl:text-center max-w-[949px] mx-auto">
                 Acelera el Éxito con nuestra<br /> Automatización Inteligente</h2>
             <button
-                class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-white bg-mora rounded-[3px] p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] block mx-auto mt-[48px]">¡Contáctanos
+                class="xl:max-w-[197px] w-full font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-white bg-mora rounded-[3px] p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] block mx-auto mt-[48px]">¡Contáctanos
                 Ahora!</button>
         </div>
 

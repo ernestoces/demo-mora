@@ -6,9 +6,9 @@ const industries = ref([
     { highlightedClients: ["copeinca", "enex", "aceros", "gloria", "centria", "pesquera"], label: "manufactura", heading: "Automatización inteligente para la fabricación", cover: "./manufactura.png", description: `<p>Confía en nuestra tecnología para automatizar tus procesos y operaciones en la industria. Al eliminar errores y desperdicios, reducimos costos y aceleramos tu entrada al mercado,<span class="font-bold">manteniéndote competitivo en un entorno cambiante.</span></p>`, ctaUrl: `/` },
     { highlightedClients: ["inretail", "mass", "supermercados", "makro", "oechsle", "promart"], label: "retail", cover: "./retail.png", heading: "Automatización inteligente para el comercio", description: `<p>Desde la gestión de inventarios hasta la seguridad en tienda, optimizamos procesos para impulsar las ventas y la lealtad del cliente. <span class="font-bold">Reforzamos la seguridad y prevenimos pérdidas</span> con monitoreo inteligente y alertas ante actividades sospechosas.</p>`, ctaUrl: `/` },
 ])
-
-const currentIndustryIndex = useState('currentIndustryIndex', () => 0)
-const centerAligned = ref("items-start ")
+const currentIndustryIndex = ref(0)
+const centerAligned = ref("items-start")
+const currentIndustry = computed(() => industries.value[currentIndustryIndex.value])
 </script>
 
 <template>
@@ -19,7 +19,7 @@ const centerAligned = ref("items-start ")
                     <h2 class="font-montserrat font-bold text-[33px] leading-[40px] text-center xl:text-left">Soluciones
                         por
                         Industria <span class="capitalize hidden xl:inline-block"
-                            v-text="' - ' + industries[currentIndustryIndex].label" />
+                            v-text="' - ' + currentIndustry.label" />
                     </h2>
                     <ul class="flex flex-wrap mt-[24px] items-center xl:justify-start justify-center">
                         <li class="capitalize cursor-pointer" v-for="(industry, index) in industries"
@@ -33,34 +33,34 @@ const centerAligned = ref("items-start ")
             </div>
             <div class="flex xl:flex-row flex-col xl:gap-[48px] gap-[24px] xl:mt-[40px] mt-[24px]">
                 <div class="max-w-[591px] max-h-[352px] w-full shrink-0 ">
-                    <NuxtImg preload class="object-cover" :src="industries[currentIndustryIndex].cover" width="591"
-                        height="352" alt="image of a selected industry in action" />
+                    <NuxtImg preload class="object-cover" :src="currentIndustry.cover" width="591" height="352"
+                        alt="image of a selected industry in action" />
                 </div>
                 <div :class="[{ [centerAligned]: currentIndustryIndex === 0 }]"
-                    class="flex flex-col gap-[16px] items-end xl:pt-[65px]">
+                    class="flex flex-col gap-[16px] items-start xl:pt-[65px]">
                     <h3 class="max-w-[521px] w-full font-montserrat font-semibold text-[22px] leading-[26px]
-                    -tracking-[1%] mx-auto mt-[8px] xl:mt-0 xl:text-right">
-                        {{ industries[currentIndustryIndex].heading }}
+                    -tracking-[1%] mx-auto mt-[8px] xl:mt-0 xl:text-left">
+                        {{ currentIndustry.heading }}
                     </h3>
-                    <p class="font-raleway text-base font-normal leading-[21px] mx-auto xl:text-right"
-                        v-html="industries[currentIndustryIndex].description" />
+                    <p class="font-raleway text-base font-normal leading-[21px] mx-auto xl:text-left"
+                        v-html="currentIndustry.description || industries[0].description" />
                     <button
                         class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] text-base -tracking-[1%] rounded-[3px] xl:w-auto  w-full">Conoce
                         más</button>
                 </div>
             </div>
-            <marquee-carousel v-if="industries[currentIndustryIndex].highlightedClients.length > 4"
-                class="xl:mt-[40px] mt-[24px]" :images="industries[currentIndustryIndex].highlightedClients" />
-            <div v-else-if="industries[currentIndustryIndex].highlightedClients.length === 4"
+            <marquee-carousel v-if="currentIndustry.highlightedClients.length > 4" class="xl:mt-[40px] mt-[24px]"
+                :images="currentIndustry.highlightedClients" />
+            <div v-else-if="currentIndustry.highlightedClients.length === 4"
                 class="flex gap-[88px] h-full justify-center mt-[40px]">
-                <div ref="marqueeItem" v-for="(image, index) in industries[currentIndustryIndex].highlightedClients"
+                <div ref="marqueeItem" v-for="(image, index) in currentIndustry.highlightedClients"
                     class="py-[10]  ml-[88px] ">
                     <NuxtImg preload :key="image" :src="'./' + image + '.png'" :alt="'Image ' + (index + 1)"
                         class="object-cover h-[26px]" />
                 </div>
             </div>
             <div v-else class="flex gap-[88px] h-full justify-end mt-[40px]">
-                <div ref="marqueeItem" v-for="(image, index) in industries[currentIndustryIndex].highlightedClients"
+                <div ref="marqueeItem" v-for="(image, index) in currentIndustry.highlightedClients"
                     class="py-[10]  ml-[88px] ">
                     <NuxtImg preload :key="image" :src="'./' + image + '.png'" :alt="'Image ' + (index + 1)"
                         class="object-cover h-[47px]" />

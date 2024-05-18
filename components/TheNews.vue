@@ -16,7 +16,7 @@ Procesos (RPA), las empresas están logrando grandes avances.`
 </script>
 
 <template>
-    <div class="bg-white pt-[56px] xl:pt-[88px] pb-[188px] px-4">
+    <div class="bg-white pt-[56px] xl:py-[88px] pb-[55px] px-4">
         <p class="font-raleway font-bold text-[33px] leading-[38px] xl:text-center text-left text-dark">Últimas
             Novedades</p>
         <p
@@ -30,7 +30,7 @@ Procesos (RPA), las empresas están logrando grandes avances.`
 
         <div class="mt-[56px] xl:flex-row flex flex-col gap-[41px] w-full justify-center">
             <div v-for="article in news"
-                class="xl:pr-[41px] pb-[48px] last-of-type:pr-0 last-of-type:border-none xl:border-r-2  xl:border-b-0 border-b-2 border-purple border-opacity-50">
+                class="xl:pr-[41px] pb-[48px] xl:pb-0 last-of-type:pr-0 last-of-type:border-none xl:border-r-2  xl:border-b-0 border-b-2 border-purple border-opacity-50">
                 <div><img :src="article.image" alt="" width="332" height="189"></div>
                 <div class="mt-[16px] flex flex-col gap-[8px] max-w-[332px] w-full">
                     <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] text-dark">{{ article.heading }}
@@ -42,7 +42,7 @@ Procesos (RPA), las empresas están logrando grandes avances.`
         </div>
 
         <button
-            class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-mora border-2 rounded-[3px] p-[8px_22px] border-mora mx-auto block mt-[8px] xl:mt-[64px]">Ver
+            class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-mora border-2 rounded-[3px] p-[8px_22px] border-mora mx-auto block mt-[8px] xl:mt-[64px] w-full xl:max-w-[247px]">Ver
             más noticias y eventos</button>
     </div>
 </template>

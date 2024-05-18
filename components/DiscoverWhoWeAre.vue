@@ -1,6 +1,6 @@
 <template>
-    <div class="pt-[88px] flex gap-[40px] px-[140px]">
-        <div class="flex flex-col gap-[24px]">
+    <div class="pt-[88px] flex gap-[40px] px-[140px] py-[88px] justify-center">
+        <div class="flex flex-col gap-[24px] max-w-[589px] xl:mx-0 mx-auto">
             <h1 class="font-montserrat font-bold text-[50px] leading-[60px] text-white">Descubre <span
                     class="text-mora">Quiénes Somos</span></h1>
             <div class="font-raleway font-regular text-[18px] leading-[21px] flex flex-col gap-[20px] text-white">

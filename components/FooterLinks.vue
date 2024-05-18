@@ -25,16 +25,17 @@ const links = [
 
 <template>
     <div class="bg-dark w-full">
-        <div class="p-[40px_66px] flex justify-between items-center ">
-            <div class="flex flex-col items-start gap-[24px]">
-                <div>
-                    <img :src="'./logoblanco.png'" alt="logos" width="467" height="56">
+        <div class="p-[56px_16px] xl:p-[40px_66px] flex xl:flex-row flex-col justify-between items-center">
+            <div class="flex flex-col items-start gap-[24px] w-full">
+                <div class="xl:w-[467px] xl:h-[56px]">
+                    <img preload src="~/assets/img/logoblanco.png" alt="logos" width="467px" height="56px"
+                        class="object-cover" />
                 </div>
                 <div>
                     <nuxt-icon name="linkedin" filled width="20px" height="20px" class="text-[20px] cursor-pointer" />
                 </div>
             </div>
-            <div class="flex gap-[64px]">
+            <div class="flex xl:flex-row flex-col gap-[64px]">
                 <div class="flex flex-col">
                     <h4
                         class="font-montserrat font-semibold text-[18px] leading-[24px]s pl-3 border-l-[4px] border-mora text-white">
