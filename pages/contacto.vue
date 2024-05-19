@@ -20,50 +20,52 @@ const inputClass = ref("border-dark border-2 p-[10px] rounded-[2px] font-raleway
 
 <template>
     <div class="bg-dark xl:py-[88px] pt-[32px] pb-[48px] xl:px-[140px] border-b-[#B8A2D63B] border-b-2">
-        <div class="max-w-[1160px] mx-auto flex xl:flex-row flex-col gap-[48px] items-start">
-            <div class="px-4 xl:px-0 -order-1">
-                <h1 class="text-white font-montserrat font-bold text-[50px] leading-[61px]">Contacta con <p
-                        class="text-mora">Nosotros</p>
-                </h1>
-                <p class="xl:mt-[24px] mt-[40px] font-raleway text-[18px] leading-[21px] text-white">Descubre cómo
-                    podemos
-                    ayudar a
-                    tu empresa y agenda una demostración de nuestros producto. Estaremos en contacto.</p>
-            </div>
-            <div class="flex flex-col gap-[40px] xl:order-1 order-2 px-4 xl:px-0">
-                <div v-for="branch in branches" class="flex flex-col gap-[24px] xl:first:pt-[32px]">
-                    <p class="font-raleway text-[18px] leading-[21px] text-white">
-                        {{ branch.country }}
-                    </p>
-                    <ul class="flex flex-col xl:gap-[16px] gap-6">
-                        <li class="flex gap-2 xl:flex-row flex-col">
-                            <div class="flex gap-[6px]">
-                                <nuxt-icon filled class="text-[24px]" name="email" />
-                                <span
-                                    class="font-raleway font-semibold text-base leading-[21px] text-white">Email</span>
-                            </div>
-                            <span class="font-raleway text-base leading-[21px] text-white">{{ branch.email
-                                }}</span>
-                        </li>
-                        <li class="flex xl:gap-2 gap-1 xl:flex-row flex-col">
-                            <div class="flex gap-[6px]">
-                                <nuxt-icon filled class="text-[24px]" name="phone" />
-                                <span
-                                    class="font-raleway font-semibold text-base leading-[21px] text-white">Teléfono</span>
-                            </div>
-                            <span class="font-raleway text-base leading-[21px] text-white">{{ branch.phone
-                                }}</span>
-                        </li>
-                        <li class="flex gap-2 xl:flex-row flex-col">
-                            <div class="flex gap-[6px]">
-                                <nuxt-icon filled class="text-[24px]" name="marker" />
-                                <span
-                                    class="font-raleway font-semibold text-base leading-[21px] text-white">Oficinas</span>
-                            </div>
-                            <span class="font-raleway text-base leading-[21px] text-white">{{ branch.location
-                                }}</span>
-                        </li>
-                    </ul>
+        <div class="max-w-[1160px] mx-auto gap-[48px] xl:flex-row flex-col  flex justify-center">
+            <div class=" flex  flex-col  items-start">
+                <div class="px-4 xl:px-0 -order-1">
+                    <h1 class="max-w-[541px] text-white font-montserrat font-bold text-[50px] leading-[61px]">Contacta
+                        con <p class="text-mora">Nosotros</p>
+                    </h1>
+                    <p class="xl:mt-[24px] mt-[40px] font-raleway text-[18px] leading-[21px] text-white">Descubre cómo
+                        podemos
+                        ayudar a
+                        tu empresa y agenda una demostración de nuestros producto. Estaremos en contacto.</p>
+                </div>
+                <div class="flex flex-col gap-[40px] xl:order-1 order-2 px-4 xl:px-0">
+                    <div v-for="branch in branches" class="flex flex-col gap-[24px] xl:first:pt-[32px]">
+                        <p class="font-raleway text-[18px] leading-[21px] text-white">
+                            {{ branch.country }}
+                        </p>
+                        <ul class="flex flex-col xl:gap-[16px]">
+                            <li class="flex gap-2 xl:flex-row flex-col">
+                                <div class="flex gap-[6px]">
+                                    <nuxt-icon filled class="text-[24px]" name="email" />
+                                    <span
+                                        class="font-raleway font-semibold text-base leading-[21px] text-white">Email</span>
+                                </div>
+                                <span class="font-raleway text-base leading-[21px] text-white">{{ branch.email
+                                    }}</span>
+                            </li>
+                            <li class="flex xl:gap-2 gap-1 xl:flex-row flex-col">
+                                <div class="flex gap-[6px]">
+                                    <nuxt-icon filled class="text-[24px]" name="phone" />
+                                    <span
+                                        class="font-raleway font-semibold text-base leading-[21px] text-white">Teléfono</span>
+                                </div>
+                                <span class="font-raleway text-base leading-[21px] text-white">{{ branch.phone
+                                    }}</span>
+                            </li>
+                            <li class="flex gap-2 xl:flex-row flex-col">
+                                <div class="flex gap-[6px]">
+                                    <nuxt-icon filled class="text-[24px]" name="marker" />
+                                    <span
+                                        class="font-raleway font-semibold text-base leading-[21px] text-white">Oficinas</span>
+                                </div>
+                                <span class="font-raleway text-base leading-[21px] text-white">{{ branch.location
+                                    }}</span>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
             <form action="https://formspree.io/f/mjvnzkrd" method="POST"
