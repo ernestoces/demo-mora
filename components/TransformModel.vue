@@ -26,9 +26,13 @@ const transformations = [
                 </div>
             </div>
         </div>
-        <h2 class="font-bold font-montserrat text-[52px] leading-[63px] mt-[100px] text-center text-[#333333]">Conoce
-            nuestros productos.
+        <h2 class="font-bold font-montserrat text-[52px] leading-[63px] mt-[100px] text-center text-[#333333]">Con una
+            plataforma completa e inteligente.
         </h2>
+        <p class="font-montserrat text-[20px] leading-[24px] text-center">Automation Success Platform acelera la
+            transformación con
+            automatización nativa en la nube flexible
+            respaldada por una comunidad global de miembros y un ecosistema de socios.</p>
         <div class="xl:w-[928px] xl:h-[610px] mx-auto pt-[50px] w-full hidden xl:block">
             <NuxtImg preload :src="'./platform.png'" class="object-cover" alt="process diagram" />
         </div>
