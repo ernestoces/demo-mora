@@ -24,7 +24,7 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                     <ul class="flex flex-wrap mt-[24px] items-center xl:justify-start justify-center">
                         <li class="capitalize cursor-pointer " v-for="(industry, index) in industries"
                             @click="currentIndustryIndex = index">
-                            <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px] hover:bg-purple hover:text-white"
+                            <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px] hover:bg-lightPurple hover:text-white"
                                 v-bind:class="{ 'bg-purple text-white': index === currentIndustryIndex }">
                                 {{ industry.label }}</h4>
                         </li>
@@ -43,7 +43,7 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                         {{ currentIndustry.heading }}
                     </h3>
                     <p class="font-raleway text-base font-normal leading-[21px] mx-auto xl:text-left"
-                        v-html="currentIndustry.description || industries[0].description" />
+                        v-html="currentIndustry.description" />
                     <NuxtLink :href="'/industrias/' + currentIndustry.label"
                         class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] text-base -tracking-[1%] rounded-[3px] xl:w-auto  w-full">
                         Conoce
