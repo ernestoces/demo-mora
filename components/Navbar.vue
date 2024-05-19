@@ -44,9 +44,9 @@ const pagesWithOpaqueBackground = ["/"]
                     <ul v-if="link.label === 'industrias'"
                         class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[3/4] py-[24px]  px-[32px] bg-dark">
                         <li v-text="link.label" class="capitalize hover:text-lightPurple text-white"
-                            v-for="link in dropdownLinks" @click.native="(event) => {
+                            v-for="link in dropdownLinks" @click="async (event) => {
                                 event.preventDefault()
-                                navigateTo(link.href);
+                                await navigateTo({ path: link.href });
 
                             }" />
                     </ul>
