@@ -12,11 +12,11 @@ const links = [
 ]
 
 const dropdownLinks = [
-    { label: "banca", href: "/#banca" },
-    { label: "minería", href: "/#mineria" },
-    { label: "salud", href: "/#salud" },
-    { label: "manufactura", href: "/#manufactura" },
-    { label: "retail", href: "/#retail" },
+    { label: "banca", href: "/industrias/banca" },
+    { label: "minería", href: "/industrias/mineria" },
+    { label: "salud", href: "/industrias/salud" },
+    { label: "manufactura", href: "/industrias/manufactura" },
+    { label: "retail", href: "/industrias/retail" },
 ]
 const location = ref(useBrowserLocation())
 const scrolledClass = ref('bg-dark')
@@ -25,6 +25,7 @@ const scrollThreshold = location?.value?.pathname?.includes("nosotros") ? 100 : 
 const menuIsOpen = ref(false)
 const dropdownOpen = ref(false)
 const clickedChevronClass = 'rotate-180'
+const groupClass = `group`
 </script>
 
 <template>
@@ -33,13 +34,24 @@ const clickedChevronClass = 'rotate-180'
             <a href="/">
                 <img src="/logo.png" class="w-[161px] h-[44px]" />
             </a>
-            <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center">
-                <a :href="link.href" v-for="link in links" class="flex space-x-[4px] relative font-raleway">
+
+            <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
+                <a :href="link.href" v-for="link in links" class=" relative flex space-x-[4px] font-raleway"
+                    :class="{ [groupClass]: link.label === 'industrias' }">
                     <span class="hover:text-lightPurple"> {{ link.label }}</span>
                     <nuxt-icon v-if="link.label === 'industrias'" name="chevron" class="mt-1" />
-                    <div v-if="link.label === 'industrias'" class="hidden absolute top-0 left-0">dropdown</div>
+                    <ul v-if="link.label === 'industrias'"
+                        class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[18px] py-[24px]  px-[32px] bg-dark"
+                        :class="{ ['bg-transparent']: scroll.y < scrollThreshold }">
+                        <li v-for="link in dropdownLinks">
+                            <NuxtLink class="capitalize hover:text-lightPurple" :href="link.href" v-text="link.label" />
+                        </li>
+                    </ul>
                 </a>
             </ul>
+
+
+
             <a href="/contacto"
                 class="hidden xl:block bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">Contacto</a>
             <button @click="menuIsOpen = true; $emit('scrollLock')" class="ml-left xl:hidden">
@@ -61,12 +73,13 @@ const clickedChevronClass = 'rotate-180'
                                 :class="{ [clickedChevronClass]: dropdownOpen }" />
                         </div>
                         <div v-if="dropdownOpen && link.href === '/#industrias'" class="mt-[24px]">
-                            <ul class="pl-4 flex flex-col gap-4">
-                                <li class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
+                            <div class="pl-4 flex flex-col gap-4">
+                                <a :href="dropdownLink.href"
+                                    class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
                                     v-for="dropdownLink in dropdownLinks">
                                     {{ dropdownLink.label }}
-                                </li>
-                            </ul>
+                                </a>
+                            </div>
                         </div>
                     </li>
                 </ul>

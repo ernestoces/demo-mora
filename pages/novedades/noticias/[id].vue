@@ -1,3 +1,8 @@
+<script setup lang="ts">
+const route = useRoute()
+console.log(route.params)
+</script>
+
 <template>
     <article>
         <div class="bg-dark py-[88px]">
@@ -84,8 +89,3 @@
         </div>
     </article>
 </template>
-
-<script setup lang="ts">
-const route = useRoute()
-console.log(route.params)
-</script>
