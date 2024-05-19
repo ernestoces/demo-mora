@@ -114,19 +114,17 @@ const root = ref<HTMLElement | null>(null)
 </script>
 <template>
     <div class="bg-white w-full ">
-        <h2 class="pt-[126px] font-montserrat font-bold text-[40px] leading-[53px] text-center mx-auto">Conoce nuestros
-            productos.
-        </h2>
+
         <div class="w-[1332px] mx-auto">
             <div ref="root"
                 class="gap-[90px] snap-x snap-mandatory overflow-hidden w-full shrink-0  mt-[50px] flex items-center justify-center pb-[62px]">
                 <div
-                    class="z-10 snap-always snap-center w-[1219px] shrink-0 pt-[50px] px-[70px] pb-[139px] shadow-2xl border  rounded-[20px] ">
+                    class="z-10 snap-always snap-center xl:w-[1219px] w-full shrink-0 pt-[50px] xl:px-[70px] px-[15px] pb-[139px] shadow-2xl border  rounded-[20px] ">
                     <p class="font-semibold font-montserrat text-[24px] leading-[32px] text-[#133A65] text-center">{{
                         products[currentSlideIndex].name }}</p>
                     <p class="mt-[20px] text-center font-montserrat font-normal text-[18px] leading-[24px]">{{
                         products[currentSlideIndex].description }}</p>
-                    <div class="flex gap-[40px] items-center">
+                    <div class="flex gap-[40px] items-center xl:flex-row flex-col">
                         <ul class="mt-[50px] gap-[50px] flex flex-col">
                             <li v-for="item in products[currentSlideIndex].items" class="flex gap-[25px] items-start">
                                 <div v-if="item.icon">

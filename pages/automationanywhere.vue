@@ -2,7 +2,7 @@
 </script>
 
 <template>
-    <div class="bg-white px-[140px] py-[88px] pt-[24px]">
+    <div class="bg-white xl:px-[140px] xl:py-[88px] pt-[24px] py-[32px] px-4">
         <AutomateEverything />
         <TransformModel />
         <OurProducts />
