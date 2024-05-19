@@ -4,11 +4,14 @@ const transformations = [
     { icon: "remote", heading: `Integrado en su tecnología y sus equipos.`, description: `Conectores para sistemas y aplicaciones centrales, y automatización integrada en el lugar en el que trabajan sus equipos.` },
     { icon: "deploy", heading: `Escalabilidad de confianza.`, description: `Acelere la innovación con una arquitectura nativa en la nube y un ecosistema hecho para el éxito.` },
 ]
+const modalOpen = ref(false)
 </script>
 
 <template>
-    <div class="mt-[151px]">
-        <h2 class="font-bold font-montserrat text-[52px] leading-[63px] text-center text-[#333333]">Transforme su
+    <div class="mt-[112px] xl:mt-[151px]">
+        <h2
+            class="font-bold font-montserrat xl:text-[52px] text-[34px] xl:leading-[63px] leading-[40px] text-center text-[#333333] ">
+            Transforme su
             modelo operativo.
         </h2>
         <div
@@ -26,17 +29,30 @@ const transformations = [
                 </div>
             </div>
         </div>
-        <h2 class="font-bold font-montserrat text-[52px] leading-[63px] mt-[100px] text-center text-[#333333]">Con una
-            plataforma completa e inteligente.
-        </h2>
-        <p class="font-montserrat text-[20px] leading-[24px] text-center max-w-[1063px] mx-auto">Automation Success
-            Platform
-            acelera la
-            transformación con
-            automatización nativa en la nube flexible
-            respaldada por una comunidad global de miembros y un ecosistema de socios.</p>
-        <div class="xl:w-[928px] xl:h-[610px] mx-auto pt-[50px] w-full hidden xl:block">
-            <NuxtImg preload :src="'./platform.png'" class="object-cover" alt="process diagram" />
+        <div class="flex flex-col gap-[30px]">
+            <h2
+                class="font-bold font-montserrat xl:text-[52px] text-[34px] xl:leading-[63px] leading-[40px] mt-[100px] text-center text-[#333333]">
+                Con
+                una
+                plataforma completa e inteligente.
+            </h2>
+            <p class="font-montserrat text-[20px] leading-[24px] text-center max-w-[1063px] mx-auto">Automation Success
+                Platform
+                acelera la
+                transformación con
+                automatización nativa en la nube flexible
+                respaldada por una comunidad global de miembros y un ecosistema de socios.</p>
+        </div>
+        <div class="xl:w-[928px] xl:h-[610px] mx-auto pt-[50px] w-full block relative">
+            <NuxtImg preload :src="'./platform.png'" class="object-cover" alt="process diagram"
+                @click="modalOpen = true" />
+            <div>
+                <UModal v-model="modalOpen" fullscreen class="z-[9999999]">
+                    <div class="w-[1440px] mx-auto py-[56px] px-4">
+                        <NuxtImg preload :src="'./platform.png'" class="object-cover" alt="process diagram" />
+                    </div>
+                </UModal>
+            </div>
         </div>
     </div>
 </template>
