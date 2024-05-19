@@ -22,9 +22,9 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                             v-text="' - ' + currentIndustry.label" />
                     </h2>
                     <ul class="flex flex-wrap mt-[24px] items-center xl:justify-start justify-center">
-                        <li class="capitalize cursor-pointer" v-for="(industry, index) in industries"
+                        <li class="capitalize cursor-pointer " v-for="(industry, index) in industries"
                             @click="currentIndustryIndex = index">
-                            <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px]"
+                            <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px] hover:bg-purple hover:text-white"
                                 v-bind:class="{ 'bg-purple text-white': index === currentIndustryIndex }">
                                 {{ industry.label }}</h4>
                         </li>
