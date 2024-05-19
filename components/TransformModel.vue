@@ -29,7 +29,9 @@ const transformations = [
         <h2 class="font-bold font-montserrat text-[52px] leading-[63px] mt-[100px] text-center text-[#333333]">Con una
             plataforma completa e inteligente.
         </h2>
-        <p class="font-montserrat text-[20px] leading-[24px] text-center">Automation Success Platform acelera la
+        <p class="font-montserrat text-[20px] leading-[24px] text-center max-w-[1063px] mx-auto">Automation Success
+            Platform
+            acelera la
             transformación con
             automatización nativa en la nube flexible
             respaldada por una comunidad global de miembros y un ecosistema de socios.</p>
