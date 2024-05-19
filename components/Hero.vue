@@ -15,10 +15,11 @@
                 class="relative font-raleway font-normal text-[18px] leading-[21px] xl:text-center text-left mt-[24px] text-white    px-4">
                 Explora cómo podemos llevar tu negocio al siguiente nivel.</p>
             <div class="relative px-4 ">
-                <button
-                    class=" font-raleway font-semibold text-base leading-[27px] tracking-tight bg-mora px-[22px] py-[8px]  text-white rounded-[3px] mx-auto block xl:mt-[40px] mt-[48px] w-full xl:w-auto">Conoce
+                <NuxtLink href="/servicios"
+                    class=" font-raleway font-semibold text-base leading-[27px] tracking-tight bg-mora px-[22px] py-[8px]  text-white rounded-[3px] mx-auto block xl:mt-[40px] mt-[48px] w-full xl:w-auto">
+                    Conoce
                     más de <span class="hidden xl:inline-block">nuestros servicios</span><span
-                        class="xl:hidden inline-block">nosotros</span></button>
+                        class="xl:hidden inline-block">nosotros</span></NuxtLink>
             </div>
         </div>
 
