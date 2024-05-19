@@ -44,9 +44,10 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                     </h3>
                     <p class="font-raleway text-base font-normal leading-[21px] mx-auto xl:text-left"
                         v-html="currentIndustry.description || industries[0].description" />
-                    <button
-                        class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] text-base -tracking-[1%] rounded-[3px] xl:w-auto  w-full">Conoce
-                        más</button>
+                    <NuxtLink :href="'/industrias/' + currentIndustry.label"
+                        class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] text-base -tracking-[1%] rounded-[3px] xl:w-auto  w-full">
+                        Conoce
+                        más</NuxtLink>
                 </div>
             </div>
             <marquee-carousel v-if="currentIndustry.highlightedClients.length > 4" class="xl:mt-[40px] mt-[24px]"
