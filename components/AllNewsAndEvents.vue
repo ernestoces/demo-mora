@@ -25,15 +25,17 @@ organización, ha anunciado su última innovación: la primera`
 </script>
 
 <template>
-    <div class="bg-white px-[140px] pb-[88px]">
+    <div class="bg-white xl:px-[140px] pb-[88px]">
         <div class="max-w-[1160px] mx-auto">
-            <h3 class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark">Todas las
+            <h3
+                class="hidden xl:block font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark">
+                Todas las
                 Noticias y Eventos</h3>
-            <ul v-for="n in 3" class="mt-[72px] flex">
-                <li class="flex flex-col first:pl-0 last:border-0 px-[41px] border-r-[1px] border-[#372b471e] "
+            <ul v-for="n in 3" class="xl:mt-[72px] flex xl:flex-row flex-col px-4">
+                <li class="pb-[48px] border-b-[1px] pt-[48px] last:border-b-0 flex flex-col first:pt-0 xl:first:pl-0 xl:last:border-0 xl:px-[41px]  xl:border-r-[1px] border-[#372b471e] "
                     v-for="post in postCategory">
-                    <div class="max-w-[332px] h-[189px] shrink-0 ">
-                        <img class="object-cover" :src="'./blogCover.png'" alt="blog cover">
+                    <div class="xl:max-w-[332px] w-full h-[189px] shrink-0 ">
+                        <NuxtImg preload class="object-cover rounded-[3px]" :src="'./blogCover.png'" alt="blog cover" />
                     </div>
                     <h4 class="mt-[16px] font-montserrat font-semibold text-[18px] leading-[24px] text-dark">
                         {{

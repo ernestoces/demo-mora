@@ -1,6 +1,7 @@
 <script setup lang="ts">
 defineProps<{
-    light: boolean
+    light?: boolean,
+    text?: string
 }>()
 </script>
 
@@ -12,12 +13,13 @@ defineProps<{
             Your browser does not support the video tag.
         </video>
         <div class="xl:p-[148px_246px] relative z-10 p-[112px_24px]">
-            <h2
+            <h2 v-html="text ? text : 'Acelera el Éxito con nuestra <br/> Automatización Inteligente'"
                 class="font-montserrat font-bold text-[33px] leading-[40px] text-white text-left xl:text-center max-w-[949px] mx-auto">
-                Acelera el Éxito con nuestra<br /> Automatización Inteligente</h2>
-            <button
-                class="xl:max-w-[224px] w-full font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-white bg-mora rounded-[3px] p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] block mx-auto mt-[48px]">¡Contáctanos
-                Ahora!</button>
+            </h2>
+            <NuxtLink href="/contacto"
+                class=" text-center xl:max-w-[224px] w-full font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-white bg-mora rounded-[3px] p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] block mx-auto mt-[48px]">
+                ¡Contáctanos
+                Ahora!</NuxtLink>
         </div>
 
     </div>
@@ -27,7 +29,7 @@ defineProps<{
                 class="font-montserrat font-bold text-[33px] leading-[40px] text-[#133a65] text-center max-w-[949px] mx-auto">
                 Acelera el Éxito con nuestra Automatización Inteligente</h2>
             <button
-                class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-white bg-[#FF5A10] rounded-full p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] block mx-auto mt-[48px]">Contáctanos
+                class="w-full xl:w-auto font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-white bg-[#FF5A10] rounded-full p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] block mx-auto mt-[48px]">Contáctanos
                 Ahora</button>
         </div>
     </div>

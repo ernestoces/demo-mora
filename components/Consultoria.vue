@@ -39,7 +39,7 @@ const highlightedServices = [
                     organizaciones para impulsar la transformación digital y mejorar la eficiencia operativa.
                 </p>
                 <p class="font-raleway text-base leading-[21px] font-bold mt-[24px]">Trabajamos con:</p>
-                <ul class="gap-[24px] flex mt-[48px]">
+                <ul class="gap-[24px] flex mt-[48px] xl:flex-row flex-col">
                     <li v-for="tool in tools" class="flex flex-col gap-[8px] max-w-[165px] justify-center items-center">
                         <nuxt-icon :name="tool.icon" filled class="text-[56px]" />
                         <p class="text-center font-raleway text-base leading-[21px] text-dark">{{ tool.title }}</p>

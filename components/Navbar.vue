@@ -1,6 +1,5 @@
 <script setup lang="ts">
 import { useWindowScroll } from '@vueuse/core';
-import { useBrowserLocation } from '@vueuse/core'
 const scroll = ref(useWindowScroll())
 const links = [
     { label: "home", href: "/" },
@@ -10,7 +9,6 @@ const links = [
     { label: "nosotros", href: "/nosotros" },
     { label: "novedades", href: "/novedades" },
 ]
-
 const dropdownLinks = [
     { label: "banca", href: "/industrias/banca" },
     { label: "minería", href: "/industrias/mineria" },
@@ -18,14 +16,16 @@ const dropdownLinks = [
     { label: "manufactura", href: "/industrias/manufactura" },
     { label: "retail", href: "/industrias/retail" },
 ]
-const location = ref(useBrowserLocation())
+const location = useBrowserLocation()
 const scrolledClass = ref('bg-dark')
 const defaultClass = ref("px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full")
-const scrollThreshold = location?.value?.pathname?.includes("nosotros") ? 100 : 210
+const scrollThreshold = 210
 const menuIsOpen = ref(false)
 const dropdownOpen = ref(false)
 const clickedChevronClass = 'rotate-180'
-const groupClass = `group`
+const pageDoesntStartWithATranslucidBackground = ref(0)
+const pagesWithOpaqueBackground = ["/"]
+
 </script>
 
 <template>
@@ -36,25 +36,29 @@ const groupClass = `group`
             </a>
 
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
-                <a :href="link.href" v-for="link in links" class=" relative flex space-x-[4px] font-raleway"
-                    :class="{ [groupClass]: link.label === 'industrias' }">
+
+                <NuxtLink :href="link.href" v-for="link in links" :class="{ ['group']: link.label === 'industrias' }"
+                    class=" relative flex space-x-[4px] font-raleway">
                     <span class="hover:text-lightPurple"> {{ link.label }}</span>
                     <nuxt-icon v-if="link.label === 'industrias'" name="chevron" class="mt-1" />
                     <ul v-if="link.label === 'industrias'"
-                        class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[18px] py-[24px]  px-[32px] bg-dark"
-                        :class="{ ['bg-transparent']: scroll.y < scrollThreshold }">
-                        <li v-for="link in dropdownLinks">
-                            <NuxtLink class="capitalize hover:text-lightPurple" :href="link.href" v-text="link.label" />
-                        </li>
+                        class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[3/4] py-[24px]  px-[32px] bg-dark">
+                        <li v-text="link.label" class="capitalize hover:text-lightPurple text-white"
+                            v-for="link in dropdownLinks" @click.native="(event) => {
+                                event.preventDefault()
+                                navigateTo(link.href);
+
+                            }" />
                     </ul>
-                </a>
+                </NuxtLink>
+
             </ul>
 
 
 
             <a href="/contacto"
                 class="hidden xl:block bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">Contacto</a>
-            <button @click="menuIsOpen = true; $emit('scrollLock')" class="ml-left xl:hidden">
+            <button @click="menuIsOpen = true" class="ml-left xl:hidden">
                 <nuxt-icon filled name="hamburger" class="text-[32px]  m-0" />
             </button>
             <div ref="menu" v-if="menuIsOpen"
@@ -84,7 +88,9 @@ const groupClass = `group`
                     </li>
                 </ul>
                 <div class="mt-auto p-6 flex justify-between items-center">
-                    <p class="text-white font-raleway text-base leading-[21px]">Contáctanos</p>
+                    <NuxtLink href="/contacto" @click="menuIsOpen = false"
+                        class="hover:text-lightPurple text-white font-raleway text-base leading-[21px]">Contáctanos
+                    </NuxtLink>
                     <nuxt-icon name="linkedin" filled class="text-21px" />
                 </div>
             </div>

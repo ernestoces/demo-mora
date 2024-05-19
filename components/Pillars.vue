@@ -24,17 +24,19 @@ const pillars = ref([
 </script>
 
 <template>
-    <section class="bg-white py-[88px]">
+    <section class="bg-white xl:py-[88px] py-[56px]">
         <div class="max-w-[1160px] mx-auto">
             <h2 class="text-center mx-auto font-montserrat font-bold text-[33px] leading-[40px]">Conoce Nuestros Pilares
             </h2>
-            <div class="flex gap-[33px] mt-[48px]">
+            <div class="flex xl:flex-row flex-col items-center xl:gap-[33px] gap-[24px] xl:mt-[48px] mt-[32px] px-4">
                 <div v-for="pillar in pillars"
-                    class=" bg-gradient-to-r hover:from-[#B8A2D633] hover:to-[#5820E733] hover:border-white border border-lightPurple w-[265px] p-[24px] flex flex-col gap-[56px] rounded-[5px] cursor-default">
+                    class=" bg-gradient-to-r hover:from-[#B8A2D633] hover:to-[#5820E733] hover:border-white border border-lightPurple w-full xl:w-[265px] p-[24px] flex flex-col xl:gap-[56px] gap-[30px] rounded-[5px] cursor-default">
                     <div class="flex gap-[16px]">
                         <nuxt-icon :name="pillar.icon" filled class="text-[40px]" />
-                        <h4 class="max-w-[134px] font-montserrat font-semibold text-[18px] leading-[24px] text-dark">{{
-                            pillar.heading
+                        <h4
+                            class="xl:max-w-[134px] w-full font-montserrat font-semibold text-[18px] leading-[24px] text-dark">
+                            {{
+                                pillar.heading
                             }}
                         </h4>
                     </div>

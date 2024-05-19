@@ -1,7 +1,7 @@
 <script setup lang="ts">
 const countries = [
     {
-        name: "Peru",
+        name: "Perú",
         email: "contacto.peru@automationanywhere.com",
         phone: "+51 987 654 321"
     },
@@ -38,7 +38,7 @@ const links = [
             <div class="flex xl:flex-row flex-col xl:gap-[64px] gap-[32px] mt-[32px]">
                 <div class="flex flex-col gap-[16px]">
                     <h4
-                        class="fo nt-montserrat font-semibold text-[18px] leading-[24px]s pl-3 border-l-[4px] border-mora text-white">
+                        class="fo nt-montserrat font-semibold text-[18px] leading-[24px] pl-3 border-l-[3px] border-mora text-white">
                         Contacto</h4>
                     <div v-for="presence in countries" class="flex flex-col mt-[16px] gap-[16px] pl-4">
                         <p class="font-raleway text-[18px] leading-[21px] text-white ">{{ presence.name }}</p>
@@ -51,7 +51,7 @@ const links = [
                 </div>
                 <div>
                     <h4
-                        class="font-montserrat font-semibold text-[18px] leading-[24px]s pl-3 border-l-[4px] border-mora text-white">
+                        class="font-montserrat font-semibold text-[18px] leading-[24px]s pl-3 border-l-[3px] border-mora text-white">
                         Menú</h4>
                     <ul class="mt-[16px] flex flex-col gap-[10px]">
                         <li v-for="link in links"
@@ -62,7 +62,7 @@ const links = [
                 </div>
             </div>
         </div>
-        <div class="w-full max-w-[90%] bg-white h-0.5 mx-auto rounded-full" />
+        <div class="w-full max-w-[90%] bg-white h-[1px] mx-auto rounded-full" />
         <div
             class="flex xl:flex-row flex-col gap-[48px] justify-between xl:p-[16px_66px_32px] p-[16px_16px_56px] items-center xl:items-normal">
             <p class="text-white font-montserrat text-base xl:font-semibold font-medium leading-[24px] -tracking-[1%]">©

@@ -3,5 +3,6 @@
         <NovedadesHero />
         <LatestNews />
         <AllNewsAndEvents />
+        <CallToAction />
     </div>
 </template>

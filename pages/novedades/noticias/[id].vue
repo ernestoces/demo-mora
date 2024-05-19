@@ -5,11 +5,17 @@ console.log(route.params)
 
 <template>
     <article>
-        <div class="bg-dark py-[88px]">
-            <div class="flex gap-[48px] max-w-[1160px] mx-auto items-center">
+        <div class="bg-dark xl:py-[88px] pt-[32px] pb-[56px] px-4">
+            <div
+                class="flex xl:flex-row flex-col xl:gap-[48px] gap-[24px] max-w-[1160px] mx-auto items-center relative">
                 <div class="flex flex-col gap-[24px]">
-                    <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] text-lightPurple">Noticia </h4>
-                    <h1 class="font-montserrat font-semibold text-[50px] leading-[60px] text-white">¿Qué revela la
+                    <h4
+                        class="xl:block absolute top-0 font-montserrat font-semibold text-[18px] leading-[24px] text-lightPurple">
+                        Noticia </h4>
+                    <h1
+                        class="font-montserrat font-semibold xl:text-[50px] text-[33px] xl:leading-[60px] leading-[40px] text-white ">
+                        ¿Qué
+                        revela la
                         fusión de
                         la IA y
                         RPA
@@ -22,13 +28,13 @@ console.log(route.params)
                             2024</span>
                     </div>
                 </div>
-                <div class="shrink-0 w-[485px] h-[315px]">
+                <div class="shrink-0 xl:w-[485px] xl:h-[315px] pt-[48px] -order-1">
                     <NuxtImg preload :src="'./laptop.png'" alt="image of a laptop" />
                 </div>
             </div>
         </div>
-        <div class="bg-white pt-[64px] pb-[88px] px-[140px]">
-            <div class="flex gap-[80px]  max-w-[1160px] mx-auto">
+        <div class="bg-white pt-[64px] xl:pb-[88px] xl:px-[140px] py-[56px] px-4">
+            <div class="flex xl:flex-row flex-col xl:gap-[80px] gap-[56px]  max-w-[1160px] mx-auto">
                 <p class="font-raleway text-base leading-[21px] text-dark">Hoy en día, hacer las cosas de manera
                     eficiente es
                     clave en los negocios. Al combinar la Inteligencia
@@ -69,23 +75,25 @@ console.log(route.params)
                     en mejor posición para competir en un mercado cada vez más competitivo. La automatización
                     inteligente no solo mejora los procesos existentes, sino que también abre la puerta a nuevas
                     oportunidades de innovación y creación de nuevos negocios.</p>
-                <div class="flex flex-col w-[324px] shrink-0">
+                <div class="flex flex-col xl:w-[324px] shrink-0">
                     <h3 class="font-montserrat font-semibold text-[22px] leading-[26px]">Recomendaciones</h3>
                     <div class="mt-[23px] flex flex-col space-y-[48px]">
-                        <div v-for="article in ['seminario', 'automatizacion']">
-                            <NuxtImg :src="'./' + article + '.png'" />
+                        <div class="w-full" v-for="article in ['seminario', 'automatizacion']">
+                            <NuxtImg class="w-full" :src="'./' + article + '.png'" />
                             <h4 class="mt-4 font-montserrat font-semibold text-[18px] leading-[24px]">Seminario Web:
                                 Automatización AI en la Práctica</h4>
-                            <p class="mt-[8px] font-normal text-base leading-[21px]">Únete a nuestro seminario web para
+                            <p class="mt-[8px] font-raleway font-normal text-base leading-[21px]">Únete a nuestro
+                                seminario web para
                                 explorar cómo la automatización con
                                 inteligencia artificial está transformando la forma en que hacemos negocios. Desde la
                                 automatización de tareas repetitivas hasta la mejora de la precisión...<a
-                                    :href="'/novedades/noticias/' + article" class="font-semibold text-mora"> Seguir
+                                    :href="'/novedades/noticias/' + article" class="font-bold text-mora"> Seguir
                                     leyendo</a></p>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <CallToAction />
     </article>
 </template>

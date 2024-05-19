@@ -62,7 +62,7 @@ const industries = ref([
             },
         ],
         successCase: {
-            logo: './bancolombia.png',
+            logo: { path: './bancolombia.png', sizes: [[201, 48]] },
             company: "Bancolombia",
             description: `La institución financiera galardonada necesitaba desarrollar una fuerza laboral virtual que combinara capacidades humanas, robóticas, cognitivas y analíticas, para mejorar la experiencia de los clientes, automatizar tareas repetitivas y aumentar la eficiencia en todos los ámbitos.`,
             cover: './bancolombiaSuccess.png',
@@ -89,16 +89,88 @@ const industries = ref([
                 },
             ]
         }
+    },
+    {
+        id: "mineria",
+        heading: `<h1  class="font-montserrat text-white text-[50px] leading-[61px] font-bold ">Automatización Inteligente para 
+ <span class="block text-mora">la Industria Minera</span></h1>`,
+        description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Desde la extracción hasta la logística, nuestra tecnología revoluciona los procesos, aumentando la eficiencia y la seguridad en un entorno normativo en constante evolución. Descubre cómo podemos llevar tu operación minera al siguiente nivel.</p>`,
+        imagePath: './mineria.png',
+        benefits: [
+            {
+                imagePath: './suministro.png',
+                title: `Diseña una Cadena de Suministros Sólida`,
+                description: `Optimiza tu cadena de suministros con automatización inteligente, agilizando procesos como la incorporación de nuevos proveedores.`
+            },
+            {
+                imagePath: './tuerca.png',
+                title: `Eficiencia y Precisión Mejoradas`,
+                description: `Automatiza los procesos de atención para lograr un rendimiento superior y una precisión del 100%, reduciendo errores críticos y costos.`
+            },
+            {
+                imagePath: './city.png',
+                title: `Procesos de Producción Ágiles`,
+                description: `Optimiza tus procesos de producción con nuestra automatización inteligente, eficientando la gestión de recursos y turnos.`
+            },
+            {
+                imagePath: './calculadora.png',
+                title: `Reducción de Costos Administrativos`,
+                description: `Elimina errores humanos y mejora el cumplimiento en tus procesos, optimizando la logística y cadena de suministros para reducir costos administrativos.`
+            },
+
+        ],
+        services: [
+            {
+                title: `Planificación de <span class="text-mora">Producción Minera</span>`,
+                description: `Automatiza la planificación de la producción para optimizar recursos, monitorear maquinaria y programar turnos. Maximiza la eficiencia y reduce tiempos de inactividad.`
+            },
+            {
+                title: `Gestión de Activos <span class="text-mora">y Mantenimiento</span>`,
+                description: `Utiliza automatización inteligente y análisis de datos para monitorear y mantener tus activos. Realiza mantenimiento preventivo y detecta problemas antes de que afecten la producción.`
+            },
+            {
+                title: `Logística y Cadena <span class="text-mora"> de Suministro</span>`,
+                description: `Mejora la eficiencia de la logística y cadena de suministro. Automatiza la planificación de rutas, seguimiento de envíos y gestión de proveedores para reducir costos y garantizar un flujo continuo de materias primas.`
+            },
+            {
+                title: `Seguridad y <span class="text-mora"> Cumplimiento Ambiental</span>`,
+                description: `Asegura el entorno laboral y cumple con regulaciones. Utiliza automatización para gestionar inspecciones, informes y cumplimiento ambiental, minimizando riesgos y mejorando sostenibilidad.`
+            },
+        ],
+        successCase: {
+            logo: { path: './vale.png', sizes: [[121, 48]] },
+            company: "Vale",
+            description: `Una de las mayores empresas mineras del mundo quería permitir a sus empleados un mejor nivel de productividad y alcanzar sus objetivos, buscando que pudieran desempeñarse en su expertis y no en tareas administrativas, como el registro de facturas, que no están relacionados con su campo laboral.`,
+            cover: './bancolombiaSuccess.png',
+            results: [
+                {
+                    imagePath: `./suitcase.png`,
+                    title: `+$12 millones`,
+                    description: `en ahorro de costos`
+                },
+                {
+                    imagePath: `./bots.png`,
+                    title: `+1000 bots`,
+                    description: `en producción`,
+                },
+                {
+                    imagePath: `./verified.png`,
+                    title: `+350 procesos`,
+                    description: `automatizados`
+                },
+            ]
+        }
     }
 ])
 const industryId = route.params.id
-const industry = industries.value.find(industry => industry.id === industryId)
-
+const industry = ref(industries.value.find(industry => industry.id === industryId))
+const doubleColumnClass = ref('grid-cols-2')
+const tripleColumnClass = ref('grid-cols-3')
+const successCaseHasLessThan4Results = ref(industry.value && industry.value.successCase.results.length < 4)
 </script>
 
 <template>
     <main>
-
         <div class="bg-dark py-[88px] px-[140px]" v-if="industry">
             <div class="flex gap-[56px] items-center justify-center">
                 <div class="flex flex-col gap-6 max-w-[644px]">
@@ -113,8 +185,9 @@ const industry = industries.value.find(industry => industry.id === industryId)
 
         <div class="bg-white py-[88px] px-[140px]">
             <h2 class="text-montserrat font-bold text-[33px] leading-[40px] text-center">Beneficios Clave</h2>
-            <ul class="grid grid-cols-3 gap-x-[37px] gap-y-[35px] mt-[48px] max-w-[1160px] mx-auto">
-                <li class="py-6 px-4 bg-[#B8A2D633] rounded-[5px] flex flex-col gap-[25px]"
+            <ul class="grid grid-cols-3 gap-x-[37px] gap-y-[35px] mt-[48px] max-w-[1160px] mx-auto"
+                :class="{ [doubleColumnClass]: industry?.id == 'mineria' }">
+                <li class="py-6 px-4 bg-[#B8A2D633] rounded-[5px] flex flex-col gap-[25px] hover-shadow hover:-translate-y-[8px] transition-all"
                     v-for="benefit in industry?.benefits">
                     <NuxtImg width="40px" height="40px" :src="benefit.imagePath" />
                     <div class="flex flex-col gap-2">
@@ -145,7 +218,10 @@ const industry = industries.value.find(industry => industry.id === industryId)
             <div class="flex flex-col gap-[28px] max-w-[1160px] mx-auto">
                 <div class="flex justify-between items-center">
                     <h2 class="font-montserrat font-bold text-[33px] leading-[40px]" v-text="'Caso de Éxito'" />
-                    <NuxtImg :src="industry?.successCase.logo" width="201px" height="48px" />
+                    <div class="w-[201px] h-auto">
+                        <NuxtImg :src="industry?.successCase.logo.path" class="object-cover" width="201px"
+                            height="48px" />
+                    </div>
                 </div>
                 <div class="flex gap-[48px] items-center ">
                     <div class="shrink-0">
@@ -156,28 +232,36 @@ const industry = industries.value.find(industry => industry.id === industryId)
                             v-text="industry?.successCase.company" />
                         <p class="font-raleway font-normal text-base leading-[21px] text-dark"
                             v-text="industry?.successCase.description" />
-                        <ul class="grid grid-cols-2 gap-x-[24px] gap-y-[16px] mt-8">
-                            <li v-for="result in industry?.successCase.results" class="flex gap-[8px]">
+                        <ul class="grid grid-cols-2 gap-x-[24px] gap-y-[16px] mt-8 justify-center"
+                            :class="{ [tripleColumnClass]: successCaseHasLessThan4Results }">
+                            <li v-for="result in industry?.successCase.results" class="flex gap-[8px] items-center"
+                                :class="{ [`flex-col`]: successCaseHasLessThan4Results }">
                                 <div class="w-[40px] h-[40px] shrink-0">
                                     <NuxtImg width="40px" height="40px" class="object-cover" :src="result.imagePath" />
                                 </div>
-                                <div class="flex flex-col gap-[2px] w-full">
+                                <div class="flex flex-col gap-[2px] w-full"
+                                    :class="{ [`text-center items-center`]: successCaseHasLessThan4Results }">
                                     <h3 class="font-semibold text-[22px] font-montserrat leading-[26px] -tracking-[1%] text-dark"
                                         v-text="result.title" />
                                     <p class="font-montserrat font-normal text-base leading-[17px] text-dark"
                                         v-text="result.description" />
                                 </div>
                             </li>
+                            <NuxtLink href="/"
+                                class="flex gap-[8px] items-center p-[8px] w-full max-w-[186px] mx-auto self-center">
+                                <span
+                                    class="font-raleway font-semibold  text-base leading-[21px] text-purple shrink-0">Ver
+                                    caso
+                                    completo</span> <nuxt-icon name="chevronRight" filled />
+                            </NuxtLink>
                         </ul>
-                        <NuxtLink href="/" class="flex gap-[8px] items-center p-[8px]"><span
-                                class="font-raleway font-semibold  text-base leading-[21px] text-purple">Ver caso
-                                completo</span> <nuxt-icon name="chevronRight" filled />
-                        </NuxtLink>
+
                     </div>
                 </div>
             </div>
         </div>
-        <CallToAction :light="false" />
+        <CallToAction :light="false"
+            text="¿Listo para comenzar a automatizar tu negocio y llevarlo al siguiente nivel?" />
     </main>
 </template>
 
@@ -208,5 +292,9 @@ const industry = industries.value.find(industry => industry.id === industryId)
     100% {
         background-position: 200% 50%;
     }
+}
+
+.hover-shadow:hover {
+    box-shadow: 0px 20px 80px 0px rgba(0, 0, 0, 0.2);
 }
 </style>

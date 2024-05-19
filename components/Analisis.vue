@@ -23,7 +23,7 @@ const highlightedServices = [
         <div class="py-[88px] flex gap-[48px] max-w-[1440px] mx-auto">
             <div class="flex flex-col gap-[24px] items-start">
                 <h3
-                    class="text-white font-montserrat font-semibold text-[22px] leading-[27px] -tracking-[1%] text-center">
+                    class="text-white font-montserrat font-semibold text-[22px] leading-[27px] -tracking-[1%] xl:text-center text-left">
                     Análisis, Desarrollo e Implementación de Robots</h3>
                 <p class="font-raleway font-normal text-base leading-[21px] text-white">Ofrecemos servicios completos de
                     <span class="font-bold">

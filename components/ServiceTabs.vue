@@ -13,8 +13,8 @@ defineProps<{
 
 
 <template>
-    <div class="sticky top-[60px] bg-dark mb-[24px]">
-        <ul class="mt-[24px] flex justify-center py-2">
+    <div class="sticky top-[60px] bg-dark mb-[24px] px-4 overflow-x-auto">
+        <ul class="mt-[24px] flex justify-center py-2 w-[949px]">
             <a :href="'/servicios#' + service.id" @click="$emit('inView', { serviceIndex: index })"
                 class="px-[20px] py-[8px] hover:cursor-pointer rounded-[20px] text-white"
                 :class="[{ ['bg-white']: activeServiceIndex === index }]" v-for="(service, index) in services">
