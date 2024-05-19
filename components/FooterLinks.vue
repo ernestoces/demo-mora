@@ -49,7 +49,7 @@ const links = [
                         </div>
                     </div>
                 </div>
-                <div>
+                <div class="xl:min-w-[181px]">
                     <h4
                         class="font-montserrat font-semibold text-[18px] leading-[24px]s pl-3 border-l-[3px] border-mora text-white">
                         Menú</h4>
