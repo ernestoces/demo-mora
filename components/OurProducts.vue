@@ -109,12 +109,11 @@ const counter = useInterval(3500)
 const currentSlideIndex = computed(() => counter.value % 4)
 const activeSlideDotClass = "bg-[#FF5A10] opacity-100"
 const root = ref<HTMLElement | null>(null)
-
-
 </script>
 <template>
-    <div class="bg-white w-full ">
-
+    <div class="bg-white w-full">
+        <h2 class="mt-[88px] text-dark font-montserrat font-bold text-[40px] leading-[53px] text-center">Conoce nuestros
+            productos.</h2>
         <div class="w-[1332px] mx-auto">
             <div ref="root"
                 class="gap-[90px] snap-x snap-mandatory overflow-hidden w-full shrink-0  mt-[50px] flex items-center justify-center pb-[62px]">
@@ -141,7 +140,7 @@ const root = ref<HTMLElement | null>(null)
                             </li>
                         </ul>
                         <div>
-                            <img :src="products[currentSlideIndex].image" alt="">
+                            <NuxtImg :src="products[currentSlideIndex].image" alt="" />
                             <p
                                 class="text-[#133A65] mt-[20px] py-[8px] px-[22px] flex gap-[8px] items-center text-center justify-center text-[]">
                                 Conoce más de
