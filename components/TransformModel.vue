@@ -44,7 +44,7 @@ const modalOpen = ref(false)
                 respaldada por una comunidad global de miembros y un ecosistema de socios.</p>
         </div>
         <div class="xl:w-[928px] xl:h-[610px] mx-auto pt-[50px] w-full block relative">
-            <NuxtImg preload :src="'./platform.png'" class="object-cover" alt="process diagram"
+            <NuxtImg preload :src="'./platform.png'" class="object-cover cursor-pointer" alt="process diagram"
                 @click="modalOpen = true" />
             <div>
                 <UModal v-model="modalOpen" fullscreen class="z-[9999999]">

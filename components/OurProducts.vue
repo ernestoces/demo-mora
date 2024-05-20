@@ -1,5 +1,4 @@
 <script setup lang="ts">
-
 const products = ref([
     {
         id: 0,
@@ -105,55 +104,25 @@ const products = ref([
     },
 ])
 const counter = useInterval(3500)
-
 const currentSlideIndex = computed(() => counter.value % 4)
 const activeSlideDotClass = "bg-[#FF5A10] opacity-100"
 const root = ref<HTMLElement | null>(null)
 </script>
 <template>
     <div class="bg-white w-full">
+
         <h2 class="mt-[88px] text-dark font-montserrat font-bold text-[40px] leading-[53px] text-center">Conoce nuestros
             productos.</h2>
-        <div class="w-[1332px] mx-auto">
+        <div class="xl:hidden flex flex-col xl:gap-6 gap-[50px] mt-[50px]">
+            <ProductSlide v-for="product in products" :product="product" />
+        </div>
+        <div class="w-[1332px] mx-auto hidden">
             <div ref="root"
                 class="gap-[90px] snap-x snap-mandatory overflow-hidden w-full shrink-0  mt-[50px] flex items-center justify-center pb-[62px]">
-                <div
-                    class="z-10 snap-always snap-center xl:w-[1219px] w-full shrink-0 pt-[50px] xl:px-[70px] px-[15px] pb-[139px] shadow-2xl border  rounded-[20px] ">
-                    <p class="font-semibold font-montserrat text-[24px] leading-[32px] text-[#133A65] text-center">{{
-                        products[currentSlideIndex].name }}</p>
-                    <p class="mt-[20px] text-center font-montserrat font-normal text-[18px] leading-[24px]">{{
-                        products[currentSlideIndex].description }}</p>
-                    <div class="flex gap-[40px] items-center xl:flex-row flex-col">
-                        <ul class="mt-[50px] gap-[50px] flex flex-col">
-                            <li v-for="item in products[currentSlideIndex].items" class="flex gap-[25px] items-start">
-                                <div v-if="item.icon">
-                                    <nuxt-icon :name="item.icon" filled class="text-[72px]" />
-                                </div>
-                                <div class="flex flex-col space-y-[10px]">
-                                    <p class="font-semibold font-montserrat text-[18px] leading-[24px]">{{ item.heading
-                                        }}
-                                    </p>
-                                    <p class="font-montserrat font-normal text-base leading-[21px] text-[#333333]">{{
-                                        item.description }}
-                                    </p>
-                                </div>
-                            </li>
-                        </ul>
-                        <div>
-                            <NuxtImg :src="products[currentSlideIndex].image" alt="" />
-                            <p
-                                class="text-[#133A65] mt-[20px] py-[8px] px-[22px] flex gap-[8px] items-center text-center justify-center text-[]">
-                                Conoce más de
-                                este
-                                producto
-                                <nuxt-icon name="arrowright" filled class="text-base" />
-                            </p>
-                        </div>
-                    </div>
-                </div>
+                <ProductSlide :product="products[currentSlideIndex]" />
             </div>
         </div>
-        <div class="flex gap-4 mt-[25px] justify-center">
+        <div class="xl:flex gap-4 mt-[25px] justify-center hidden">
             <span v-for="n in 4" class="h-[12px] w-[12px] bg-[#666666] opacity-25 rounded-full cursor-pointer"
                 @click="counter = n - 1" :class="{ [activeSlideDotClass]: n === currentSlideIndex + 1 }">
             </span>
@@ -161,9 +130,4 @@ const root = ref<HTMLElement | null>(null)
     </div>
 </template>
 
-<style scoped>
-.shadow-custom {
-    /* Customize the shadow using Tailwind utilities */
-    box-shadow: 0 20px 80px 0 rgba(0, 0, 0, 0.2);
-}
-</style>
+<style scoped></style>

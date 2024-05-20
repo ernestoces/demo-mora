@@ -7,6 +7,6 @@
         <TransformModel />
         <OurProducts />
         <QueAutomatizara />
-        <CallToAction light class="mt-[150px]" heading="¡Empieza a automatizar hoy!" />
+        <CallToAction light class="xl:mt-[150px] mt-[146px]" text="¡Empieza a automatizar hoy!" />
     </div>
 </template>
