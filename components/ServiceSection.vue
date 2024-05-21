@@ -30,45 +30,67 @@ function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[
     }
 }
 
-
-const trainingDetails = [
+const initialTrainingDetails = [
     {
         name: "Overview", items: [
             "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
             "Generación y configuración de Dashboard de negocio."
-        ]
+        ],
+        expanded: false
     },
     {
         name: "Template A360", items: [
             "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
             "Generación y configuración de Dashboard de negocio."
-        ]
+        ],
+        expanded: false
     },
     {
         name: "AARI", items: [
             "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
             "Generación y configuración de Dashboard de negocio."
-        ]
+        ],
+        expanded: false
     },
     {
         name: "Input Data", items: [
             "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
             "Generación y configuración de Dashboard de negocio."
-        ]
+        ],
+        expanded: false
     },
     {
         name: "Build a Bot", items: [
             "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
             "Generación y configuración de Dashboard de negocio."
-        ]
+        ],
+        expanded: false
     },
     {
         name: "Caso de uso", items: [
             "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
             "Generación y configuración de Dashboard de negocio."
-        ]
+        ],
+        expanded: false
     },
 ]
+
+
+const trainingDetails = ref(
+    initialTrainingDetails
+)
+// starts at 9
+const currentTrainingDetailsIndex = ref(0)
+
+function expandDetail(selectedIndex: number) {
+    if (currentTrainingDetailsIndex.value > 0) {
+        trainingDetails.value[currentTrainingDetailsIndex.value - 1].expanded = false
+    }
+    trainingDetails.value[selectedIndex].expanded = true
+    currentTrainingDetailsIndex.value = selectedIndex + 1
+}
+
+
 const collapsedTrainingDetailsIndex = ref(0)
 const highlightedItemsClass = 'self-center'
 let keypointsHeading = ref("")
@@ -104,21 +126,24 @@ if (props.service.id === 'consultoria') {
                         </p>
                     </li>
                 </ul>
-                <ul v-else class="w-full grid xl:grid-cols-2 grid-cols-1 gap-[24px] items-baseline">
+                <ul v-else
+                    class="w-full grid xl:grid-cols-2 grid-cols-1 gap-[24px] items-baseline margin:transition-all">
                     <template v-for="(detail, index) in trainingDetails">
-                        <li
-                            class="peer relative hover:mb-[120px] group cursor-pointer bg-purple rounded-[8px] flex justify-between py-[8px] px-[16px] items-center">
-                            <span class="text-white  font-semibold text-base leading-[21px] ">{{
+                        <li v-bind="$attrs" :class="{ ['mb-[140px]']: detail.expanded }" @click="expandDetail(index)"
+                            class="relative group cursor-pointer bg-purple rounded-[8px] flex justify-between  px-[16px] items-center ">
+                            <span class="text-white  py-[9.5px] font-semibold text-base leading-[21px] ">{{
                                 detail.name }}</span>
-                            <nuxt-icon name="arrowdown" filled class="text-[24px] group-hover:rotate-180" />
-                            <ul class="hidden list-disc group-hover:max-h-[600px] transition-[max-height] absolute top-[40px] left-0  flex-col mb-[32px] pt-[24px] pl-[32px] gap-[1px]"
-                                :class="{ ['flex']: collapsedTrainingDetailsIndex == index }">
-                                <li v-for="(item, index) in detail.items" class=" text-white">
+                            <nuxt-icon name="arrowdown" filled class="text-[24px]"
+                                :class="{ ['rotate-180']: detail.expanded }" />
+                            <ul v-bind="$attrs" v-show="detail.expanded"
+                                class=" bg-dark list-disc transition-[max-height] absolute top-[40px] left-0  flex-col mb-[14px] xl:mb-[32px] pt-[24px] pl-[32px] gap-[1px]"
+                                :class="{ ['flex']: collapsedTrainingDetailsIndex == index, ['max-h-[600px]']: detail.expanded }">
+                                <li v-for="(item, index) in detail.items"
+                                    class="font-raleway text-base leading-[21px] text-white">
                                     {{ item }}
                                 </li>
                             </ul>
                         </li>
-
                     </template>
                 </ul>
             </div>
