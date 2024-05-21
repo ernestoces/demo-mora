@@ -15,8 +15,12 @@
                     automatización inteligentes para identificar, transformar y ampliar los procesos empresariales.
                 </p>
             </div>
-            <div class="xl:w-[542px] xl:h-[307px] shrink-0 w-full mt-[10px] xl:mt-0">
-                <img :src="'./automatice.png'" width="542px" height="307px" alt="a laptop">
+            <div class="xl:w-[542px] xl:h-[307px] shrink-0 w-full mt-[10px] xl:-mt-[12px]">
+                <iframe class="rounded-bl-3xl rounded-tr-3xl" width="532" height="300"
+                    src="https://www.youtube.com/embed/gvDIpfXI_Mg?si=j1LpvY6nZVV3txaV" title="YouTube video player"
+                    frameborder="0"
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>
     </div>

@@ -133,7 +133,7 @@ const industries = ref([
                 description: `Mejora la eficiencia de la logística y cadena de suministro. Automatiza la planificación de rutas, seguimiento de envíos y gestión de proveedores para reducir costos y garantizar un flujo continuo de materias primas.`
             },
             {
-                title: `Seguridad y <span class="text-mora"> Cumplimiento Ambiental</span>`,
+                title: `Seguridad y <span class="text-mora"> Cumplimiento</span>`,
                 description: `Asegura el entorno laboral y cumple con regulaciones. Utiliza automatización para gestionar inspecciones, informes y cumplimiento ambiental, minimizando riesgos y mejorando sostenibilidad.`
             },
         ],
@@ -245,14 +245,12 @@ const industries = ref([
 ])
 const industryId = route.params.id
 const industry = ref(industries.value.find(industry => industry.id === industryId))
-const doubleColumnClass = ref('xl:grid-cols-2')
-const tripleColumnClass = ref('grid-cols-3')
-const successCaseHasLessThan4Results = ref(industry.value && industry.value.successCase.results.length < 4)
+const doubleColumnClass = ref('xl:!grid-cols-2')
 </script>
 
 <template>
-    <main>
-        <div class="bg-dark xl:py-[88px] py-[56px] xl:px-[140px] px-4" v-if="industry">
+    <main v-if="industry">
+        <div class="bg-dark xl:py-[88px] py-[56px] xl:px-[140px] px-4">
             <div class="flex xl:gap-[56px] gap-[40px] xl:flex-row flex-col items-center justify-center">
                 <div class="flex flex-col gap-6 max-w-[644px]">
                     <div class="font-montserrat text-white xl:text-[50px] text-[33px] leading-[40px] xl:leading-[61px] font-bold "
@@ -265,19 +263,19 @@ const successCaseHasLessThan4Results = ref(industry.value && industry.value.succ
                 </div>
             </div>
         </div>
-
+        v-if="industry"
         <div class="bg-white xl:py-[88px] px-4 py-[56px] xl:px-[140px]">
             <h2 class="text-montserrat font-bold text-[33px] leading-[40px] text-center">Beneficios Clave</h2>
             <ul class="grid xl:grid-cols-3 grid-cols-1 gap-x-[37px] gap-y-[35px] xl:mt-[48px] mt-[32px] xl:max-w-[1160px] w-full mx-auto"
-                :class="{ [doubleColumnClass]: industry?.id == 'mineria' }">
-                <li class="py-6 px-4 bg-[#B8A2D633] rounded-[5px] flex flex-col xl:items-normal items-center gap-[25px] hover-shadow hover:-translate-y-[8px] transition-all"
+                :class="{ [doubleColumnClass]: industry.id == 'mineria' }">
+                <li class="py-6 px-4 bg-[#B8A2D633] rounded-[5px] flex flex-col xl:items-start items-center gap-[25px] hover-shadow hover:-translate-y-[8px] transition-all"
                     v-for="benefit in industry?.benefits">
                     <NuxtImg width="40px" height="40px" :src="benefit.imagePath" />
                     <div class="flex flex-col gap-2">
                         <h3 v-html="benefit.title"
                             class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark text-center xl:text-left" />
                         <p v-html="benefit.description"
-                            class="font-raleway font-normal text-base leading-[21px] text-dark xl:text-center xl:text-left" />
+                            class="font-raleway font-normal text-base leading-[21px] text-dark text-center xl:text-left" />
                     </div>
                 </li>
             </ul>
@@ -286,8 +284,8 @@ const successCaseHasLessThan4Results = ref(industry.value && industry.value.succ
         <div class="bg-dark xl:py-[88px] xl:px-[140px] py-[56px] px-4">
             <h2 v-text="'Servicios Especificos'"
                 class="font-montserrat font-bold text-[33px] leading-[40px] text-white text-center" />
-            <ul class="grid xl:grid-cols-4 grid-cols-1 gap-x-[33px] max-w-[1160px] mx-auto mt-12   gap-y-[41px]">
-                <li class="cool-border rounded-[5px] p-6 flex flex-col gap-[26px] xl:max-w-[265px] w-full justify-between"
+            <ul class="grid xl:grid-cols-4 grid-cols-1 gap-x-[33px] max-w-[1160px] mx-auto mt-12 gap-y-[41px]">
+                <li class="cool-border rounded-[5px] p-[24px] flex flex-col gap-[26px] xl:min-w-[265px] w-full"
                     v-for="service in industry?.services">
                     <h3 v-html="service.title"
                         class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-white" />

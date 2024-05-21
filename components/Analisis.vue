@@ -34,7 +34,8 @@ const highlightedServices = [
                 </p>
                 <p class="font-bold font-raleway text-base leading-[21px] text-white leading-">Te garantizamos:</p>
                 <ul class="flex gap-6">
-                    <li v-for="promise in promises" class="flex flex-col items-center max-w-[159px]">
+                    <li v-for="promise in promises" :key="promise.icon"
+                        class="flex flex-col items-center max-w-[159px]">
                         <nuxt-icon :name="promise.icon" filled class="text-[48px]" />
                         <p class="font-raleway text-[16px] leading-[21px] text-center text-white">{{ promise.title }}
                         </p>

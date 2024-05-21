@@ -37,7 +37,8 @@ const pagesWithOpaqueBackground = ["/"]
 
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
 
-                <NuxtLink :href="link.href" v-for="link in links" :class="{ ['group']: link.label === 'industrias' }"
+                <NuxtLink :href="link.href" v-for="link in links" :key="link.href"
+                    :class="{ ['group']: link.label === 'industrias' }"
                     class=" relative flex space-x-[4px] font-raleway">
                     <span class="hover:text-lightPurple"> {{ link.label }}</span>
                     <nuxt-icon v-if="link.label === 'industrias'" name="chevron" class="mt-1" />
@@ -91,7 +92,9 @@ const pagesWithOpaqueBackground = ["/"]
                     <NuxtLink href="/contacto" @click="menuIsOpen = false"
                         class="hover:text-lightPurple text-white font-raleway text-base leading-[21px]">Contáctanos
                     </NuxtLink>
-                    <nuxt-icon name="linkedin" filled class="text-21px" />
+                    <NuxtLink href="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true">
+                        <nuxt-icon name="linkedin" filled class="text-21px" />
+                    </NuxtLink>
                 </div>
             </div>
         </div>

@@ -31,9 +31,9 @@ organización, ha anunciado su última innovación: la primera`
                 class="hidden xl:block font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark">
                 Todas las
                 Noticias y Eventos</h3>
-            <ul v-for="n in 3" class="xl:mt-[72px] flex xl:flex-row flex-col px-4">
+            <ul v-for="n in 3" :key="n" class="xl:mt-[72px] flex xl:flex-row flex-col px-4">
                 <li class="pb-[48px] border-b-[1px] pt-[48px] xl:border-b-0 last:border-b-0 flex flex-col first:pt-0 xl:first:pl-0 xl:first:pt-[48px] xl:last:border-0 xl:px-[41px]  xl:border-r-[1px] border-[#372b471e] "
-                    v-for="post in postCategory">
+                    v-for="post in postCategory" :key="post.id">
                     <div class="xl:max-w-[332px] w-full h-[189px] shrink-0 ">
                         <NuxtImg preload class="object-cover rounded-[3px]" :src="'./blogCover.png'" alt="blog cover" />
                     </div>

@@ -31,9 +31,9 @@ const links = [
                     <img preload src="~/assets/img/logoblanco.png" alt="logos" width="467px" height="56px"
                         class="object-cover" />
                 </div>
-                <div>
+                <NuxtLink href="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true ">
                     <nuxt-icon name="linkedin" filled width="20px" height="20px" class="text-[20px] cursor-pointer" />
-                </div>
+                </NuxtLink>
             </div>
             <div class="flex xl:flex-row flex-col xl:gap-[64px] gap-[32px] mt-[32px]">
                 <div class="flex flex-col gap-[16px]">
@@ -62,9 +62,8 @@ const links = [
                 </div>
             </div>
         </div>
-        <div class="w-full max-w-[90%] bg-white h-[1px] mx-auto rounded-full" />
         <div
-            class="flex xl:flex-row flex-col gap-[48px] justify-between xl:p-[16px_66px_32px] p-[16px_16px_56px] items-center xl:items-normal">
+            class="border-t-white border-t-[1px] flex xl:flex-row flex-col gap-[48px] mx-[66px] justify-between xl:p-[16px_0_32px] p-[16px_16px_56px] items-center xl:items-normal">
             <p class="text-white font-montserrat text-base xl:font-semibold font-medium leading-[24px] -tracking-[1%]">©
                 Mora Group
                 Technology

@@ -9,6 +9,7 @@ const sectors = ref([
 ])
 const counter = useInterval(2400)
 const currentSectorIndex = computed(() => counter.value % sectors.value.length)
+const currentSectorId = ref(0)
 const activeSectorClass = "border-[#ff5a10] border-t-[6px] text-[#ff5a10] font-semibold"
 const activeSlideDotClass = ref("bg-[#FF5A10] !opacity-100")
 
@@ -33,7 +34,7 @@ const activeSlideDotClass = ref("bg-[#FF5A10] !opacity-100")
             <p class="font-semibold text-[30px] leading-[40px] text-[#444444] mt-[30px]"
                 v-text="sectors[currentSectorIndex].message" />
             <div class="flex gap-4 mt-[25px] justify-center xl:hidden">
-                <span v-for="(sector, index) in sectors"
+                <span v-for="(sector, index) in sectors" :key="sector.name"
                     class="h-[12px] w-[12px] bg-[#666666] opacity-25 rounded-full cursor-pointer"
                     @click="currentSectorIndex = index"
                     :class="{ [activeSlideDotClass]: index === currentSectorIndex }">
@@ -43,17 +44,17 @@ const activeSlideDotClass = ref("bg-[#FF5A10] !opacity-100")
         <div
             class="hidden mt-[50px] xl:block bg-white rounded-[20px] p-[50px_60px] drop-shadow-xl max-w-[1233px] mx-auto">
             <div class="flex gap-[30px] w-full max-w-[1113px] mx-auto">
-                <p v-for="(sector, index) in sectors" :class="{ [activeSectorClass]: currentSectorIndex === index }"
-                    @click="currentSectorIndex = index"
+                <p v-for="(sector, index) in sectors" :class="{ [activeSectorClass]: currentSectorId === index }"
+                    @click="currentSectorId = index"
                     class="cursor-pointer pt-[20px] w-[151px] font-light text-[18px] leading-[24px] text-[#444444] border-t-2 border-[#cccccc] ">
                     {{ sector.name }}</p>
             </div>
             <div class="mt-[58px] flex gap-[31px] items-center max-w-[1113px] mx-auto">
                 <p class="max-w-[494px] font-montserrat font-semibold text-[30px] leading-[40px] text-[#444444]">{{
-                    sectors[currentSectorIndex].message
-                    }}</p>
+                    sectors[currentSectorId].message
+                }}</p>
                 <div class="w-[588px] h-[375px]">
-                    <NuxtImg preload :src="sectors[currentSectorIndex].image" alt="sector image" class="object-cover" />
+                    <NuxtImg preload :src="sectors[currentSectorId].image" alt="sector image" class="object-cover" />
                 </div>
             </div>
         </div>
