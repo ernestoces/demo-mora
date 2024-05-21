@@ -196,7 +196,7 @@ const successCaseHasLessThan4Results = ref(industry.value && industry.value.succ
                         <h3 v-html="benefit.title"
                             class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark text-center xl:text-left" />
                         <p v-html="benefit.description"
-                            class="font-raleway font-normal text-base leading-[21px] text-dark text-center xl:text-left" />
+                            class="font-raleway font-normal text-base leading-[21px] text-dark xl:text-center xl:text-left" />
                     </div>
                 </li>
             </ul>
@@ -244,8 +244,7 @@ const successCaseHasLessThan4Results = ref(industry.value && industry.value.succ
                                 <div class="w-[40px] h-[40px] shrink-0">
                                     <NuxtImg width="40px" height="40px" class="object-cover" :src="result.imagePath" />
                                 </div>
-                                <div class="flex flex-col gap-[2px] w-full"
-                                    :class="{ [`text-center items-center`]: successCaseHasLessThan4Results }">
+                                <div class="flex flex-col gap-[2px] w-full">
                                     <h3 class="font-semibold text-[22px] font-montserrat leading-[26px] -tracking-[1%] text-dark"
                                         v-text="result.title" />
 
