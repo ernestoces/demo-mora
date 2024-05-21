@@ -129,7 +129,7 @@ if (props.service.id === 'consultoria') {
                 <ul class="mt-[24px] flex flex-col gap-[24px] shrink-0">
                     <li class="text-dark font-raleway font-normal pb-[24px] py-[8px] items-center justify-start border-b-2 border-[#B8A2D6] border-opacity-50 flex gap-4 xl:flex-row flex-col last:border-none"
                         v-for="item in service.highlightedServices">
-                        <nuxt-icon :name="item.icon" filled class="text-[32px]" />
+                        <nuxt-icon :name="item.icon" filled width="32px" height="32px" class="text-[56px]" />
                         <p class="font-normal font-raleway text-base leading-[21px] text-center xl:text-left"
                             :class="service.dark ? 'text-white' : 'text-dark'"><span
                                 class="font-semibold xl:text-left text-center">{{
