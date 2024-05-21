@@ -92,8 +92,7 @@ const industries = ref([
     },
     {
         id: "mineria",
-        heading: `<h1>Automatización Inteligente para 
- <span class="block text-mora">la Industria Minera</span></h1>`,
+        heading: `<h1>Automatización Inteligente para <span class="block text-mora">la Industria Minera</span></h1>`,
         description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Desde la extracción hasta la logística, nuestra tecnología revoluciona los procesos, aumentando la eficiencia y la seguridad en un entorno normativo en constante evolución. Descubre cómo podemos llevar tu operación minera al siguiente nivel.</p>`,
         imagePath: './mineria.png',
         benefits: [
@@ -163,8 +162,7 @@ const industries = ref([
     },
     {
         id: "salud",
-        heading: `<h1>Automatización Inteligente para la 
- <span class="block text-mora">Atención Sanitaria</span></h1>`,
+        heading: `<h1>Automatización Inteligente para la <span class="block text-mora">Atención Sanitaria</span></h1>`,
         description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">La automatización inteligente impulsa la transformación digital en el sector de la atención médica, capacitando a las organizaciones para adaptarse, aumentar su capacidad y abordar los desafíos en toda la cadena de valor de los servicios médicos.</p>`,
         imagePath: './salud.png',
         benefits: [
@@ -353,12 +351,13 @@ const doubleColumnClass = ref('xl:!grid-cols-2')
 @keyframes border-animation {
     0% {
         border-right-color: #FFFFFF;
-        border-top-color: #724ADA;
+        border-top-color: #481878;
     }
 
     25% {
         border-right-color: #724ADA;
-        border-bottom-color: #FFFFFF
+        border-bottom-color: #FFFFFF;
+        border-top-color: #FFFFFF;
     }
 
     75% {
@@ -367,8 +366,7 @@ const doubleColumnClass = ref('xl:!grid-cols-2')
     }
 
     100% {
-        border-bottom-color: #FFFFFF;
-        border-left-color: #FFFFFF;
+        border-left-color: #c7bfdc;
         border-top-color: #724ADA;
     }
 }
@@ -376,7 +374,7 @@ const doubleColumnClass = ref('xl:!grid-cols-2')
 .cool-border {
     transition: all;
     border-width: 2px;
-    animation: border-animation 4s infinite;
+    animation: border-animation 2.1s infinite;
 }
 
 .hover-shadow:hover {
