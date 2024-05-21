@@ -160,6 +160,87 @@ const industries = ref([
                 },
             ]
         }
+    },
+    {
+        id: "salud",
+        heading: `<h1>Automatización Inteligente para la 
+ <span class="block text-mora">Atención Sanitaria</span></h1>`,
+        description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">La automatización inteligente impulsa la transformación digital en el sector de la atención médica, capacitando a las organizaciones para adaptarse, aumentar su capacidad y abordar los desafíos en toda la cadena de valor de los servicios médicos.</p>`,
+        imagePath: './salud.png',
+        benefits: [
+            {
+                imagePath: './estetoscopio.png',
+                title: `Calidad Asistencial`,
+                description: `Automatiza los protocolos de control de calidad con bots que comparan y aplican estándares como AHRQ, HEDIS y HCAHPS, garantizando una atención de calidad.`
+            },
+            {
+                imagePath: './cinta.png',
+                title: `Reducción de Riesgos`,
+                description: `Prepárate para auditorías manteniendo registros precisos al 100% con bots que actualizan y gestionan la documentación.`
+            },
+            {
+                imagePath: './botiquin.png',
+                title: `Productividad y Bienestar`,
+                description: `Optimiza tus procesos de producción con nuestra automatización inteligente, eficientando la gestión de recursos y turnos.`
+            },
+            {
+                imagePath: './adn.png',
+                title: `Eficiencia y Precisión`,
+                description: `Automatiza procesos de atención para lograr mayor rendimiento y precisión del 100%, reduciendo errores críticos y costos operativos.`
+            },
+            {
+                imagePath: './heart.png',
+                title: `Experiencia del Paciente`,
+                description: `Aliviar a los profesionales de tareas tediosas les permite brindar encuentros óptimos y exitosos con los pacientes, mejorando su experiencia global.`
+            },
+            {
+                imagePath: './hospital.png',
+                title: `Interoperabilidad`,
+                description: `Los bots aseguran la extracción segura de datos y la comunicación entre sistemas, cumpliendo con normativas de privacidad y activación de procesos en cualquier entorno.`
+            },
+
+        ],
+        services: [
+            {
+                title: `Procesamiento de <span class="text-mora">Reclamos</span>`,
+                description: `Automatiza el procesamiento de reclamos de proveedores, desde la evaluación hasta el pago, asegurando una extracción de datos fluida, identificación de excepciones y procesamiento de facturas con precisión.`
+            },
+            {
+                title: `Gestión del <span class="text-mora">Ciclo de Ingresos</span>`,
+                description: `Optimiza todas las funciones del ciclo de ingresos, desde las citas de nuevos pacientes hasta la facturación, asegurando una extracción precisa de datos, procesamiento eficiente y transferencia sin errores a otros sistemas y formatos.`
+            },
+            {
+                title: `Centros de <span class="text-mora">Contacto</span>`,
+                description: `Agiliza el acceso a los datos de los pacientes y activa bots para procesar solicitudes en los centros de contacto, lo que permite una atención más centrada en el paciente, una resolución rápida de problemas y un seguimiento efectivo.`
+            },
+            {
+                title: `Administración de <span class="text-mora">Inventarios</span>`,
+                description: `Crea una fuerza de trabajo digital para gestionar inventarios médicos, proporcionando visibilidad constante, eliminando errores de informes y garantizando niveles óptimos de suministros críticos.`
+            },
+        ],
+        successCase: {
+            logo: { path: './nhs.png', sizes: [[121, 48]] },
+            company: "Newcastle Hospital",
+            description: `Uno de los hospitales más grandes del Reino Unido, tras años de enfrentar los desafíos de la pandemia, se propuso transformar la vida laboral de sus 16,000 empleados. El objetivo era liberarlos de tareas rutinarias y repetitivas para permitirles enfocarse en lo más importante: brindar una atención excepcional a los pacientes.`,
+            cover: './nhsSuccess.png',
+            results: [
+                {
+                    imagePath: `./suitcase.png`,
+                    title: `+$12 millones`,
+                    description: `en ahorro de costos`
+                },
+                {
+                    imagePath: `./bots.png`,
+                    title: `+1000 bots`,
+                    description: `en producción`,
+                },
+                {
+                    imagePath: `./verified.png`,
+                    title: `+350 procesos`,
+                    description: `automatizados`
+                },
+            ]
+        }
     }
 ])
 const industryId = route.params.id
@@ -279,22 +360,25 @@ const successCaseHasLessThan4Results = ref(industry.value && industry.value.succ
     }
 
     25% {
-        border-color: #724ADA;
-        border-bottom-colo: #FFFFFF
+        border-right-color: #724ADA;
+        border-bottom-color: #FFFFFF
     }
 
     75% {
-        border-color: #724ADA;
+        border-bottom-color: #724ADA;
+        border-left-color: #724ADA;
     }
 
     100% {
-        border-color: #FFFFFF;
-        border-left-color: #724ADA
+        border-bottom-color: #FFFFFF;
+        border-left-color: #FFFFFF;
+        border-top-color: #724ADA;
     }
 }
 
 .cool-border {
-    border: 2px solid red;
+    transition: all;
+    border-width: 2px;
     animation: border-animation 4s infinite;
 }
 
