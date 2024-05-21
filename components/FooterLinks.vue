@@ -14,12 +14,12 @@ const countries = [
 
 const links = [
     { label: "Home", url: "/" },
-    { label: "Automation Anywhere", url: "/" },
-    { label: "Servicios por Industria", url: "/" },
-    { label: "Nuestros Servicios", url: "/" },
-    { label: "Nosotros", url: "/" },
-    { label: "Novedades", url: "/" },
-    { label: "Contacto", url: "/" },
+    { label: "Automation Anywhere", url: "/automationanywhere" },
+    { label: "Servicios por Industria", url: "/#industrias" },
+    { label: "Nuestros Servicios", url: "/servicios" },
+    { label: "Nosotros", url: "/nosotros" },
+    { label: "Novedades", url: "/novedades" },
+    { label: "Contacto", url: "/contacto" },
 ]
 </script>
 

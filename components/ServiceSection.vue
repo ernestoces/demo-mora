@@ -69,6 +69,7 @@ const trainingDetails = [
         ]
     },
 ]
+const collapsedTrainingDetailsIndex = ref(0)
 const highlightedItemsClass = 'self-center'
 let keypointsHeading = ref("")
 if (props.service.id === 'consultoria') {
@@ -104,15 +105,15 @@ if (props.service.id === 'consultoria') {
                     </li>
                 </ul>
                 <ul v-else class="w-full grid xl:grid-cols-2 grid-cols-1 gap-[24px] items-baseline">
-                    <template v-for="detail in trainingDetails">
+                    <template v-for="(detail, index) in trainingDetails">
                         <li
                             class="peer relative hover:mb-[120px] group cursor-pointer bg-purple rounded-[8px] flex justify-between py-[8px] px-[16px] items-center">
                             <span class="text-white  font-semibold text-base leading-[21px] ">{{
                                 detail.name }}</span>
-                            <nuxt-icon name="arrowdown" filled class="text-[24px] group-hover:rotate-90" />
-                            <ul
-                                class="list-disc group-hover:max-h-[600px] transition-[max-height] absolute top-[40px] left-0 flex flex-col mb-[32px] pt-[24px] pl-[32px] gap-[1px] ">
-                                <li v-for="item in detail.items" class=" hidden group-hover:flex text-white ">
+                            <nuxt-icon name="arrowdown" filled class="text-[24px] group-hover:rotate-180" />
+                            <ul class="hidden list-disc group-hover:max-h-[600px] transition-[max-height] absolute top-[40px] left-0  flex-col mb-[32px] pt-[24px] pl-[32px] gap-[1px]"
+                                :class="{ ['flex']: collapsedTrainingDetailsIndex == index }">
+                                <li v-for="(item, index) in detail.items" class=" text-white">
                                     {{ item }}
                                 </li>
                             </ul>
