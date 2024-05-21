@@ -64,7 +64,7 @@ const links = [
             </div>
         </div>
         <div
-            class="border-t-white border-opacity-40 border-t-[1px] flex xl:flex-row flex-col gap-[48px] mx-[66px] justify-between xl:p-[16px_0_32px] p-[16px_16px_56px] items-center xl:items-normal">
+            class="border-t-white border-opacity-60 border-t-[1px] flex xl:flex-row flex-col gap-[48px] xl:mx-[66px] mx-[16px] justify-between xl:p-[16px_0_32px] p-[16px_16px_56px] items-center xl:items-normal">
             <p class="text-white font-montserrat text-base xl:font-semibold font-medium leading-[24px] -tracking-[1%]">©
                 Mora Group
                 Technology

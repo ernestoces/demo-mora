@@ -263,7 +263,6 @@ const doubleColumnClass = ref('xl:!grid-cols-2')
                 </div>
             </div>
         </div>
-        v-if="industry"
         <div class="bg-white xl:py-[88px] px-4 py-[56px] xl:px-[140px]">
             <h2 class="text-montserrat font-bold text-[33px] leading-[40px] text-center">Beneficios Clave</h2>
             <ul class="grid xl:grid-cols-3 grid-cols-1 gap-x-[37px] gap-y-[35px] xl:mt-[48px] mt-[32px] xl:max-w-[1160px] w-full mx-auto"
@@ -299,7 +298,7 @@ const doubleColumnClass = ref('xl:!grid-cols-2')
             <div class="flex flex-col gap-[28px] max-w-[1160px] mx-auto">
                 <div class="flex justify-between items-center">
                     <h2
-                        class="font-montserrat xl:font-bold font-semibold xl:text-[33px] text-[22px] xl:leading-[40px] leading-[26px]">
+                        class="text-dark font-montserrat xl:font-bold font-semibold xl:text-[33px] text-[22px] xl:leading-[40px] leading-[26px]">
                         Caso de Éxito<span v-text="': ' + industry?.successCase.company" /> </h2>
                     <div class="xl:w-[201px] w-full h-auto hidden xl:block">
                         <NuxtImg :src="industry?.successCase.logo.path" width="201px" />

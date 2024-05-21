@@ -37,7 +37,7 @@ const pagesWithOpaqueBackground = ["/"]
 
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
 
-                <NuxtLink :href="link.href" v-for="link in links" :key="link.href"
+                <NuxtLink preload :href="link.href" v-for="link in links" :key="link.href"
                     :class="{ ['group']: link.label === 'industrias' }"
                     class=" relative flex space-x-[4px] font-raleway">
                     <span class="hover:text-lightPurple"> {{ link.label }}</span>
@@ -54,11 +54,9 @@ const pagesWithOpaqueBackground = ["/"]
                 </NuxtLink>
 
             </ul>
-
-
-
-            <a href="/contacto"
-                class="hidden xl:block bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">Contacto</a>
+            <NuxtLink href="/contacto" preload
+                class="hidden xl:block bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">
+                Contacto</NuxtLink>
             <button @click="menuIsOpen = true" class="ml-left xl:hidden">
                 <nuxt-icon filled name="hamburger" class="text-[32px]  m-0" />
             </button>
@@ -79,11 +77,11 @@ const pagesWithOpaqueBackground = ["/"]
                         </div>
                         <div v-if="dropdownOpen && link.href === '/#industrias'" class="mt-[24px]">
                             <div class="pl-4 flex flex-col gap-4">
-                                <a :href="dropdownLink.href"
+                                <NuxtLink preload :href="dropdownLink.href"
                                     class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
                                     v-for="dropdownLink in dropdownLinks">
                                     {{ dropdownLink.label }}
-                                </a>
+                                </NuxtLink>
                             </div>
                         </div>
                     </li>

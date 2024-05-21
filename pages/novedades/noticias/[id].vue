@@ -1,6 +1,5 @@
 <script setup lang="ts">
 const route = useRoute()
-console.log(route.params)
 </script>
 
 <template>
@@ -97,3 +96,11 @@ console.log(route.params)
         <CallToAction />
     </article>
 </template>
+
+<style>
+html,
+body,
+* {
+    color: '#18131E'
+}
+</style>

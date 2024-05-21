@@ -1,5 +1,5 @@
 <template>
-    <div class="text-dark">
+    <main>
         <Hero />
         <Ally />
         <Solutions />
@@ -22,5 +22,5 @@
         <Testimonies />
         <TheNews />
         <CallToAction :light="false" />
-    </div>
+    </main>
 </template>

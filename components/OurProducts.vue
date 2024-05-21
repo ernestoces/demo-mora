@@ -117,7 +117,7 @@ const root = ref<HTMLElement | null>(null)
         </div>
         <div class="w-[1332px] mx-auto hidden xl:block shadow-indigo-500/40">
             <div ref="root"
-                class="gap-[90px] snap-x snap-mandatory w-full shrink-0  mx-auto mt-[50px] flex items-center justify-center xl:pb-0 pb-[62px]">
+                class="gap-[40px] snap-x snap-mandatory w-full shrink-0  mx-auto mt-[50px] flex items-center justify-center xl:pb-0 pb-[62px]">
                 <ProductSlide :product="products[currentSlideIndex]" :key="products[currentSlideIndex].id" />
             </div>
         </div>
