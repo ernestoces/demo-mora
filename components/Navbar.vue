@@ -37,19 +37,15 @@ const pagesWithOpaqueBackground = ["/"]
 
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
 
-                <NuxtLink preload :href="link.href" v-for="link in links" :key="link.href"
+                <NuxtLink :href="link.href" v-for="link in links" :key="link.href"
                     :class="{ ['group']: link.label === 'industrias' }"
                     class=" relative flex space-x-[4px] font-raleway">
                     <span class="hover:text-lightPurple"> {{ link.label }}</span>
                     <nuxt-icon v-if="link.label === 'industrias'" name="chevron" class="mt-1" />
                     <ul v-if="link.label === 'industrias'"
-                        class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[3/4] py-[24px]  px-[32px] bg-dark">
-                        <li v-text="link.label" class="capitalize hover:text-lightPurple text-white"
-                            v-for="link in dropdownLinks" @click="async (event) => {
-                                event.preventDefault()
-                                await navigateTo({ path: link.href });
-
-                            }" />
+                        class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[1/4] xl:-ml-[30px] py-[28px]  px-[32px] bg-dark">
+                        <NuxtLink v-text="link.label" class="capitalize hover:text-lightPurple text-white"
+                            v-for="link in dropdownLinks" :href="link.href" />
                     </ul>
                 </NuxtLink>
 
@@ -77,7 +73,7 @@ const pagesWithOpaqueBackground = ["/"]
                         </div>
                         <div v-if="dropdownOpen && link.href === '/#industrias'" class="mt-[24px]">
                             <div class="pl-4 flex flex-col gap-4">
-                                <NuxtLink preload :href="dropdownLink.href"
+                                <NuxtLink @click="menuIsOpen = false" preload :href="dropdownLink.href"
                                     class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
                                     v-for="dropdownLink in dropdownLinks">
                                     {{ dropdownLink.label }}
@@ -101,7 +97,7 @@ const pagesWithOpaqueBackground = ["/"]
 </template>
 
 <style scoped>
-.router-link-active:first-child {
+.router-link-active {
     font-weight: bold
 }
 </style>

@@ -28,7 +28,7 @@ const links = [
         <div class="p-[56px_16px] xl:p-[40px_66px] flex xl:flex-row flex-col justify-between items-center">
             <div class="flex flex-col items-start gap-[24px] w-full">
                 <div class="xl:w-[467px] xl:h-[56px]">
-                    <img preload src="~/assets/img/logoblanco.png" alt="logos" width="467px" height="56px"
+                    <NuxtImg preload src="~/assets/img/logoblanco.png" alt="logos" width="467px" height="56px"
                         class="object-cover" />
                 </div>
                 <NuxtLink href="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true"

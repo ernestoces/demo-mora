@@ -223,23 +223,24 @@ const industries = ref([
             cover: './nhsSuccess.png',
             results: [
                 {
-                    imagePath: `./suitcase.png`,
-                    title: `+$12 millones`,
-                    description: `en ahorro de costos`
+                    imagePath: `./solarcheck.png`,
+                    title: `7000 hrs`,
+                    description: `ahorradas anualmente`
                 },
                 {
-                    imagePath: `./bots.png`,
-                    title: `+1000 bots`,
-                    description: `en producción`,
+                    imagePath: `./pilljar.png`,
+                    title: `780 hrs/año`,
+                    description: `ahorradas con el bot de referencia de cáncer`,
                 },
                 {
-                    imagePath: `./verified.png`,
-                    title: `+350 procesos`,
-                    description: `automatizados`
+                    imagePath: `./jeringa.png`,
+                    title: `700 hrs`,
+                    description: `ahorradas en 2 meses con bot de vacunación`
                 },
             ]
         }
-    }
+    },
+
 ])
 const industryId = route.params.id
 const industry = ref(industries.value.find(industry => industry.id === industryId))
