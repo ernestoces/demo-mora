@@ -7,7 +7,7 @@
         <Services />
         <Brands>
             <template v-slot:header>
-                <h3 class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-center"
+                <h3 class="text-dark font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-center"
                     slot="header">Conoce
                     algunas de las compañías que confían en nosotros.
                 </h3>

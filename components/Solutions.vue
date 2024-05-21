@@ -16,7 +16,8 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
         <div class=" mx-auto xl:max-w-[1160px]">
             <div class="flex justify-between items-center">
                 <div>
-                    <h2 class="font-montserrat font-bold text-[33px] leading-[40px] text-center xl:text-left">Soluciones
+                    <h2 class="font-montserrat font-bold text-[33px] leading-[40px] text-center xl:text-left text-dark">
+                        Soluciones
                         por
                         Industria <span class="capitalize hidden xl:inline-block"
                             v-text="' - ' + currentIndustry.label" />
@@ -24,7 +25,7 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                     <ul class="flex flex-wrap mt-[24px] items-center xl:justify-start justify-center">
                         <li class="capitalize cursor-pointer " v-for="(industry, index) in industries"
                             :key="industry.label" @click="currentIndustryIndex = index">
-                            <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px] hover:bg-lightPurple hover:text-white"
+                            <h4 class="text-dark font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px] hover:bg-lightPurple hover:text-white"
                                 v-bind:class="{ 'bg-purple text-white': index === currentIndustryIndex }">
                                 {{ industry.label }}</h4>
                         </li>
@@ -38,16 +39,15 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                 </div>
                 <div :class="[{ [centerAligned]: currentIndustryIndex === 0 }]"
                     class="flex flex-col gap-[16px] items-start xl:pt-[65px]">
-                    <h3 class="max-w-[521px] w-full font-montserrat font-semibold text-[22px] leading-[26px]
+                    <h3 class="text-dark max-w-[521px] w-full font-montserrat font-semibold text-[22px] leading-[26px]
                     -tracking-[1%] mx-auto mt-[8px] xl:mt-0 xl:text-left">
                         {{ currentIndustry.heading }}
                     </h3>
-                    <p class="font-raleway text-base font-normal leading-[21px] mx-auto xl:text-left"
+                    <p class="text-dark font-raleway text-base font-normal leading-[21px] mx-auto xl:text-left"
                         v-html="currentIndustryIndex ? currentIndustry.description : `Con la automatización inteligente, los bancos y las empresas de servicios financieros pueden transformar las operaciones manuales que usan muchos datos, <span class='font-bold'>sin dejar de cumplir con los requisitos normativos</span> en constante cambio.`" />
                     <NuxtLink :href="'/industrias/' + currentIndustry.label"
-                        class="mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] text-base -tracking-[1%] rounded-[3px] xl:w-auto  w-full">
-                        Conoce
-                        más</NuxtLink>
+                        class="text-center mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] text-base -tracking-[1%] rounded-[3px] xl:w-auto  w-full">
+                        Conoce más</NuxtLink>
                 </div>
             </div>
             <marquee-carousel v-if="currentIndustry.highlightedClients.length > 4" class="xl:mt-[40px] mt-[24px]"

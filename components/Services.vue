@@ -23,7 +23,8 @@ const services = [
                     Servicios
                     Personalizados para tu Empresa
                 </h2>
-                <p class="mt-[24px] font-raleway font-regular text-base leading-[21px] xl:text-left text-center">
+                <p
+                    class="text-dark mt-[24px] font-raleway font-regular text-base leading-[21px] xl:text-left text-center">
                     Descubre cómo
                     implementamos
                     soluciones <span class="font-semibold text-dark">hiper

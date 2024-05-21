@@ -264,7 +264,7 @@ const doubleColumnClass = ref('xl:!grid-cols-2')
             </div>
         </div>
         <div class="bg-white xl:py-[88px] px-4 py-[56px] xl:px-[140px]">
-            <h2 class="text-montserrat font-bold text-[33px] leading-[40px] text-center">Beneficios Clave</h2>
+            <h2 class="text-montserrat font-bold text-[33px] leading-[40px] text-center text-dark">Beneficios Clave</h2>
             <ul class="grid xl:grid-cols-3 grid-cols-1 gap-x-[37px] gap-y-[35px] xl:mt-[48px] mt-[32px] xl:max-w-[1160px] w-full mx-auto"
                 :class="{ [doubleColumnClass]: industry.id == 'mineria' }">
                 <li class="py-6 px-4 bg-[#B8A2D633] rounded-[5px] flex flex-col xl:items-start items-center gap-[25px] hover-shadow hover:-translate-y-[8px] transition-all"

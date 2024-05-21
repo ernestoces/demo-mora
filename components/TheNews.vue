@@ -20,7 +20,7 @@ Procesos (RPA), las empresas están logrando grandes avances.`
         <p class="font-raleway font-bold text-[33px] leading-[38px] xl:text-center text-left text-dark">Últimas
             Novedades</p>
         <p
-            class="pt-[24px] w-full max-w-[949px] mx-auto font-raleway text-[18px] leading-[21px] xl:text-center text-left">
+            class="text-dark pt-[24px] w-full max-w-[949px] mx-auto font-raleway text-[18px] leading-[21px] xl:text-center text-left">
             Mantente
             al día con
             nuestras
