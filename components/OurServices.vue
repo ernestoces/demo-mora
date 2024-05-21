@@ -92,7 +92,12 @@ type Payload = {
 
 const activeServiceIndex = ref(0)
 function handleSectionInView(payload: Payload) {
+    if (payload.serviceIndex < 2) {
+        activeServiceIndex.value = payload.serviceIndex - 1
+    }
     activeServiceIndex.value = payload.serviceIndex
+
+
 
 }
 </script>
