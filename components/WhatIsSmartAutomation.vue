@@ -18,22 +18,25 @@
                     empresariales, garantizando ejecuciones continuas, libres de errores y a una gran velocidad y
                     escala, sin requerir esfuerzos adicionales.</p>
                 <ul
-                    class="mt-[40px] xl:flex-row flex-col flex xl:gap-[40px] gap-[8px] xl:py-[16px] xl:px-[62px]  rounded-[5px] items-center">
-                    <li class="flex xl:flex-col items-center gap-[8px] bg-[#372B4780] py-4 w-full justify-center">
+                    class="xl:bg-[#372B4780] bg-transparent mt-[40px] xl:flex-row flex-col flex xl:gap-[40px] gap-[8px] xl:py-[16px] xl:px-[62px]  rounded-[5px] items-center">
+                    <li
+                        class="flex xl:flex-col items-center gap-[8px] xl:bg-transparent bg-[#372B4780] py-4 w-full justify-center">
                         <nuxt-icon name="lightbulb" filled class="text-[30px]" />
                         <p class="text-center font-raleway text-base leading-[21px] text-white">Inteligencia Artificial
                         </p>
                     </li>
                     <small
                         class="font-montserrat font-semibold text-[22px] leading-[26px]  -tracking-[1%] text-white">+</small>
-                    <li class="flex xl:flex-col items-center gap-[8px] bg-[#372B4780] py-4 w-full justify-center">
+                    <li
+                        class="flex xl:flex-col items-center gap-[8px] xl:bg-transparent bg-[#372B4780] py-4 w-full justify-center">
                         <nuxt-icon name="cursor" filled class="text-[30px]" />
                         <p class="text-center font-raleway text-base leading-[21px] text-white">Tecnología de
                             Automatización</p>
                     </li>
                     <small
                         class="font-montserrat font-semibold text-[22px] leading-[26px]  -tracking-[1%] text-white">=</small>
-                    <li class="flex xl:flex-col items-center gap-[8px] bg-[#372B4780] py-4 w-full justify-center">
+                    <li
+                        class="flex xl:flex-col items-center gap-[8px] xl:bg-transparent bg-[#372B4780] py-4 w-full justify-center">
                         <nuxt-icon name="smile" filled class="text-[30px]" />
                         <p class="text-center font-raleway text-base leading-[21px] text-white">Automatización
                             Inteligente</p>

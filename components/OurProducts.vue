@@ -7,17 +7,17 @@ const products = ref([
         image: `./copilot.png`,
         items: [
             {
-                icon: "team",
+                icon: "./team.png",
                 heading: `Empodera los Equipos de Trabajo`,
                 description: `Mejora la productividad del equipo con asistentes de automatización que abarcan una amplia gama de tareas parametrizadas.`
             },
             {
-                icon: "areas",
+                icon: "./areas.png",
                 heading: `Interconexión entre Áreas`,
                 description: `Permite a los usuarios realizar el seguimiento y/o aprobar sobre la ejecución de un apartado especifico de un proceso automatizado.`
             },
             {
-                icon: "access",
+                icon: "./access.png",
                 heading: `Acceso en Cualquier Aplicación`,
                 description: `Integra el Automation Co-pilot directamente en las aplicaciones que utilizan tus equipos para que los usuarios puedan ejecutar sus asistentes desde estas.`
             }
@@ -27,25 +27,25 @@ const products = ref([
         id: 1,
         name: "Document Automation",
         description: `Extrae datos de documentos a la velocidad de la luz con el procesamiento inteligente de documentos impulsado por IA conectado a la automatización e integre rápidamente estos en el flujo de trabajo. Todo de forma nativa con Automation Success Platform.`,
-        image: `./automation.png`,
+        image: `youtube video`,
         items: [
             {
-                icon: "gear",
+                icon: "./gear.png",
                 heading: `Preprocesamiento`,
                 description: `Mejore la calidad de los documentos con técnicas de reducción de ruido, binarización y eliminación de sesgos.`
             },
             {
-                icon: "version",
+                icon: "./division.png",
                 heading: `Clasificación y División`,
                 description: `Clasifique y separe los documentos de varias páginas para identificar las páginas relevantes.`
             },
             {
-                icon: "extraction",
+                icon: "./extraction.png",
                 heading: `Extracción`,
                 description: `Utilice tecnologías avanzadas para extraer datos específicos de documentos.`
             },
             {
-                icon: "validation",
+                icon: "./validation.png",
                 heading: `Validación de Datos`,
                 description: `Realice la validación mediante reglas y técnicas impulsadas por la IA para mejorar los resultados de extracción.`
             }
@@ -86,47 +86,45 @@ const products = ref([
         image: `./discovery.png`,
         items: [
             {
-                icon: "file",
+                icon: "./transparency.png",
                 heading: `Transparencia y Precisión`,
                 description: `Proporciona una visión precisa de los procesos empresariales para identificar ineficiencias y optimizar la automatización.`
             },
             {
-                icon: "velocity",
+                icon: "./documentation.png",
                 heading: `Documentación del Proceso`,
                 description: `Permite elegir el proceso mas optimo para generar la documentación integral del proceso.`
             },
             {
-                icon: "sensor",
+                icon: "./huella.png",
                 heading: `Escala Segura con IA`,
                 description: `Amplía la transformación en toda la empresa con una arquitectura en la nube diseñada para recopilar y procesar big data, garantizando la seguridad y la precisión.`
             }
         ]
     },
 ])
-const counter = useInterval(3500)
+const counter = useInterval(5000)
 const currentSlideIndex = computed(() => counter.value % 4)
 const activeSlideDotClass = "bg-[#FF5A10] !opacity-100"
 const root = ref<HTMLElement | null>(null)
 </script>
 <template>
-    <div class="bg-white w-full">
+    <div class="bg-white w-full ">
         <h2 class="mt-[88px] text-dark font-montserrat font-bold text-[40px] leading-[53px] text-center">Conoce nuestros
             productos.</h2>
         <div class="xl:hidden flex flex-col xl:gap-6 gap-[50px] mt-[50px]">
-            <ProductSlide v-for="product in products" :product="product" />
+            <ProductSlide v-for="product in products" :product="product" :key="product.id" />
         </div>
-        <div class="w-[1332px] mx-auto hidden xl:block">
+        <div class="w-[1332px] mx-auto hidden xl:block shadow-indigo-500/40">
             <div ref="root"
-                class="gap-[90px] snap-x snap-mandatory overflow-hidden w-full shrink-0  mt-[50px] flex items-center justify-center pb-[62px]">
-                <ProductSlide :product="products[currentSlideIndex]" />
+                class="gap-[90px] snap-x snap-mandatory w-full shrink-0  mx-auto mt-[50px] flex items-center justify-center xl:pb-0 pb-[62px]">
+                <ProductSlide :product="products[currentSlideIndex]" :key="products[currentSlideIndex].id" />
             </div>
         </div>
-        <div class="xl:flex gap-4 mt-[25px] justify-center hidden">
+        <div class="xl:flex gap-4 xl:mt-[50px] mt-[25px] justify-center hidden">
             <span v-for="n in 4" class="h-[12px] w-[12px] bg-[#666666] opacity-25 rounded-full cursor-pointer"
                 @click="counter = n - 1" :class="{ [activeSlideDotClass]: n === currentSlideIndex + 1 }">
             </span>
         </div>
     </div>
 </template>
-
-<style scoped></style>

@@ -11,14 +11,15 @@ const modalOpen = ref(false)
     <div class="mt-[112px] xl:mt-[151px]">
         <h2
             class="font-bold font-montserrat xl:text-[52px] text-[34px] xl:leading-[63px] leading-[40px] text-center text-[#333333] ">
-            Transforme su
-            modelo operativo.
+            Transforme su modelo operativo.
         </h2>
         <div
-            class="mt-[50px] bg-white shadow-custom flex xl:flex-row items-center xl:items-normal flex-col gap-[34px] max-w-[1242px] mx-auto px-[60px] py-[50px] rounded-[20px]">
+            class="mt-[50px] bg-white shadow-custom flex xl:flex-row items-center xl:items-start flex-col gap-[34px] max-w-[1242px] mx-auto px-[60px] py-[50px] rounded-[20px]">
             <div v-for="transformation in transformations"
                 class="flex gap-[20px] xl:items-start items-center xl:flex-row flex-col">
-                <nuxt-icon :name="transformation.icon" filled class="m-0 text-[80px]" />
+                <div class="shrink-0">
+                    <nuxt-icon :name="transformation.icon" filled class="m-0 text-[80px]" />
+                </div>
                 <div class="flex flex-col gap-[15px] max-w-[246px]">
                     <h6 class="font-medium font-montserrat text-[24px] leading-[29px] text-[#133A65] xl:text-left text-center"
                         v-text="transformation.heading">
@@ -29,18 +30,13 @@ const modalOpen = ref(false)
                 </div>
             </div>
         </div>
-        <div class="flex flex-col gap-[30px]">
+        <div class="flex flex-col xl:gap-[10px] gap-[30px]">
             <h2
                 class="font-bold font-montserrat xl:text-[52px] text-[34px] xl:leading-[63px] leading-[40px] mt-[100px] text-center text-[#333333]">
-                Con
-                una
-                plataforma completa e inteligente.
+                Con una plataforma completa e inteligente.
             </h2>
             <p class="font-montserrat text-[20px] leading-[24px] text-center max-w-[1063px] mx-auto">Automation Success
-                Platform
-                acelera la
-                transformación con
-                automatización nativa en la nube flexible
+                Platform acelera la transformación con automatización nativa en la nube flexible
                 respaldada por una comunidad global de miembros y un ecosistema de socios.</p>
         </div>
         <div class="xl:w-[928px] xl:h-[610px] mx-auto pt-[50px] w-full block relative">

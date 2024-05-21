@@ -92,7 +92,8 @@ const pagesWithOpaqueBackground = ["/"]
                     <NuxtLink href="/contacto" @click="menuIsOpen = false"
                         class="hover:text-lightPurple text-white font-raleway text-base leading-[21px]">Contáctanos
                     </NuxtLink>
-                    <NuxtLink href="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true">
+                    <NuxtLink href="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true"
+                        target="_blank">
                         <nuxt-icon name="linkedin" filled class="text-21px" />
                     </NuxtLink>
                 </div>

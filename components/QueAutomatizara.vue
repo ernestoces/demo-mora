@@ -52,7 +52,7 @@ const activeSlideDotClass = ref("bg-[#FF5A10] !opacity-100")
             <div class="mt-[58px] flex gap-[31px] items-center max-w-[1113px] mx-auto">
                 <p class="max-w-[494px] font-montserrat font-semibold text-[30px] leading-[40px] text-[#444444]">{{
                     sectors[currentSectorId].message
-                }}</p>
+                    }}</p>
                 <div class="w-[588px] h-[375px]">
                     <NuxtImg preload :src="sectors[currentSectorId].image" alt="sector image" class="object-cover" />
                 </div>

@@ -2,7 +2,7 @@
     <div
         class=" xl:flex-row flex-col flex gap-[40px] px-4 xl:px-[140px] xl:py-[88px] py-[32px] justify-center pb-[189px]">
         <div class="flex flex-col gap-[24px] max-w-[589px] xl:mx-0 mx-auto">
-            <NuxtImg :src="'./sello.png'" width="61px" height="63px" class="absolute right-4" />
+            <NuxtImg :src="'./sello.png'" width="61px" height="63px" class="absolute right-4 xl:hidden" />
             <h1 class="font-montserrat font-bold text-[50px] leading-[60px] text-white">Descubre <span
                     class="text-mora">Quiénes Somos</span></h1>
             <div class=" flex flex-col gap-[20px]">
