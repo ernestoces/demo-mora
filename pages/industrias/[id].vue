@@ -240,11 +240,177 @@ const industries = ref([
             ]
         }
     },
+    {
+        id: "retail",
+        heading: `<h1>Automatización Inteligente para el<span class="block text-mora"> Comercio</span></h1>`,
+        description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Optimiza tus operaciones comerciales con la automatización inteligente. Simplifica la gestión de inventarios, agiliza los pedidos en línea y mejora la experiencia del cliente en la tienda, todo mientras previenes pérdidas y garantizas la seguridad.</p>`,
+        imagePath: './retail.png',
+        benefits: [
+            {
+                imagePath: './wad.png',
+                title: `Disminuye Costos`,
+                description: `Automatiza los procesos manuales para aumentar la productividad y reducir los gastos de mano de obra, optimizando los recursos financieros.`
+            },
+            {
+                imagePath: './heartline.png',
+                title: `Mejora el Servicio al Cliente`,
+                description: `Accede en tiempo real a la información del cliente, agiliza respuestas e identifica nuevas oportunidades para satisfacer sus necesidades de manera rápida y eficiente. `
+            },
+            {
+                imagePath: './box.png',
+                title: `Cadena Productiva`,
+                description: `Agiliza los procesos de la cadena de suministro, desde la incorporación de nuevos proveedores hasta la gestión eficiente de inventarios.`
+            },
+            {
+                imagePath: './vanguard.png',
+                title: `Reducción de riesgos`,
+                description: `Simplifica y automatiza los procesos manuales para eliminar los errores de procesamiento y reducir los riesgos operativos.`
+            },
+            {
+                imagePath: './settings.png',
+                title: `Mayor Uso de los Recursos`,
+                description: `Aliviar a los profesionales de tareas tediosas les permite brindar encuentros óptimos y exitosos con los pacientes, mejorando su experiencia global.`
+            },
+            {
+                imagePath: './decisiones.png',
+                title: `Mejora la toma de Decisiones`,
+                description: `La automatización inteligente proporciona insights valiosos que ayudan a optimizar procesos, identificar oportunidades y mitigar riesgos.`
+            },
 
+        ],
+        services: [
+            {
+                title: `Gestión de <span class="text-mora">Inventarios</span>`,
+                description: `Optimiza la gestión con automatización e analítica de datos. Monitoriza niveles en tiempo real, genera alertas y asegura un flujo constante de productos para minimizar pérdidas.`
+            },
+            {
+                title: `Experiencia del <span class="text-mora">Cliente en Tienda</span>`,
+                description: `Recopila datos sobre preferencias y hábitos de compra, entrega ofertas personalizadas en tiempo real y optimiza la administración de programas de fidelización para impulsar las ventas y la lealtad del cliente.`
+            },
+            {
+                title: `Prevención de <span class="text-mora">Pérdidas</span>`,
+                description: `Monitorea activos y recursos, detecta actividades sospechosas y genera alertas a la seguridad para mejorar la respuesta ante incidentes y reducir los riesgos de robo y fraude.`
+            },
+        ],
+        successCase: {
+            logo: { path: './mindtree.png', sizes: [[172, 42]] },
+            company: "Mindtree",
+            description: `Una empresa estadounidense con ingresos superiores a 1.500 millones de dólares, buscaba mejorar la eficiencia operativa de sus procesos administrativos y de servicio al cliente, así como estandarizar y documentar sus procesos comerciales.`,
+            cover: './mindtreeSuccess.png',
+            results: [
+                {
+                    imagePath: `./moneybag.png`,
+                    title: `+$2 millones`,
+                    description: `ahorrados en 2 años`
+                },
+                {
+                    imagePath: `./bill.png`,
+                    title: `65K facturas`,
+                    description: `Procesadas al año por IQ Bot`,
+                },
+                {
+                    imagePath: `./document.png`,
+                    title: `95% documentos`,
+                    description: `automatizados con ai`
+                },
+                {
+                    imagePath: `./phone.png`,
+                    title: `85 segundos`,
+                    description: `por atención de llamadas`
+                },
+            ]
+        }
+    },
+    {
+        id: "manufactura",
+        heading: `<h1>Automatización Inteligente para la <span class="block text-mora"> Fabricación</span></h1>`,
+        description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Los líderes de la industria manufacturera a nivel mundial están adoptando la automatización para optimizar sus procesos administrativos y operativos. Al eliminar el desperdicio y aumentar la agilidad, logran reducir costos y acelerar el tiempo de lanzamiento al mercado de sus productos.</p>`,
+        imagePath: './manufactura.png',
+        benefits: [
+            {
+                imagePath: './wad.png',
+                title: `Agiliza Procesos`,
+                description: `Nuestra automatización inteligente simplifica los flujos de trabajo empresariales, eliminando el desperdicio y mejorando la eficiencia.`
+            },
+            {
+                imagePath: './calculator.png',
+                title: `Reduce Costos Administrativos`,
+                description: `Elimina errores humanos y mejora la precisión en todos los procesos empresariales, desde Recursos Humanos hasta TI.`
+            },
+            {
+                imagePath: './delivery.png',
+                title: `Diseña una Cadena de Suministros Sólida`,
+                description: `Aplica la automatización inteligente para optimizar la gestión de proveedores y fortalecer la cadena de suministro.`
+            },
+            {
+                imagePath: './time.png',
+                title: `Aumenta la Velocidad de Salida al Mercado`,
+                description: `Implementa una fuerza de trabajo digital para acelerar la ejecución de procesos y garantizar una máxima productividad.`
+            },
+            {
+                imagePath: './reloj.png',
+                title: `Conecta Sistemas y Accede a Datos en Tiempo Real`,
+                description: `Nuestra automatización inteligente funciona sin contratiempos en todos los sistemas y puede procesar datos de la IoT y analizar información al instante.`
+            },
+            {
+                imagePath: './heartline.png',
+                title: `Mejora la Experiencia Postventa del Cliente`,
+                description: `Impulsa la lealtad del cliente mediante la entrega de asistencia técnica mejorada y la anticipación de las necesidades del cliente con datos en tiempo real.`
+            },
+
+        ],
+        services: [
+            {
+                title: `Automatización de <span class="text-mora">Procesos de ERP</span>`,
+                description: `Mejora la eficiencia mediante la aplicación de automatización inteligente en la gestión de informes, facturación, pagos y gestión de inventario del sistema ERP.`
+            },
+            {
+                title: `Procesamiento de <span class="text-mora">Órdenes</span>`,
+                description: `Automatiza el procesamiento de facturas de todos los proveedores, eliminando errores y demoras. Nuestra automatización inteligente extrae datos, solicita aprobaciones y supervisa el estado de los pagos.`
+            },
+            {
+                title: `Administración de<span class="text-mora"> Inventarios</span>`,
+                description: `Los bots de automatización inteligente hacen un seguimiento del inventario las 24 horas del día, proporcionando informes en tiempo real para ayudar a tu empresa a mantenerse al día con la demanda.`
+            },
+            {
+                title: `Asistencia <span class="text-mora">Técnica</span>`,
+                description: `Obtén automatización inteligente que trabaja junto a tu equipo de asistencia técnica. Los bots manejan datos y sistemas para que tus equipos se enfoquen en ofrecer un excelente servicio y construir relaciones con clientes y proveedores.`
+            },
+        ],
+        successCase: {
+            logo: { path: './quad.png', sizes: [[172, 42]] },
+            company: "Quad Graphics",
+            description: `Esta empresa de servicios digitales e impresos, con ingresos de 4.000 millones de dólares, se propuso reducir la ineficiencia y mejorar la productividad. Su meta era liberar a sus empleados para que pudieran dedicarse a un trabajo más centrado en el cliente y con mayor valor agregado.`,
+            cover: './quadSuccess.png',
+            results: [
+                {
+                    imagePath: `./moneybag.png`,
+                    title: `$1000 millones `,
+                    description: `de flujo de caja optimizado`
+                },
+                {
+                    imagePath: `./rosca.png`,
+                    title: `26 procesos`,
+                    description: `automatizados`,
+                },
+                {
+                    imagePath: `./graph.png`,
+                    title: `200% de ampliación`,
+                    description: `de RPA en 12 meses `
+                },
+                {
+                    imagePath: `./calendar.png`,
+                    title: `10 semanas`,
+                    description: `para implementar bots`
+                },
+            ]
+        }
+    },
 ])
 const industryId = route.params.id
 const industry = ref(industries.value.find(industry => industry.id === industryId))
 const doubleColumnClass = ref('xl:!grid-cols-2')
+const tripleColumnClass = ref('xl:!grid-cols-3')
 </script>
 
 <template>
@@ -282,7 +448,8 @@ const doubleColumnClass = ref('xl:!grid-cols-2')
         <div class="bg-dark xl:py-[88px] xl:px-[140px] py-[56px] px-4">
             <h2 v-text="'Servicios Especificos'"
                 class="font-montserrat font-bold text-[33px] leading-[40px] text-white text-center" />
-            <ul class="grid xl:grid-cols-4 grid-cols-1 gap-x-[33px] max-w-[1160px] mx-auto mt-12 gap-y-[41px]">
+            <ul :class="{ [tripleColumnClass]: industry.services.length === 3 }"
+                class="grid xl:grid-cols-4 grid-cols-1 gap-x-[33px] max-w-[1160px] mx-auto mt-12 gap-y-[41px]">
                 <li class="cool-border rounded-[5px] p-[24px] flex flex-col gap-[26px] xl:min-w-[265px] w-full"
                     v-for="service in industry?.services">
                     <h3 v-html="service.title"
