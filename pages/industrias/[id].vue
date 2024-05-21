@@ -3,7 +3,7 @@ const route = useRoute()
 const industries = ref([
     {
         id: "banca",
-        heading: `<h1  class="font-montserrat text-white text-[50px] leading-[61px] font-bold ">Automatización Inteligente para <span class="block text-mora">Servicios Financieros</span></h1>`,
+        heading: `<h1>Automatización Inteligente para <span class="block text-mora">Servicios Financieros</span></h1>`,
         description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Con la automatización
                         inteligente, los
                         bancos y las empresas de servicios financieros pueden
@@ -13,9 +13,9 @@ const industries = ref([
         imagePath: './banca.png',
         benefits: [
             {
-                imagePath: './buck.png',
-                title: `Disminuye Costos`,
-                description: `Automatiza los procesos manuales, para así aumentar la productividad y disminuir los gastos de mano de obra`
+                imagePath: './zoom.png',
+                title: `Consolida el Cumplimiento`,
+                description: `Accede directamente a los datos del cliente, automatiza la supervisión de transacciones y sigue los cambios normativos.`
             },
             {
                 imagePath: './roi.png',
@@ -23,9 +23,9 @@ const industries = ref([
                 description: `Implementa la automatización robótica de procesos en tres meses y obtén un retorno de la inversión inmediato.`
             },
             {
-                imagePath: './zoom.png',
-                title: `Consolida el Cumplimiento`,
-                description: `Accede directamente a los datos del cliente, automatiza la supervisión de transacciones y sigue los cambios normativos.`
+                imagePath: './buck.png',
+                title: `Disminuye Costos`,
+                description: `Automatiza los procesos manuales, para así aumentar la productividad y disminuir los gastos de mano de obra`
             },
             {
                 imagePath: './support.png',
@@ -92,7 +92,7 @@ const industries = ref([
     },
     {
         id: "mineria",
-        heading: `<h1  class="font-montserrat text-white text-[50px] leading-[61px] font-bold ">Automatización Inteligente para 
+        heading: `<h1>Automatización Inteligente para 
  <span class="block text-mora">la Industria Minera</span></h1>`,
         description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Desde la extracción hasta la logística, nuestra tecnología revoluciona los procesos, aumentando la eficiencia y la seguridad en un entorno normativo en constante evolución. Descubre cómo podemos llevar tu operación minera al siguiente nivel.</p>`,
         imagePath: './mineria.png',
@@ -164,47 +164,49 @@ const industries = ref([
 ])
 const industryId = route.params.id
 const industry = ref(industries.value.find(industry => industry.id === industryId))
-const doubleColumnClass = ref('grid-cols-2')
+const doubleColumnClass = ref('xl:grid-cols-2')
 const tripleColumnClass = ref('grid-cols-3')
 const successCaseHasLessThan4Results = ref(industry.value && industry.value.successCase.results.length < 4)
 </script>
 
 <template>
     <main>
-        <div class="bg-dark py-[88px] px-[140px]" v-if="industry">
-            <div class="flex gap-[56px] items-center justify-center">
+        <div class="bg-dark xl:py-[88px] py-[56px] xl:px-[140px] px-4" v-if="industry">
+            <div class="flex xl:gap-[56px] gap-[40px] xl:flex-row flex-col items-center justify-center">
                 <div class="flex flex-col gap-6 max-w-[644px]">
-                    <div v-html="industry.heading" />
+                    <div class="font-montserrat text-white xl:text-[50px] text-[33px] leading-[40px] xl:leading-[61px] font-bold "
+                        v-html="industry.heading" />
                     <div v-html="industry.description" />
                 </div>
-                <div class="w-[460px] h-[355px] shrink-0">
-                    <NuxtImg width="460px" height="355px" :src="industry.imagePath" class="object-contain " />
+                <div class="xl:w-[460px] xl:h-[355px] w-full xl:px-0 xl:rounded-none rounded-[5px] shrink-0">
+                    <NuxtImg width="460px" height="355px" :src="industry.imagePath"
+                        class="object-contain rounded-[5px]" />
                 </div>
             </div>
         </div>
 
-        <div class="bg-white py-[88px] px-[140px]">
+        <div class="bg-white xl:py-[88px] px-4 py-[56px] xl:px-[140px]">
             <h2 class="text-montserrat font-bold text-[33px] leading-[40px] text-center">Beneficios Clave</h2>
-            <ul class="grid grid-cols-3 gap-x-[37px] gap-y-[35px] mt-[48px] max-w-[1160px] mx-auto"
+            <ul class="grid xl:grid-cols-3 grid-cols-1 gap-x-[37px] gap-y-[35px] xl:mt-[48px] mt-[32px] xl:max-w-[1160px] w-full mx-auto"
                 :class="{ [doubleColumnClass]: industry?.id == 'mineria' }">
-                <li class="py-6 px-4 bg-[#B8A2D633] rounded-[5px] flex flex-col gap-[25px] hover-shadow hover:-translate-y-[8px] transition-all"
+                <li class="py-6 px-4 bg-[#B8A2D633] rounded-[5px] flex flex-col xl:items-normal items-center gap-[25px] hover-shadow hover:-translate-y-[8px] transition-all"
                     v-for="benefit in industry?.benefits">
                     <NuxtImg width="40px" height="40px" :src="benefit.imagePath" />
                     <div class="flex flex-col gap-2">
                         <h3 v-html="benefit.title"
-                            class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark" />
+                            class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark text-center xl:text-left" />
                         <p v-html="benefit.description"
-                            class="font-raleway font-normal text-base leading-[21px] text-dark" />
+                            class="font-raleway font-normal text-base leading-[21px] text-dark text-center xl:text-left" />
                     </div>
                 </li>
             </ul>
         </div>
 
-        <div class="bg-dark py-[88px] px-[140px]">
+        <div class="bg-dark xl:py-[88px] xl:px-[140px] py-[56px] px-4">
             <h2 v-text="'Servicios Especificos'"
                 class="font-montserrat font-bold text-[33px] leading-[40px] text-white text-center" />
-            <ul class="grid grid-cols-4 gap-x-[33px] max-w-[1160px] mx-auto mt-12">
-                <li class="lasso-border rounded-[5px] p-6 flex flex-col gap-[26px] max-w-[265px] justify-between"
+            <ul class="grid xl:grid-cols-4 grid-cols-1 gap-x-[33px] max-w-[1160px] mx-auto mt-12   gap-y-[41px]">
+                <li class="cool-border rounded-[5px] p-6 flex flex-col gap-[26px] xl:max-w-[265px] w-full justify-between"
                     v-for="service in industry?.services">
                     <h3 v-html="service.title"
                         class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-white" />
@@ -214,28 +216,31 @@ const successCaseHasLessThan4Results = ref(industry.value && industry.value.succ
             </ul>
         </div>
 
-        <div class="bg-white px-[140px] py-[88px]">
+        <div class="bg-white xl:px-[140px] xl:py-[88px] px-4 py-[56px]">
             <div class="flex flex-col gap-[28px] max-w-[1160px] mx-auto">
                 <div class="flex justify-between items-center">
-                    <h2 class="font-montserrat font-bold text-[33px] leading-[40px]" v-text="'Caso de Éxito'" />
-                    <div class="w-[201px] h-auto">
-                        <NuxtImg :src="industry?.successCase.logo.path" class="object-cover" width="201px"
-                            height="48px" />
+                    <h2
+                        class="font-montserrat xl:font-bold font-semibold xl:text-[33px] text-[22px] xl:leading-[40px] leading-[26px]">
+                        Caso de Éxito<span v-text="': ' + industry?.successCase.company" /> </h2>
+                    <div class="xl:w-[201px] w-full h-auto hidden xl:block">
+                        <NuxtImg :src="industry?.successCase.logo.path" width="201px" />
                     </div>
                 </div>
-                <div class="flex gap-[48px] items-center ">
+                <div class="flex xl:flex-row flex-col gap-[24px] xl:gap-[48px]  items-center ">
                     <div class="shrink-0">
-                        <NuxtImg :src="industry?.successCase.cover" width="540px" height="359px" />
+                        <NuxtImg :src="industry?.successCase.cover" width="540px" height="359px"
+                            class="rounded-[5px]" />
                     </div>
-                    <div class="flex flex-col gap-4">
-                        <h3 class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark"
+                    <div class="flex flex-col xl:gap-4 gap-[24px]">
+                        <h3 class="xl:block hidden font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark"
                             v-text="industry?.successCase.company" />
+                        <NuxtImg :src="industry?.successCase.logo.path" class="xl:hidden block object-cover"
+                            width="100px" />
                         <p class="font-raleway font-normal text-base leading-[21px] text-dark"
                             v-text="industry?.successCase.description" />
-                        <ul class="grid grid-cols-2 gap-x-[24px] gap-y-[16px] mt-8 justify-center"
-                            :class="{ [tripleColumnClass]: successCaseHasLessThan4Results }">
-                            <li v-for="result in industry?.successCase.results" class="flex gap-[8px] items-center"
-                                :class="{ [`flex-col`]: successCaseHasLessThan4Results }">
+                        <ul
+                            class="grid xl:grid-cols-2 grid-cols-1 gap-x-[24px] xl:gap-y-[16px] gap-y-[24px] mt-8 justify-start xl:justify-center">
+                            <li v-for="result in industry?.successCase.results" class="flex gap-[8px] items-center">
                                 <div class="w-[40px] h-[40px] shrink-0">
                                     <NuxtImg width="40px" height="40px" class="object-cover" :src="result.imagePath" />
                                 </div>
@@ -243,16 +248,18 @@ const successCaseHasLessThan4Results = ref(industry.value && industry.value.succ
                                     :class="{ [`text-center items-center`]: successCaseHasLessThan4Results }">
                                     <h3 class="font-semibold text-[22px] font-montserrat leading-[26px] -tracking-[1%] text-dark"
                                         v-text="result.title" />
+
                                     <p class="font-montserrat font-normal text-base leading-[17px] text-dark"
                                         v-text="result.description" />
                                 </div>
                             </li>
                             <NuxtLink href="/"
-                                class="flex gap-[8px] items-center p-[8px] w-full max-w-[186px] mx-auto self-center">
+                                class="flex gap-[8px] items-center p-[8px] w-full max-w-[186px] mx-auto self-center mt-[32px]">
                                 <span
                                     class="font-raleway font-semibold  text-base leading-[21px] text-purple shrink-0">Ver
                                     caso
-                                    completo</span> <nuxt-icon name="chevronRight" filled />
+                                    completo</span>
+                                <nuxt-icon color="black" class="text-[20px]" name="rightline" filled />
                             </NuxtLink>
                         </ul>
 
@@ -266,32 +273,30 @@ const successCaseHasLessThan4Results = ref(industry.value && industry.value.succ
 </template>
 
 <style>
-.lasso-border {
-    /* Optional: makes the div round */
-    position: relative;
-}
-
-.lasso-border::before {
-    content: '';
-    position: absolute;
-    top: -2px;
-    left: -2px;
-    right: -2px;
-    bottom: -2px;
-    border-radius: inherit;
-    border: 2px solid;
-    border-image: linear-gradient(0deg, #FFFFFF, #724ADA) 1;
-    animation: lassoAnimation 2s linear infinite;
-}
-
-@keyframes lassoAnimation {
+@keyframes border-animation {
     0% {
-        background-position: 0% 50%;
+        border-right-color: #FFFFFF;
+        border-top-color: #724ADA;
+    }
+
+    25% {
+        border-color: #724ADA;
+        border-bottom-colo: #FFFFFF
+    }
+
+    75% {
+        border-color: #724ADA;
     }
 
     100% {
-        background-position: 200% 50%;
+        border-color: #FFFFFF;
+        border-left-color: #724ADA
     }
+}
+
+.cool-border {
+    border: 2px solid red;
+    animation: border-animation 4s infinite;
 }
 
 .hover-shadow:hover {
