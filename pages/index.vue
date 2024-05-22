@@ -19,7 +19,7 @@
                     nuestros servicios</a>
             </template>
         </Brands>
-        <Testimonies />
+        <!-- <Testimonies /> -->
         <TheNews />
         <CallToAction :light="false" />
     </main>
