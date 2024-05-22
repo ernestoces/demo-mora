@@ -21,7 +21,7 @@ defineProps<{
 <template>
 
     <div
-        class="shadowed z-10 snap-always snap-center xl:w-[1219px] w-full shrink-0 xl:pt-[50px] pt-[30px] xl:px-[70px] px-[15px] xl:pb-[139px] pb-[30px] rounded-[20px] ">
+        class="shadowed z-10 snap-always snap-center xl:max-w-[1219px] xl:min-h-[645px] w-full shrink-0 xl:pt-[50px] pt-[30px] xl:px-[70px] px-[15px] xl:pb-[50px] pb-[30px] rounded-[20px] ">
         <p class="font-semibold font-montserrat text-[24px] leading-[32px] text-[#133A65] text-center ">{{
             product.name }}</p>
         <p class="mt-[20px] text-center font-montserrat font-normal text-[18px] leading-[24px] text-[#333333]">{{
