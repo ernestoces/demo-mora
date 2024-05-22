@@ -24,7 +24,8 @@
                     e inteligencia artificial para optimizar procesos empresariales. <span class="font-semibold">Nuestro
                         objetivo es liberar a
                         las
-                        personas de tareas rutinarias y permitirles abordar desafíos empresariales analíticos</span></p>
+                        personas de tareas rutinarias y permitirles abordar desafíos empresariales analíticos.</span>
+                </p>
             </div>
         </div>
         <div class="x:lw-[531px] xl:h-[358px] shrink-0 ">
