@@ -19,7 +19,7 @@ const dropdownLinks = ref(
     ]
 )
 const location = ref(useBrowserLocation())
-const transparentBackgroundClass = ref('bg-transparent')
+const transparentBackgroundClass = ref('xl:bg-transparent')
 const defaultClass = ref("px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full bg-dark")
 const scrollThreshold = 210
 const menuIsOpen = ref(false)

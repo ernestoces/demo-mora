@@ -14,7 +14,7 @@ const branches = [
     }
 ]
 
-const inputClass = ref("border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark placeholder:font-raleway placeholder:text-base placeholder:text-[#828282] placeholder:font-normal placeholder:bg-white")
+const inputClass = ref("bg-white border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark placeholder:font-raleway placeholder:text-base placeholder:text-[#828282] placeholder:font-normal placeholder:bg-white")
 </script>
 
 
