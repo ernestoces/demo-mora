@@ -47,18 +47,21 @@ const articles = ref<Article[]>(data);
 
         <div class="mt-[56px] xl:flex-row flex flex-col gap-[41px] w-full justify-center">
             <div v-for="article in articles"
-                class="xl:pr-[41px] pb-[48px] xl:pb-0 last-of-type:pr-0 last-of-type:border-none xl:border-r-[1px]  xl:border-b-0 border-b-[1px] border-purple border-opacity-50">
+                class="xl:pr-[41px] pb-[48px] xl:pb-0 last-of-type:pr-0 last-of-type:border-none xl:border-r-[1px]  xl:border-b-0 border-b-[1px] border-purple border-opacity-50 ">
                 <div>
-                    <NuxtImg :src="article.cover" alt="" width="332" height="189" />
+                    <NuxtImg :src="article.cover" alt="" class="w-full xl:w-[332px] xlh-[189px]" />
                 </div>
                 <div class="mt-[16px] flex flex-col gap-[8px] max-w-[332px] w-full">
-                    <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] text-dark">{{ article.title }}
+                    <h4 class=" font-montserrat font-semibold text-[18px] leading-[24px] text-dark">
+                        {{ article.title }}
                     </h4>
-                    <SanityContent :blocks="article.content" />
-                    <NuxtLink :href="'/novedades/noticias/' + article.slug" class="text-mora font-bold cursor-pointer">
-                        Seguir
-                        leyendo</NuxtLink>
+                    <div class="max-h-[126px] overflow-y-hidden">
+                        <SanityContent :blocks="article.content" />
+                    </div>
                 </div>
+                <NuxtLink :href="'/novedades/noticias/' + article.slug" class="text-mora font-bold cursor-pointer">
+                    Seguir
+                    leyendo</NuxtLink>
             </div>
         </div>
 

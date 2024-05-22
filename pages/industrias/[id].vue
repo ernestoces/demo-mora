@@ -488,15 +488,15 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                             width="100px" />
                         <p class="font-raleway font-normal text-base leading-[21px] text-dark"
                             v-text="industry?.successCase.description" />
-                        <ul :class="[{ ['xl:!grid-cols-3']: industry.successCase.results.length === 3 }]"
+                        <ul :class="[{ [tripleColumnClass]: industry.successCase.results.length === 3 }]"
                             class="grid xl:grid-cols-2 grid-cols-1 gap-x-[24px] xl:gap-y-[16px] gap-y-[24px] mt-8 justify-start xl:justify-center">
                             <li v-for="result in industry?.successCase.results" class="flex gap-[8px] items-center"
-                                :class="[{ ['flex-col items-center xl:text-center']: industry.successCase.results.length === 3 }]">
+                                :class="[{ ['xl:flex-col xl:items-center items-start xl:text-center']: industry.successCase.results.length === 3 }]">
                                 <div class="w-[40px] h-[40px] shrink-0">
                                     <NuxtImg width="40px" height="40px" class="object-cover" :src="result.imagePath" />
                                 </div>
                                 <div class="flex flex-col gap-[2px] w-full"
-                                    :class="[{ ['items-center ']: industry.successCase.results.length === 3 }]">
+                                    :class="[{ ['xl:items-center ']: industry.successCase.results.length === 3 }]">
                                     <h3 class="font-semibold text-[22px] font-montserrat leading-[26px] -tracking-[1%] text-dark"
                                         v-text="result.title" />
 
