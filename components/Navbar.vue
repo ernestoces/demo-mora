@@ -16,20 +16,20 @@ const dropdownLinks = [
     { label: "manufactura", href: "/industrias/manufactura" },
     { label: "retail", href: "/industrias/retail" },
 ]
-const location = useBrowserLocation()
-const scrolledClass = ref('bg-dark')
-const defaultClass = ref("px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full")
+const location = ref(useBrowserLocation())
+const transparentBackgroundClass = ref('bg-transparent')
+const defaultClass = ref("px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full bg-dark")
 const scrollThreshold = 210
 const menuIsOpen = ref(false)
 const dropdownOpen = ref(false)
 const clickedChevronClass = 'rotate-180'
 const pageDoesntStartWithATranslucidBackground = ref(0)
 const pagesWithOpaqueBackground = ["/"]
-
+const shouldChangeBackgroundsOnScroll = computed(() => location.value.pathname === "/" && scroll.value.y < scrollThreshold)
 </script>
 
 <template>
-    <nav v-bind:class="{ [defaultClass]: true, [scrolledClass]: scroll.y > scrollThreshold }">
+    <nav :class="[{ [transparentBackgroundClass]: shouldChangeBackgroundsOnScroll }, defaultClass]">
         <div class="max-w-[1440px] flex mx-auto justify-between">
             <a href="/">
                 <NuxtImg src="/logo.png" class="w-[161px] h-[44px]" />
