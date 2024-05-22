@@ -110,7 +110,10 @@ const root = ref<HTMLElement | null>(null)
 </script>
 <template>
     <div class="bg-white w-full ">
-        <h2 class="mt-[88px] text-dark font-montserrat font-bold text-[40px] leading-[53px] text-center">Conoce nuestros
+        <h2
+            class="mt-[88px] text-[#333333] font-montserrat font-bold text-[34px] xl:text-[40px] xl:leading-[53px] leading-[34px] text-center">
+            Conoce
+            nuestros
             productos.</h2>
         <div class="xl:hidden flex flex-col xl:gap-6 gap-[50px] mt-[50px]">
             <ProductSlide v-for="product in products" :product="product" :key="product.id" />
