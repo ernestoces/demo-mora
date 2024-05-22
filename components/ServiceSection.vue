@@ -33,29 +33,36 @@ function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[
 const initialTrainingDetails = [
     {
         name: "Overview", items: [
-            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
-            "Generación y configuración de Dashboard de negocio."
-        ],
-        expanded: false
-    },
-    {
-        name: "Template A360", items: [
-            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
-            "Generación y configuración de Dashboard de negocio."
-        ],
-        expanded: false
-    },
-    {
-        name: "AARI", items: [
-            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
-            "Generación y configuración de Dashboard de negocio."
+            "Introducción",
+            "Mesa de Instalación",
+            "Automation Anywhere",
+            "Enterprise Overview",
+            "Mejores Prácticas",
+            "Variables",
+            "Descarga de Archivos",
+            "Clase Business Analyst"
         ],
         expanded: false
     },
     {
         name: "Input Data", items: [
-            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
-            "Generación y configuración de Dashboard de negocio."
+            "Grabadora/Recorder",
+            "Leer desde CSV/Text",
+            "Bucles/Loops",
+            "Condicionales (IF)",
+            "Interacción con Excel",
+            "Manejo de Errores",
+            "Modulación mediante uso de sub tareas"
+        ],
+        expanded: false
+    },
+    {
+        name: "Template A360", items: [
+            "Implementación de Template Estándar A360",
+            "Módulo de Archivos de Configuración",
+            "Módulo de Creación de estructura de Carpetas",
+            "Módulo de Mensajería y Registro logs",
+            "Módulo de Respaldos",
         ],
         expanded: false
     },
@@ -67,9 +74,16 @@ const initialTrainingDetails = [
         expanded: false
     },
     {
+        name: "AARI", items: [
+            "Creación de Formularios",
+            "Creación de Bots e Interacción con Formularios para proceso atendido"
+        ],
+        expanded: false
+    },
+    {
         name: "Caso de uso", items: [
-            "Implementación de un proceso utilizando RPA Workspace, IQ Bot y Bot Insight.",
-            "Generación y configuración de Dashboard de negocio."
+            "Desarrollo en conjunto de un caso de uso de Complejidad Baja o media",
+            "Despliegue de proceso automatizado de forma desatendida"
         ],
         expanded: false
     },
@@ -96,7 +110,7 @@ function expandDetail(selectedIndex: number) {
 
 
 const collapsedTrainingDetailsIndex = ref(0)
-const highlightedItemsClass = 'self-center'
+const highlightedItemsClass = 'self-center xl:self-start'
 let keypointsHeading = ref("")
 if (props.service.id === 'consultoria') {
     keypointsHeading.value = 'Trabajamos con:'
@@ -111,7 +125,7 @@ if (props.service.id === 'consultoria') {
     <div v-intersection-observer="onIntersectionObserver" ref="el"
         class="z-10 snap-center w-full py-[56px] xl:pt-[88px] xl:pb-[104px] px-4 xl:px-[140px] "
         :class="service.dark ? 'bg-dark' : 'bg-white '" v-bind:id="service.id">
-        <div class="max-w-[1160px] mx-auto flex gap-[48px] xl:flex-row flex-col">
+        <div class="max-w-[1160px] mx-auto flex gap-[48px] items-start xl:flex-row flex-col">
             <div class="flex gap-6 flex-col font-raleway text-base leading-[21px] items-start xl:max-w-[600px]">
                 <h3 :class="service.dark ? 'text-white' : 'text-dark'"
                     class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%]  xl:text-center text-left text-dark">
@@ -133,7 +147,7 @@ if (props.service.id === 'consultoria') {
                 <ul v-else
                     class="w-full grid xl:grid-cols-2 grid-cols-1 gap-[24px] items-baseline margin:transition-all">
                     <template v-for="(detail, index) in trainingDetails">
-                        <li v-bind="$attrs" :class="{ ['mb-[140px]']: detail.expanded }" @click="expandDetail(index)"
+                        <li v-bind="$attrs" :class="{ ['mb-[200px]']: detail.expanded }" @click="expandDetail(index)"
                             class="relative group cursor-pointer bg-purple rounded-[8px] flex justify-between  px-[16px] items-center ">
                             <span class="text-white  py-[9.5px] font-semibold text-base leading-[21px] ">{{
                                 detail.name }}</span>
