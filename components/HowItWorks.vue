@@ -1,3 +1,7 @@
+<script setup lang="ts">
+const modalOpen = ref(false)
+</script>
+
 <template>
     <div class="bg-dark xl:py-[88px] py-[56px] mt-[12px] xl:mt-0">
         <div class="w-full max-w-[949px] mx-auto flex flex-col gap-[24px] xl:text-center px-4">
@@ -10,8 +14,17 @@
                 tu transformación empresarial.</p>
         </div>
         <div class="xl:mt-[48px] mt-[32px] shrink-0 px-4">
-            <NuxtImg preload :src="'./howitworks.png'" alt="diagram of process" width="907" height="592"
-                class="object-cover mx-auto" />
+            <NuxtImg @click="modalOpen = true" preload :src="'./howitworks.png'" alt="diagram of process" width="907"
+                height="592" class="object-cover mx-auto cursor-pointer" />
+        </div>
+        <div>
+            <UModal v-model="modalOpen" fullscreen class="z-[9999999]">
+                <div class="xl:w-[1440px] w-full mx-auto py-[56px] px-4 flex flex-col items-start">
+                    <p class="mt-[24px] mb-[8px] font-montserrat leading-[41px] text-[24px] font-semibold text-center text-[#133A65] cursor-pointer"
+                        @click="modalOpen = false">Regresar</p>
+                    <NuxtImg preload :src="'./platform.png'" class="object-cover" alt="process diagram" />
+                </div>
+            </UModal>
         </div>
         <div class="xl:mt-[48px] mt-[32px] mx-auto flex flex-col items-center">
             <button
