@@ -33,7 +33,7 @@ const articles = ref<Article[]>(data);
 </script>
 
 <template>
-    <div class="bg-white pt-[56px] xl:py-[88px] pb-[55px] px-4">
+    <div v-if="articles" class="bg-white pt-[56px] xl:py-[88px] pb-[55px] px-4">
         <p class="font-raleway font-bold text-[33px] leading-[38px] xl:text-center text-left text-dark">Últimas
             Novedades</p>
         <p
@@ -56,7 +56,7 @@ const articles = ref<Article[]>(data);
                         {{ article.title }}
                     </h4>
                     <div class="max-h-[126px] overflow-y-hidden">
-                        <SanityContent :blocks="article.content" />
+                        <SanityContent :blocks="article.content" class="text-dark" />
                     </div>
                 </div>
                 <NuxtLink :href="'/novedades/noticias/' + article.slug" class="text-mora font-bold cursor-pointer">
