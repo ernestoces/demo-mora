@@ -62,6 +62,7 @@ const industries = ref([
             },
         ],
         successCase: {
+            pdfPath: '/bancolombia.pdf',
             logo: { path: './bancolombia.png', sizes: [[201, 48]] },
             company: "Bancolombia",
             description: `La institución financiera galardonada necesitaba desarrollar una fuerza laboral virtual que combinara capacidades humanas, robóticas, cognitivas y analíticas, para mejorar la experiencia de los clientes, automatizar tareas repetitivas y aumentar la eficiencia en todos los ámbitos.`,
@@ -137,6 +138,7 @@ const industries = ref([
             },
         ],
         successCase: {
+            pdfPath: '/vale.pdf',
             logo: { path: './vale.png', sizes: [[121, 48]] },
             company: "Vale",
             description: `Una de las mayores empresas mineras del mundo quería permitir a sus empleados un mejor nivel de productividad y alcanzar sus objetivos, buscando que pudieran desempeñarse en su expertis y no en tareas administrativas, como el registro de facturas, que no están relacionados con su campo laboral.`,
@@ -217,6 +219,7 @@ const industries = ref([
             },
         ],
         successCase: {
+            pdfPath: '/nhs.pdf',
             logo: { path: './nhs.png', sizes: [[121, 48]] },
             company: "Newcastle Hospital",
             description: `Uno de los hospitales más grandes del Reino Unido, tras años de enfrentar los desafíos de la pandemia, se propuso transformar la vida laboral de sus 16,000 empleados. El objetivo era liberarlos de tareas rutinarias y repetitivas para permitirles enfocarse en lo más importante: brindar una atención excepcional a los pacientes.`,
@@ -293,6 +296,7 @@ const industries = ref([
             },
         ],
         successCase: {
+            pdfPath: '/mindtree.pdf',
             logo: { path: './mindtree.png', sizes: [[172, 42]] },
             company: "Mindtree",
             description: `Una empresa estadounidense con ingresos superiores a 1.500 millones de dólares, buscaba mejorar la eficiencia operativa de sus procesos administrativos y de servicio al cliente, así como estandarizar y documentar sus procesos comerciales.`,
@@ -378,6 +382,7 @@ const industries = ref([
             },
         ],
         successCase: {
+            pdfPath: '/quad.pdf',
             logo: { path: './quad.png', sizes: [[172, 42]] },
             company: "Quad Graphics",
             description: `Esta empresa de servicios digitales e impresos, con ingresos de 4.000 millones de dólares, se propuso reducir la ineficiencia y mejorar la productividad. Su meta era liberar a sus empleados para que pudieran dedicarse a un trabajo más centrado en el cliente y con mayor valor agregado.`,
@@ -496,7 +501,7 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                                         v-text="result.description" />
                                 </div>
                             </li>
-                            <NuxtLink href="/"
+                            <NuxtLink :href="industry.successCase.pdfPath" target="_blank"
                                 class="flex gap-[8px] items-center p-[8px] w-full max-w-[186px] mx-auto self-center mt-[32px]">
                                 <span
                                     class="font-raleway font-semibold  text-base leading-[21px] text-purple shrink-0">Ver

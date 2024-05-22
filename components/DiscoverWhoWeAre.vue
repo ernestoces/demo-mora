@@ -10,9 +10,9 @@
                     opera como
                     Automation
                     Anywhere
-                    en Perú y Chile. En este 2024, hemos logrado el reconocimiento <span
-                        class="underline text-lightPurple font-semibold">Verified Service Partner
-                        (VSP)</span>, que
+                    en Perú y Chile. En este 2024, hemos logrado el reconocimiento <NuxtLink href="/vsp-mora.pdf"
+                        target="_blank" class="underline text-lightPurple font-semibold">Verified Service Partner
+                        (VSP)</NuxtLink>, que
                     certifica
                     nuestra amplia experiencia en implementación de proyectos de automatización inteligente para
                     empresas en
