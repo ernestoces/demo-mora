@@ -142,7 +142,7 @@ const industries = ref([
             logo: { path: './vale.png', sizes: [[121, 48]] },
             company: "Vale",
             description: `Una de las mayores empresas mineras del mundo quería permitir a sus empleados un mejor nivel de productividad y alcanzar sus objetivos, buscando que pudieran desempeñarse en su expertis y no en tareas administrativas, como el registro de facturas, que no están relacionados con su campo laboral.`,
-            cover: './bancolombiaSuccess.png',
+            cover: './valeSuccess.png',
             results: [
                 {
                     imagePath: `./suitcase.png`,
