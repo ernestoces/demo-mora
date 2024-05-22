@@ -10,7 +10,7 @@ const industries = ref([
                         transformar las operaciones manuales que usan muchos datos, sin dejar de cumplir con los
                         requisitos
                         normativos en constante cambio.</p>`,
-        imagePath: './banca.png',
+        imagePath: './bancaCover.png',
         benefits: [
             {
                 imagePath: './zoom.png',
@@ -95,7 +95,7 @@ const industries = ref([
         id: "mineria",
         heading: `<h1>Automatización Inteligente para <span class="block text-mora">la Industria Minera</span></h1>`,
         description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Desde la extracción hasta la logística, nuestra tecnología revoluciona los procesos, aumentando la eficiencia y la seguridad en un entorno normativo en constante evolución. Descubre cómo podemos llevar tu operación minera al siguiente nivel.</p>`,
-        imagePath: './mineria.png',
+        imagePath: './mineriaCover.png',
         benefits: [
             {
                 imagePath: './suministro.png',
@@ -166,7 +166,7 @@ const industries = ref([
         id: "salud",
         heading: `<h1>Automatización Inteligente para la <span class="block text-mora">Atención Sanitaria</span></h1>`,
         description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">La automatización inteligente impulsa la transformación digital en el sector de la atención médica, capacitando a las organizaciones para adaptarse, aumentar su capacidad y abordar los desafíos en toda la cadena de valor de los servicios médicos.</p>`,
-        imagePath: './salud.png',
+        imagePath: './saludCover.png',
         benefits: [
             {
                 imagePath: './estetoscopio.png',
@@ -247,7 +247,7 @@ const industries = ref([
         id: "retail",
         heading: `<h1>Automatización Inteligente para el<span class="block text-mora"> Comercio</span></h1>`,
         description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Optimiza tus operaciones comerciales con la automatización inteligente. Simplifica la gestión de inventarios, agiliza los pedidos en línea y mejora la experiencia del cliente en la tienda, todo mientras previenes pérdidas y garantizas la seguridad.</p>`,
-        imagePath: './retail.png',
+        imagePath: './retailCover.png',
         benefits: [
             {
                 imagePath: './wad.png',
@@ -329,7 +329,7 @@ const industries = ref([
         id: "manufactura",
         heading: `<h1>Automatización Inteligente para la <span class="block text-mora"> Fabricación</span></h1>`,
         description: `<p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Los líderes de la industria manufacturera a nivel mundial están adoptando la automatización para optimizar sus procesos administrativos y operativos. Al eliminar el desperdicio y aumentar la agilidad, logran reducir costos y acelerar el tiempo de lanzamiento al mercado de sus productos.</p>`,
-        imagePath: './manufactura.png',
+        imagePath: './manufacturaCover.png',
         benefits: [
             {
                 imagePath: './wad.png',
@@ -428,13 +428,14 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                     <div v-html="industry.description" />
                 </div>
                 <div class="xl:w-[460px] xl:h-[355px] w-full xl:px-0 xl:rounded-none rounded-[5px] shrink-0">
-                    <NuxtImg width="460px" height="355px" :src="industry.imagePath"
-                        class="object-contain rounded-[5px]" />
+                    <NuxtImg :src="industry.imagePath"
+                        class=" object-scale-down  w-full rounded-[5px] object-[center]" />
                 </div>
             </div>
         </div>
-        <div class="bg-white xl:py-[88px] px-4 py-[56px] xl:px-[140px]">
-            <h2 class="text-montserrat font-bold text-[33px] leading-[40px] text-center text-dark">Beneficios Clave</h2>
+        <div class=" bg-white xl:py-[88px] px-4 py-[56px] xl:px-[140px]">
+            <h2 class="text-montserrat font-bold text-[33px] leading-[40px] text-center text-dark">
+                Beneficios Clave</h2>
             <ul class="grid xl:grid-cols-3 grid-cols-1 gap-x-[37px] gap-y-[35px] xl:mt-[48px] mt-[32px] xl:max-w-[1160px] w-full mx-auto"
                 :class="{ [doubleColumnClass]: industry.id == 'mineria' }">
                 <li class="py-6 px-4 bg-[#B8A2D633] rounded-[5px] flex flex-col xl:items-start items-center gap-[25px] hover-shadow hover:-translate-y-[8px] transition-all"
@@ -489,11 +490,13 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                             v-text="industry?.successCase.description" />
                         <ul :class="[{ ['xl:!grid-cols-3']: industry.successCase.results.length === 3 }]"
                             class="grid xl:grid-cols-2 grid-cols-1 gap-x-[24px] xl:gap-y-[16px] gap-y-[24px] mt-8 justify-start xl:justify-center">
-                            <li v-for="result in industry?.successCase.results" class="flex gap-[8px] items-center">
+                            <li v-for="result in industry?.successCase.results" class="flex gap-[8px] items-center"
+                                :class="[{ ['flex-col items-center xl:text-center']: industry.successCase.results.length === 3 }]">
                                 <div class="w-[40px] h-[40px] shrink-0">
                                     <NuxtImg width="40px" height="40px" class="object-cover" :src="result.imagePath" />
                                 </div>
-                                <div class="flex flex-col gap-[2px] w-full">
+                                <div class="flex flex-col gap-[2px] w-full"
+                                    :class="[{ ['items-center ']: industry.successCase.results.length === 3 }]">
                                     <h3 class="font-semibold text-[22px] font-montserrat leading-[26px] -tracking-[1%] text-dark"
                                         v-text="result.title" />
 
@@ -501,16 +504,17 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                                         v-text="result.description" />
                                 </div>
                             </li>
+                        </ul>
+                        <div class="flex max-w-[186px] justify-center mx-auto self-center mt-[32px]">
                             <NuxtLink :href="industry.successCase.pdfPath" target="_blank"
-                                class="flex gap-[8px] items-center p-[8px] w-full max-w-[186px] mx-auto self-center mt-[32px]">
+                                class="flex gap-[8px] items-center p-[8px] w-full ">
                                 <span
                                     class="font-raleway font-semibold  text-base leading-[21px] text-purple shrink-0">Ver
                                     caso
                                     completo</span>
                                 <nuxt-icon color="black" class="text-[20px]" name="rightline" filled />
                             </NuxtLink>
-                        </ul>
-
+                        </div>
                     </div>
                 </div>
             </div>
