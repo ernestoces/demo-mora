@@ -85,6 +85,10 @@ const currentTrainingDetailsIndex = ref(0)
 function expandDetail(selectedIndex: number) {
     if (currentTrainingDetailsIndex.value > 0) {
         trainingDetails.value[currentTrainingDetailsIndex.value - 1].expanded = false
+        if (currentTrainingDetailsIndex.value - 1 == selectedIndex) {
+            currentTrainingDetailsIndex.value = 0
+            return
+        }
     }
     trainingDetails.value[selectedIndex].expanded = true
     currentTrainingDetailsIndex.value = selectedIndex + 1
