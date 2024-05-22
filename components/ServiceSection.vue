@@ -123,7 +123,7 @@ if (props.service.id === 'consultoria') {
                 <ul v-if="service.id !== 'training'" class="flex gap-[16px] justify-center w-full xl:flex-row flex-col">
                     <li v-for="point in service.keypoints"
                         class="flex xl:flex-col gap-[8px]  xl:max-w-[159px] items-center w-full">
-                        <nuxt-icon :name="point.icon" filled class="text-[56px]" />
+                        <nuxt-icon :name="point.icon" filled class="xl:text-[56px] text-[48px]" />
                         <p class="font-raleway text-base leading-[21px] xl:text-center text-left"
                             :class="service.dark ? 'text-white' : 'text-dark'">
                             {{ point.title }}
