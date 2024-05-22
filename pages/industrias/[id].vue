@@ -487,7 +487,7 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                             width="100px" />
                         <p class="font-raleway font-normal text-base leading-[21px] text-dark"
                             v-text="industry?.successCase.description" />
-                        <ul
+                        <ul :class="[{ ['xl:!grid-cols-3']: industry.successCase.results.length === 3 }]"
                             class="grid xl:grid-cols-2 grid-cols-1 gap-x-[24px] xl:gap-y-[16px] gap-y-[24px] mt-8 justify-start xl:justify-center">
                             <li v-for="result in industry?.successCase.results" class="flex gap-[8px] items-center">
                                 <div class="w-[40px] h-[40px] shrink-0">

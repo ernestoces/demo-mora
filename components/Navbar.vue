@@ -9,13 +9,15 @@ const links = [
     { label: "nosotros", href: "/nosotros" },
     { label: "novedades", href: "/novedades" },
 ]
-const dropdownLinks = [
-    { label: "banca", href: "/industrias/banca" },
-    { label: "minería", href: "/industrias/mineria" },
-    { label: "salud", href: "/industrias/salud" },
-    { label: "manufactura", href: "/industrias/manufactura" },
-    { label: "retail", href: "/industrias/retail" },
-]
+const dropdownLinks = ref(
+    [
+        { label: "banca", href: "/industrias/banca" },
+        { label: "minería", href: "/industrias/mineria" },
+        { label: "salud", href: "/industrias/salud" },
+        { label: "manufactura", href: "/industrias/manufactura" },
+        { label: "retail", href: "/industrias/retail" },
+    ]
+)
 const location = ref(useBrowserLocation())
 const transparentBackgroundClass = ref('bg-transparent')
 const defaultClass = ref("px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full bg-dark")
@@ -40,13 +42,14 @@ const shouldChangeBackgroundsOnScroll = computed(() => location.value.pathname =
                         class="hover:text-lightPurple relative flex space-x-[4px] font-raleway cursor-pointer text-white">
                         {{ link.label }}
                     </NuxtLink>
-                    <li v-else :href="link.href" class="group relative flex space-x-[4px] font-raleway cursor-pointer">
+                    <li v-else class="group relative flex space-x-[4px] font-raleway cursor-pointer">
                         <span class="hover:text-lightPurple"> {{ link.label }}</span>
                         <nuxt-icon v-if="link.label === 'industrias'" name="chevron" class="mt-1" />
                         <ul v-if="link.label === 'industrias'"
                             class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[1/4] xl:-ml-[30px] py-[28px]  px-[32px] bg-dark">
-                            <NuxtLink v-text="link.label" class="capitalize hover:text-lightPurple text-white"
-                                v-for="link in dropdownLinks" :href="link.href" />
+                            <NuxtLink class="capitalize hover:text-lightPurple text-white"
+                                v-for="dropdownLink in dropdownLinks" :href="dropdownLink.href">{{ dropdownLink.label }}
+                            </NuxtLink>
                         </ul>
                     </li>
                 </template>
