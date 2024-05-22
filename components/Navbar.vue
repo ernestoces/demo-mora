@@ -32,7 +32,7 @@ const pagesWithOpaqueBackground = ["/"]
     <nav v-bind:class="{ [defaultClass]: true, [scrolledClass]: scroll.y > scrollThreshold }">
         <div class="max-w-[1440px] flex mx-auto justify-between">
             <a href="/">
-                <img src="/logo.png" class="w-[161px] h-[44px]" />
+                <NuxtImg src="/logo.png" class="w-[161px] h-[44px]" />
             </a>
 
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">

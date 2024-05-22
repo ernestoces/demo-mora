@@ -42,7 +42,7 @@ const {
     <div class="mt-[40px]" ref="container">
         <ul class="flex gap-[88px] max-w-[1160px] h-[47px] justify-center" ref="marquee">
             <li v-for="clientName in clients" class="h-[26px] w-auto">
-                <img class="h-[26px] w-auto object-contain" :src="'./' + clientName + '.png'"
+                <NuxtImg class="h-[26px] w-auto object-contain" :src="'./' + clientName + '.png'"
                     :alt="clientName + ' logo'" />
             </li>
         </ul>

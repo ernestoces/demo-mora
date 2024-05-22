@@ -2,7 +2,7 @@
     <div
         class="flex flex-col xl:flex-row gap-[48px] py-[56px] xl:py-[88px] xl:px-[140px] bg-dark justify-center -mt-[2px] ">
         <div class="max-w-[436px] max-h-[286px] w-full shrink-0 px-4 xl:px-0">
-            <img class="object-cover" src="/ally.png" alt="ally illustration">
+            <NuxtImg class="object-cover" src="/ally.png" alt="ally illustration" />
         </div>
         <div class="flex flex-col gap-6 w-full max-w-[675px] px-4 xl:px-4">
             <h6 class="font-raleway font-bold text-[33px] leading-[40px] text-white max-w-[609px]">

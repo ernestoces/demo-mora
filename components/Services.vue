@@ -48,7 +48,7 @@ const services = [
         </div>
 
         <div class="shrink-0 xl:w-[508px] xl:h-[382px] w-full -order-1">
-            <img :src="'./services.png'" alt="servicios" height="382" width="508" class="w-full">
+            <NuxtImg :src="'./services.png'" alt="servicios" height="382" width="508" class="w-full" />
         </div>
     </div>
 </template>

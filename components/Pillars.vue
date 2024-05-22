@@ -31,7 +31,7 @@ const pillars = ref([
             <div
                 class="flex xl:flex-row flex-col xl:items-start items-center xl:gap-[33px] gap-[24px] xl:mt-[48px] mt-[32px] px-4">
                 <div v-for="pillar in pillars"
-                    class="h-[278px] bg-gradient-to-r hover:from-[#B8A2D633] hover:to-[#5820E733] hover:border-white border border-lightPurple w-full xl:w-[265px] p-[24px] flex flex-col xl:gap-[56px] gap-[30px] rounded-[5px] cursor-default">
+                    class="xl:h-[278px] h-[202px] bg-gradient-to-r hover:from-[#B8A2D633] hover:to-[#5820E733] hover:border-white border border-lightPurple w-full xl:w-[265px] p-[24px] flex flex-col xl:gap-[56px] justify-between rounded-[5px] cursor-default">
                     <div class="flex gap-[16px]">
                         <nuxt-icon :name="pillar.icon" filled class="text-[40px]" />
                         <h4
