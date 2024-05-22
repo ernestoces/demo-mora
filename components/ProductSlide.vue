@@ -27,7 +27,7 @@ defineProps<{
         <p class="mt-[20px] text-center font-montserrat font-normal text-[18px] leading-[24px] text-[#333333]">{{
             product.description }}</p>
         <div class="flex gap-[40px] items-center xl:flex-row flex-col">
-            <ul class="mt-[50px] xl:gap-[50px] gap-[40px] flex flex-col max-w-[505px]">
+            <ul class="mt-[40px] xl:gap-[32px] gap-[40px] flex flex-col max-w-[505px]">
                 <li v-for="item in product.items"
                     class="flex xl:flex-row flex-col items-center xl:gap-[25px] xl:items-start">
                     <div v-if="item.icon" class="shrink-0 h-[72px] w-[72px]">
