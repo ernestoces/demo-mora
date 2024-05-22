@@ -23,6 +23,7 @@
   "devDependencies": {
     "@nuxtjs/google-fonts": "^3.2.0",
     "@vueuse/core": "^10.9.0",
-    "@vueuse/nuxt": "^10.9.0"
+    "@vueuse/nuxt": "^10.9.0",
+    "nuxt-time": "^0.1.3"
   }
 }

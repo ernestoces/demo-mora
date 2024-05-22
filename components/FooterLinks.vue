@@ -57,7 +57,7 @@ const links = [
                     <ul class="mt-[16px] flex flex-col gap-[10px]">
                         <li v-for="link in links"
                             class="pl-4 text-white font-raleway text-base leading-[21px] hover:text-lightPurple">
-                            <a :href="link.url">{{ link.label }}</a>
+                            <NuxtLink :to="link.url">{{ link.label }}</NuxtLink>
                         </li>
                     </ul>
                 </div>

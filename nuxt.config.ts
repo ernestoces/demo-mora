@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   devtools: { enabled: false },
-  modules: ['@vueuse/nuxt', 'nuxt-icons', ['@nuxtjs/google-fonts', {
+  modules: ['nuxt-time', '@vueuse/nuxt', 'nuxt-icons', ['@nuxtjs/google-fonts', {
     families: {
       Raleway: {
         wght: '200..900',

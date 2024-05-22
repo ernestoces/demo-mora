@@ -4,7 +4,8 @@ const query = groq`*[_type == "article" && slug.current == $slug][0] {
     "cover": cover.asset->url,
     content,
     title,
-    "slug": slug.current
+    "slug": slug.current,
+    _createdAt
 }`
 
 type Article = {
@@ -19,7 +20,8 @@ const recomendedArticlesQuery = groq`*[_type == "article"][0..3] {
     "cover": cover.asset->url,
     content,
     title,
-    "slug": slug.current
+    "slug": slug.current,
+   
 }`
 
 const { data: recommendedArticles } = useSanityQuery<Article>(recomendedArticlesQuery)
@@ -40,9 +42,8 @@ const { data: recommendedArticles } = useSanityQuery<Article>(recomendedArticles
                         {{ data?.title }}</h1>
                     <div class="flex gap-[24px]">
                         <p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Juan Perez</p>
-                        <span class="font-raleway font-normal text-[18px] leading-[21px] text-lightPurple">15 de marzo
-                            de
-                            2024</span>
+                        <NuxtTime class="font-raleway font-normal text-[18px] leading-[21px] text-lightPurple"
+                            day="numeric" month="long" year="numeric" :datetime="data._createdAt" />
                     </div>
                 </div>
                 <div class="shrink-0 xl:w-[485px] xl:h-[315px] pt-[48px] ">
