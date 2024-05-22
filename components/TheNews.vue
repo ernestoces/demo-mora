@@ -28,8 +28,7 @@ type Article = {
     slug: string;
 };
 
-const { data } = await useSanityQuery(query)
-const articles = ref<Article[]>(data);
+const { data: articles } = await useSanityQuery<Article>(query)
 </script>
 
 <template>

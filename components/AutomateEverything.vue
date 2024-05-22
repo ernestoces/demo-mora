@@ -1,6 +1,6 @@
 <template>
     <div class="flex flex-col max-w-[1160px] mx-auto justify-start">
-        <NuxtImg src="./logoaa.png" class=" text-[72px] self-start  leading-0 shrink-0 m-0 mb-6 " height="144px" />
+        <NuxtImg src="./logoaa.png" class=" self-start w-[165px] h-[60px] leading-0 shrink-0 m-0 mb-6" height="144px" />
         <div class="flex xl:gap-[40px] gap-[20px] xl:mt-0  xl:flex-row flex-col">
             <div class="flex flex-col gap-4 max-w-[578px]">
                 <h1

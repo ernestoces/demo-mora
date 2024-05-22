@@ -13,7 +13,7 @@ type Article = {
     slug: string;
 };
 
-const { data: article, pending } = await useSanityQuery<Article>(query)
+const { data: article } = await useSanityQuery<Article>(query)
 
 </script>
 
