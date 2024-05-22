@@ -26,7 +26,8 @@ const pillars = ref([
 <template>
     <section class="bg-white xl:py-[88px] py-[56px]">
         <div class="max-w-[1160px] mx-auto">
-            <h2 class="text-center mx-auto font-montserrat font-bold text-[33px] leading-[40px]">Conoce Nuestros Pilares
+            <h2 class="text-center mx-auto font-montserrat font-bold text-[33px] leading-[40px] text-dark">Conoce
+                Nuestros Pilares
             </h2>
             <div
                 class="flex xl:flex-row flex-col xl:items-start items-center xl:gap-[33px] gap-[24px] xl:mt-[48px] mt-[32px] px-4">
