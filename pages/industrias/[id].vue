@@ -456,7 +456,8 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                 class="font-montserrat font-bold text-[33px] leading-[40px] text-white text-center" />
             <ul :class="{ [tripleColumnClass]: industry.services.length === 3 }"
                 class="grid xl:grid-cols-4 grid-cols-1 gap-x-[33px] max-w-[1160px] mx-auto mt-12 gap-y-[41px]">
-                <li class="cool-border rounded-[5px] p-[24px] flex flex-col gap-[26px] xl:min-w-[265px] w-full"
+                <li :class="[{ ['first:xl:!gap-[80px] last:xl:!gap-[80px] xl:!gap-[48px]']: industry.services.length === 3 }]"
+                    class="cool-border rounded-[5px] p-[24px] flex flex-col xl:gap-[24px] gap-[26px] xl:min-w-[265px] w-full"
                     v-for="service in industry?.services">
                     <h3 v-html="service.title"
                         class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-white" />
