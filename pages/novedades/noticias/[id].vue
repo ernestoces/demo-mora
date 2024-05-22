@@ -1,5 +1,20 @@
 <script setup lang="ts">
 const route = useRoute()
+const query = groq`*[_type == "article" && slug.current == $slug][0] {
+    "cover": cover.asset->url,
+    content,
+    title,
+    "slug": slug.current
+}`
+
+type Article = {
+    cover: string;
+    content: any
+    title: string;
+    slug: string;
+};
+
+const { data } = await useSanityQuery<Article>(query, { slug: route.params.id })
 </script>
 
 <template>
@@ -34,46 +49,7 @@ const route = useRoute()
         </div>
         <div class="bg-white pt-[64px] xl:pb-[88px] xl:px-[140px] py-[56px] px-4">
             <div class="flex xl:flex-row flex-col xl:gap-[80px] gap-[56px]  max-w-[1160px] mx-auto">
-                <p class="font-raleway text-base leading-[21px] text-dark">Hoy en día, hacer las cosas de manera
-                    eficiente es
-                    clave en los negocios. Al combinar la Inteligencia
-                    Artificial (IA) con la Automatización Robótica de Procesos (RPA), las empresas están logrando
-                    grandes avances. La IA ayuda a las máquinas a pensar y aprender, mientras que RPA se encarga de
-                    automatizar tareas repetitivas. Juntas, estas tecnologías están llevando la eficiencia empresarial a
-                    otro nivel.
-
-                    Como lo menciona Helena Isabel Lynch Salcedo en su artículo Integrando IA + RPA: el futuro de la
-                    eficiencia empresarial: “Es importante entender que el RPA y la IA son tecnologías estrechamente
-                    relacionadas, apasionantes e innovadoras que impulsan una rápida automatización integral de los
-                    procesos empresariales y agilizan la transformación digital. Ambas tecnologías están remodelando el
-                    mundo laboral al aumentar el número de empleados e inaugurar una nueva era de productividad.”
-
-                    ¿Qué se viene para los próximos años?
-
-                    Automatización Inteligente en todos los ámbitos: Veremos que más y más empresas adoptarán la
-                    automatización inteligente en todas sus operaciones. Desde la gestión de datos hasta el servicio al
-                    cliente, la IA y la RPA trabajarán juntas para hacer las cosas más eficientemente y reducir costos.
-
-                    Mejoras en la experiencia del cliente: Con la ayuda de la IA y la RPA, las empresas podrán ofrecer a
-                    sus clientes experiencias más personalizadas y mejores. Desde chatbots inteligentes hasta sistemas
-                    de recomendación avanzados, la automatización inteligente hará que la interacción con los clientes
-                    sea más satisfactoria.
-
-                    Optimización interna: La IA y la RPA también ayudarán a mejorar los procesos internos de las
-                    empresas. Desde la gestión de recursos humanos hasta la cadena de suministro, estas tecnologías
-                    identificarán áreas para mejorar y automatizar tareas repetitivas, liberando tiempo para actividades
-                    más importantes.
-
-                    Mayor atención a la seguridad y privacidad de los datos: A medida que la automatización se vuelva
-                    más común, la seguridad y la privacidad de los datos serán aún más importantes. Las empresas
-                    invertirán en soluciones de IA y RPA que garanticen la protección de la información y cumplan con
-                    las regulaciones de privacidad.
-
-                    Al usar IA y RPA juntas, las empresas pueden hacer las cosas más rápido, más precisas y a menor
-                    costo, mejorando la eficiencia en general. Aquellas empresas que adopten estas tecnologías estarán
-                    en mejor posición para competir en un mercado cada vez más competitivo. La automatización
-                    inteligente no solo mejora los procesos existentes, sino que también abre la puerta a nuevas
-                    oportunidades de innovación y creación de nuevos negocios.</p>
+                <SanityContent :blocks="data.content" />
                 <div class="flex flex-col xl:w-[324px] shrink-0">
                     <h3 class="font-montserrat font-semibold text-[22px] leading-[26px]">Recomendaciones</h3>
                     <div class="mt-[23px] flex flex-col space-y-[48px]">

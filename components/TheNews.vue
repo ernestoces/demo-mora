@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import useArticles from '@/composables/useArticles';
 const news = ref([
     { image: "./seminario.png", heading: "Seminario Web: Automatización AI en la Práctica", description: "Únete a nuestro seminario web para explorar cómo la automatización con inteligencia artificial está transformando la forma en que hacemos negocios. Desde la automatización de tareas repetitivas hasta la mejora de la precisión" },
     {
@@ -13,6 +14,23 @@ combinar la Inteligencia Artificial (IA) con la Automatización Robótica de
 Procesos (RPA), las empresas están logrando grandes avances.`
     },
 ])
+
+const query = groq`*[_type == "article"][0..3] {
+    "cover": cover.asset->url,
+    content,
+    title,
+    "slug": slug.current
+}`
+
+type Article = {
+    cover: string;
+    content: any
+    title: string;
+    slug: string;
+};
+
+const { data } = await useSanityQuery(query)
+const articles = ref<Article[]>(data);
 </script>
 
 <template>
@@ -29,16 +47,18 @@ Procesos (RPA), las empresas están logrando grandes avances.`
             comunidad empresarial.</p>
 
         <div class="mt-[56px] xl:flex-row flex flex-col gap-[41px] w-full justify-center">
-            <div v-for="article in news"
+            <div v-for="article in articles"
                 class="xl:pr-[41px] pb-[48px] xl:pb-0 last-of-type:pr-0 last-of-type:border-none xl:border-r-[1px]  xl:border-b-0 border-b-[1px] border-purple border-opacity-50">
                 <div>
-                    <NuxtImg :src="article.image" alt="" width="332" height="189" />
+                    <NuxtImg :src="article.cover" alt="" width="332" height="189" />
                 </div>
                 <div class="mt-[16px] flex flex-col gap-[8px] max-w-[332px] w-full">
-                    <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] text-dark">{{ article.heading }}
+                    <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] text-dark">{{ article.title }}
                     </h4>
-                    <p class="font-raleway text-base leading-[21px] text-dark">{{ article.description + "..." }}<span
-                            class="text-mora font-bold cursor-pointer">Seguir leyendo</span></p>
+                    <SanityContent :blocks="article.content" />
+                    <NuxtLink :href="'/novedades/noticias/' + article.slug" class="text-mora font-bold cursor-pointer">
+                        Seguir
+                        leyendo</NuxtLink>
                 </div>
             </div>
         </div>
