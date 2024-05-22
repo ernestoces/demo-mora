@@ -1,6 +1,6 @@
 <template>
     <div
-        class=" xl:flex-row flex-col flex gap-[40px] px-4 xl:px-[140px] xl:py-[88px] py-[32px] justify-center pb-[189px]">
+        class=" xl:flex-row flex-col flex gap-[40px] px-4 xl:px-[140px] xl:py-[88px] py-[32px] justify-center xl:pb-[189px]">
         <div class="flex flex-col gap-[24px] max-w-[589px] xl:mx-0 mx-auto">
             <NuxtImg :src="'./sello.png'" width="61px" height="63px"
                 class="xl:absolute xl:right-4 order-2 xl:w-[61px] xl:h-[63px] w-[108px] h-[111px] block mx-auto" />
@@ -27,7 +27,7 @@
             </div>
         </div>
         <div class="x:lw-[531px] xl:h-[358px] shrink-0">
-            <NuxtImg :src="'./discoverWhoWeAre.png'" class="w-[531px] h-[358px] object-cover"
+            <NuxtImg :src="'./discoverWhoWeAre.png'" class="w-[531px] h-[358px] rounded-[5px] object-cover"
                 alt="photo of a group of people siting around a desk through a glassdoor inside an office space" />
         </div>
     </div>
