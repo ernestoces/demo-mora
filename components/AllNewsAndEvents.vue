@@ -32,7 +32,7 @@ organización, ha anunciado su última innovación: la primera`
                 Todas las
                 Noticias y Eventos</h3>
             <ul v-for="n in 3" :key="n" class="xl:mt-[48px] flex xl:flex-row flex-col px-4">
-                <li class="pb-[48px] xl:pb-0 border-b-[1px] pt-[48px] xl:pt-0 xl:border-b-0 last:border-b-0 flex flex-col first:pt-0 xl:first:pl-0 xl:last:border-0 xl:px-[41px]  xl:border-r-[1px] border-[#372b471e] "
+                <li class="pb-[48px] xl:pb-0 border-b-[1px] pt-[48px] xl:pt-0 xl:border-b-0 last:border-b-0 flex flex-col first:pt-0 xl:first:pl-0 xl:last:border-0 xl:px-[41px]  xl:border-r-[1px] border-purple border-opacity-25"
                     v-for="post in postCategory" :key="post.id">
                     <div class="xl:max-w-[332px] xl:h-[189px] w-full shrink-0 ">
                         <NuxtImg preload class="object-cover rounded-[3px] w-full" :src="'./blogCover.png'"
@@ -41,8 +41,8 @@ organización, ha anunciado su última innovación: la primera`
                     <h4 class="mt-[16px] font-montserrat font-semibold text-[18px] leading-[24px] text-dark">
                         {{
                             post.title }}</h4>
-                    <p class="mt-[8px] font-normal font-raleway text-base leading-[21px]">{{ post.content }} ... <a
-                            :href="'/novedades/noticias/' + post.id" class="text-mora font-bold cursor-hover">Seguir
+                    <p class="mt-[8px] font-normal font-raleway text-base text-dark leading-[21px]">{{ post.content }}
+                        ... <a :href="'/novedades/noticias/' + post.id" class="text-mora font-bold cursor-hover">Seguir
                             leyendo</a></p>
                 </li>
             </ul>
