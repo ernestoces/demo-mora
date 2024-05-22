@@ -27,7 +27,7 @@ const { data: recommendedArticles } = useSanityQuery<Article>(recomendedArticles
 </script>
 
 <template>
-    <article v-if="data">
+    <article>
         <div class="bg-dark xl:py-[88px] pt-[32px] pb-[56px] px-4">
             <div
                 class="flex xl:flex-row flex-col xl:gap-[48px] gap-[24px] max-w-[1160px] mx-auto items-center xl:items-start relative">
