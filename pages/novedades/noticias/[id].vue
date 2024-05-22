@@ -13,15 +13,24 @@ type Article = {
     title: string;
     slug: string;
 };
+const { data } = useSanityQuery<Article>(query, { slug: route.params.id })
 
-const { data } = await useSanityQuery<Article>(query, { slug: route.params.id })
+const recomendedArticlesQuery = groq`*[_type == "article"][0..3] {
+    "cover": cover.asset->url,
+    content,
+    title,
+    "slug": slug.current
+}`
+
+const { data: recommendedArticles } = useSanityQuery<Article>(recomendedArticlesQuery)
+
 </script>
 
 <template>
     <article v-if="data">
         <div class="bg-dark xl:py-[88px] pt-[32px] pb-[56px] px-4">
             <div
-                class="flex xl:flex-row flex-col xl:gap-[48px] gap-[24px] max-w-[1160px] mx-auto items-center relative">
+                class="flex xl:flex-row flex-col xl:gap-[48px] gap-[24px] max-w-[1160px] mx-auto items-center xl:items-start relative">
                 <div class="flex flex-col gap-[24px]">
                     <h4 class="xl:block font-montserrat font-semibold text-[18px] leading-[24px] text-lightPurple">
                         Noticia
@@ -49,17 +58,18 @@ const { data } = await useSanityQuery<Article>(query, { slug: route.params.id })
                 <div class="flex flex-col xl:w-[324px] shrink-0">
                     <h3 class="font-montserrat font-semibold text-[22px] leading-[26px]">Recomendaciones</h3>
                     <div class="mt-[23px] flex flex-col space-y-[48px]">
-                        <div class="w-full" v-for="article in ['seminario', 'automatizacion']">
-                            <NuxtImg class="w-full" :src="'./' + article + '.png'" />
-                            <h4 class="mt-4 font-montserrat font-semibold text-[18px] leading-[24px]">Seminario Web:
-                                Automatización AI en la Práctica</h4>
-                            <p class="mt-[8px] font-raleway font-normal text-base leading-[21px]">Únete a nuestro
-                                seminario web para
-                                explorar cómo la automatización con
-                                inteligencia artificial está transformando la forma en que hacemos negocios. Desde la
-                                automatización de tareas repetitivas hasta la mejora de la precisión...<a
-                                    :href="'/novedades/noticias/' + article" class="font-bold text-mora"> Seguir
-                                    leyendo</a></p>
+                        <div class="w-full" v-for="article in recommendedArticles">
+                            <NuxtImg class="w-full" :src="article.cover" />
+                            <h4 class="mt-4 font-montserrat font-semibold text-[18px] leading-[24px]">{{ article.title
+                                }}
+                            </h4>
+                            <p
+                                class="mt-[8px] font-raleway font-normal text-base leading-[21px] max-h-[126px] overflow-y-hidden">
+                                <SanityContent :blocks="article.content" class="text-dark" />
+                            </p>
+                            <NuxtLink preload :href="'/novedades/noticias/' + article.slug" class="font-bold text-mora">
+                                Seguir
+                                leyendo</NuxtLink>
                         </div>
                     </div>
                 </div>

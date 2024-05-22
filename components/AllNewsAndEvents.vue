@@ -22,6 +22,23 @@ empresariales que integra la inteligencia artificial en todos los aspectos de un
 organización, ha anunciado su última innovación: la primera`
     },
 ]
+
+const query = groq`*[_type == "article"][0..3] {
+    "cover": cover.asset->url,
+    content,
+    title,
+    "slug": slug.current
+}`
+
+type Article = {
+    cover: string;
+    content: any
+    title: string;
+    slug: string;
+};
+
+const { data } = await useSanityQuery(query)
+const articles = ref<Article[]>(data);
 </script>
 
 <template>
@@ -31,19 +48,25 @@ organización, ha anunciado su última innovación: la primera`
                 class="hidden xl:block font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark">
                 Todas las
                 Noticias y Eventos</h3>
-            <ul v-for="n in 3" :key="n" class="xl:mt-[48px] flex xl:flex-row flex-col px-4">
+            <ul v-for="n in 3" :key="n" class="xl:mt-[48px] flex xl:flex-row flex-col px-4 ">
                 <li class="pb-[48px] xl:pb-0 border-b-[1px] pt-[48px] xl:pt-0 xl:border-b-0 last:border-b-0 flex flex-col first:pt-0 xl:first:pl-0 xl:last:border-0 xl:px-[41px]  xl:border-r-[1px] border-purple border-opacity-25"
-                    v-for="post in postCategory" :key="post.id">
-                    <div class="xl:max-w-[332px] xl:h-[189px] w-full shrink-0 ">
-                        <NuxtImg preload class="object-cover rounded-[3px] w-full" :src="'./blogCover.png'"
+                    v-for="article in articles" :key="article.slug">
+                    <div class="xl:w-[332px] xl:h-[189px] w-full shrink-0 ">
+                        <NuxtImg preload class="object-cover rounded-[3px] w-full" :src="article.cover"
                             alt="blog cover" />
                     </div>
                     <h4 class="mt-[16px] font-montserrat font-semibold text-[18px] leading-[24px] text-dark">
                         {{
-                            post.title }}</h4>
-                    <p class="mt-[8px] font-normal font-raleway text-base text-dark leading-[21px]">{{ post.content }}
-                        ... <a :href="'/novedades/noticias/' + post.id" class="text-mora font-bold cursor-hover">Seguir
-                            leyendo</a></p>
+                            article.title }}</h4>
+                    <p
+                        class="mt-[8px] font-normal font-raleway text-base text-dark leading-[21px] h-[126px] overflow-y-hidden inline-flex flex-col">
+                        <SanityContent :blocks="article.content" class="text-dark" />
+                        <span>...</span>
+                    </p>
+
+                    <NuxtLink :href="'/novedades/noticias/' + article.slug" class="text-mora font-bold cursor-hover">
+                        Seguir
+                        leyendo</NuxtLink>
                 </li>
             </ul>
         </div>
