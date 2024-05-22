@@ -36,18 +36,22 @@ const shouldChangeBackgroundsOnScroll = computed(() => location.value.pathname =
             </a>
 
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
-
-                <NuxtLink :href="link.href" v-for="link in links" :key="link.href"
-                    :class="{ ['group']: link.label === 'industrias' }"
-                    class=" relative flex space-x-[4px] font-raleway">
-                    <span class="hover:text-lightPurple"> {{ link.label }}</span>
-                    <nuxt-icon v-if="link.label === 'industrias'" name="chevron" class="mt-1" />
-                    <ul v-if="link.label === 'industrias'"
-                        class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[1/4] xl:-ml-[30px] py-[28px]  px-[32px] bg-dark">
-                        <NuxtLink v-text="link.label" class="capitalize hover:text-lightPurple text-white"
-                            v-for="link in dropdownLinks" :href="link.href" />
-                    </ul>
-                </NuxtLink>
+                <template v-for="link in links" :key="link.href">
+                    <NuxtLink v-if="link.label !== 'industrias'"
+                        class="hover:text-lightPurple relative flex space-x-[4px] font-raleway cursor-pointer">
+                        {{ link.label }}
+                    </NuxtLink>
+                    <li v-else :href="link.href" :class="{ ['group']: link.label === 'industrias' }"
+                        class=" relative flex space-x-[4px] font-raleway cursor-pointer">
+                        <span class="hover:text-lightPurple"> {{ link.label }}</span>
+                        <nuxt-icon v-if="link.label === 'industrias'" name="chevron" class="mt-1" />
+                        <ul v-if="link.label === 'industrias'"
+                            class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[1/4] xl:-ml-[30px] py-[28px]  px-[32px] bg-dark">
+                            <NuxtLink v-text="link.label" class="capitalize hover:text-lightPurple text-white"
+                                v-for="link in dropdownLinks" :href="link.href" />
+                        </ul>
+                    </li>
+                </template>
 
             </ul>
             <NuxtLink href="/contacto" preload
@@ -64,34 +68,38 @@ const shouldChangeBackgroundsOnScroll = computed(() => location.value.pathname =
                 <ul class="mt-4 flex flex-col gap-[32px]">
                     <li v-for="link in links" class="flex flex-col">
                         <div class="flex items-center gap-[4px]">
-                            <NuxtLink @click="menuIsOpen = false"
+                            <NuxtLink v-if="link.href !== '/#industrias'" @click="menuIsOpen = false"
                                 class="text-white capitalize font-raleway text-base font-normal leading-[18px] hover:text-lightPurple "
                                 :href="link.href">{{ link.label }} </NuxtLink>
-                            <nuxt-icon @click="dropdownOpen = !dropdownOpen" class="cursor-pointer"
-                                v-if="link.href === '/#industrias'" name="chevronDown" filled
-                                :class="{ [clickedChevronClass]: dropdownOpen }" />
-                        </div>
-                        <div v-if="dropdownOpen && link.href === '/#industrias'" class="mt-[24px]">
-                            <div class="pl-4 flex flex-col gap-4">
-                                <NuxtLink @click="menuIsOpen = false" preload :href="dropdownLink.href"
-                                    class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
-                                    v-for="dropdownLink in dropdownLinks">
-                                    {{ dropdownLink.label }}
-                                </NuxtLink>
-                            </div>
-                        </div>
+                    <li v-else
+                        class="cursor-pointer text-white capitalize font-raleway text-base font-normal leading-[18px] hover:text-lightPurple ">
+                        {{ link.label }}
                     </li>
-                </ul>
-                <div class="mt-auto p-6 flex justify-between items-center">
-                    <NuxtLink href="/contacto" @click="menuIsOpen = false"
-                        class="hover:text-lightPurple text-white font-raleway text-base leading-[21px]">Contáctanos
-                    </NuxtLink>
-                    <NuxtLink href="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true"
-                        target="_blank">
-                        <nuxt-icon name="linkedin" filled class="text-21px" />
+                    <nuxt-icon @click="dropdownOpen = !dropdownOpen" class="cursor-pointer"
+                        v-if="link.href === '/#industrias'" name="chevronDown" filled
+                        :class="{ [clickedChevronClass]: dropdownOpen }" />
+            </div>
+            <div v-if="dropdownOpen && link.href === '/#industrias'" class="mt-[24px]">
+                <div class="pl-4 flex flex-col gap-4">
+                    <NuxtLink @click="menuIsOpen = false" preload :href="dropdownLink.href"
+                        class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
+                        v-for="dropdownLink in dropdownLinks">
+                        {{ dropdownLink.label }}
                     </NuxtLink>
                 </div>
             </div>
+            </li>
+            </ul>
+            <div class="mt-auto p-6 flex justify-between items-center">
+                <NuxtLink href="/contacto" @click="menuIsOpen = false"
+                    class="hover:text-lightPurple text-white font-raleway text-base leading-[21px]">Contáctanos
+                </NuxtLink>
+                <NuxtLink href="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true"
+                    target="_blank">
+                    <nuxt-icon name="linkedin" filled class="text-21px" />
+                </NuxtLink>
+            </div>
+        </div>
         </div>
     </nav>
 </template>
