@@ -46,9 +46,15 @@
         </div>
         <div class="flex justify-center">
             <button
-                class="xl:w-auto w-full drop-shadow-sm xl:mt-[24px] mt-[48px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%] py-[8px] xl:px-[22px] px-[18px] bg-mora rounded-[3px]">Conocer
+                class="xl:w-auto w-full drop-shadow-sm  mt-[48px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%] py-[8px] xl:px-[22px] px-[18px] bg-mora rounded-[3px]">Conocer
                 más de
                 Automation Anywhere</button>
         </div>
     </div>
 </template>
+
+<style scoped>
+li {
+    padding: 0;
+}
+</style>
