@@ -94,7 +94,7 @@ const inputClass = ref("bg-white border-dark border-2 p-[10px] rounded-[2px] fon
                     <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark" for="mensaje">Deja tu
                         mensaje</label>
                     <textarea
-                        class="border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark placeholder:font-raleway placeholder:text-base placeholder:text-[#828282] placeholder:bg-white placeholder:font-normal"
+                        class="bg-white border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark placeholder:font-raleway placeholder:text-base placeholder:text-[#828282] placeholder:bg-white placeholder:font-normal"
                         id="mensaje" placeholder="Mensaje" rows="9"></textarea>
                 </div>
                 <button
