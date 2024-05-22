@@ -65,9 +65,9 @@ const { data: recommendedArticles } = useSanityQuery<Article>(recomendedArticles
                             </h4>
                             <p
                                 class="text-dark mt-[8px] font-raleway font-normal text-base leading-[21px] max-h-[126px] overflow-y-hidden">
-                                <SanityContent :blocks="article.content" class="text-dark" />
+                                <SanityContent :blocks="article.content" />
                             </p>
-                            <NuxtLink preload :href="'/novedades/noticias/' + article.slug" class="font-bold text-mora">
+                            <NuxtLink preload :to="'/novedades/noticias/' + article.slug" class="font-bold text-mora">
                                 Seguir
                                 leyendo</NuxtLink>
                         </div>

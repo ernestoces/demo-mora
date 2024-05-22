@@ -42,5 +42,6 @@ export default defineNuxtConfig({
   sanity: {
     projectId: 'sqk82n5u',
     dataset: 'production',
+    apiVersion: '2024-05-22'
   }
 })

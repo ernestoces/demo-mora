@@ -27,7 +27,7 @@ const modalOpen = ref(false)
             </UModal>
         </div>
         <div class="xl:mt-[48px] mt-[32px] mx-auto flex flex-col items-center">
-            <NuxtLink href="/automationanywhere"
+            <NuxtLink to="/automationanywhere"
                 class="font-raleway font-semibold leading-[27px] -tracking-[1%] p-[8px_22px] text-white bg-mora rounded-[3px]">
                 Conoce
                 más de

@@ -31,7 +31,7 @@ const links = [
                     <NuxtImg preload src="./logoblanco.png" alt="logos" width="467px" height="56px"
                         class="object-cover" />
                 </div>
-                <NuxtLink href="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true"
+                <NuxtLink to="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true"
                     target="_blank">
                     <nuxt-icon name="linkedin" filled width="20px" height="20px" class="text-[20px] cursor-pointer" />
                 </NuxtLink>

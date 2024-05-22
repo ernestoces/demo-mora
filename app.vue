@@ -1,6 +1,7 @@
 <template>
   <div class="bg-dark">
     <div>
+      <NuxtLoadingIndicator />
       <Navbar />
       <NuxtPage />
       <FooterLinks />

@@ -53,7 +53,7 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                     </h3>
                     <p class="text-dark font-raleway text-base font-normal leading-[21px] mx-auto xl:text-left"
                         v-html="currentIndustryIndex ? currentIndustry.description : `Con la automatización inteligente, los bancos y las empresas de servicios financieros pueden transformar las operaciones manuales que usan muchos datos, <span class='font-bold'>sin dejar de cumplir con los requisitos normativos</span> en constante cambio.`" />
-                    <NuxtLink :href="'/industrias/' + currentIndustry.label"
+                    <NuxtLink :to="'/industrias/' + currentIndustry.label"
                         class="text-center mt-[8px] border-[2px] border-mora text-mora p-[8px_22px] font-raleway font-semibold leading-[27px] text-base -tracking-[1%] rounded-[3px] xl:w-auto  w-full">
                         Conoce más</NuxtLink>
                 </div>

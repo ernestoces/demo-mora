@@ -38,7 +38,7 @@ const shouldApplyTransparentBackground = computed(() => location.value.pathname 
             </a>
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
                 <template v-for="link in links" :key="link.href">
-                    <NuxtLink v-if="link.label !== 'industrias'" :href="link.href"
+                    <NuxtLink v-if="link.label !== 'industrias'" :to="link.href"
                         class="hover:text-lightPurple relative flex space-x-[4px] font-raleway cursor-pointer text-white">
                         {{ link.label }}
                     </NuxtLink>
@@ -48,14 +48,14 @@ const shouldApplyTransparentBackground = computed(() => location.value.pathname 
                         <ul v-if="link.label === 'industrias'"
                             class="hidden group-hover:flex absolute top-0 mt-[20px]  flex-col gap-[8px] z-0 -left-[1/4] xl:-ml-[30px] py-[28px]  px-[32px] bg-dark">
                             <NuxtLink class="capitalize hover:text-lightPurple text-white"
-                                v-for="dropdownLink in dropdownLinks" :href="dropdownLink.href">{{ dropdownLink.label }}
+                                v-for="dropdownLink in dropdownLinks" :to="dropdownLink.href">{{ dropdownLink.label }}
                             </NuxtLink>
                         </ul>
                     </li>
                 </template>
 
             </ul>
-            <NuxtLink href="/contacto" preload
+            <NuxtLink to="/contacto" preload
                 class="hidden xl:block bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">
                 Contacto</NuxtLink>
             <button @click="menuIsOpen = true" class="ml-left xl:hidden">
@@ -71,7 +71,7 @@ const shouldApplyTransparentBackground = computed(() => location.value.pathname 
                         <div class="flex items-center gap-[4px]">
                             <NuxtLink v-if="link.href !== '/#industrias'" @click="menuIsOpen = false"
                                 class="text-white capitalize font-raleway text-base font-normal leading-[18px] hover:text-lightPurple "
-                                :href="link.href">{{ link.label }} </NuxtLink>
+                                :to="link.href">{{ link.label }} </NuxtLink>
                     <li v-else
                         class="cursor-pointer text-white capitalize font-raleway text-base font-normal leading-[18px] hover:text-lightPurple ">
                         {{ link.label }}
@@ -82,7 +82,7 @@ const shouldApplyTransparentBackground = computed(() => location.value.pathname 
             </div>
             <div v-if="dropdownOpen && link.href === '/#industrias'" class="mt-[24px]">
                 <div class="pl-4 flex flex-col gap-4">
-                    <NuxtLink @click="menuIsOpen = false" preload :href="dropdownLink.href"
+                    <NuxtLink @click="menuIsOpen = false" preload :to="dropdownLink.href"
                         class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
                         v-for="dropdownLink in dropdownLinks">
                         {{ dropdownLink.label }}
@@ -92,10 +92,10 @@ const shouldApplyTransparentBackground = computed(() => location.value.pathname 
             </li>
             </ul>
             <div class="mt-auto p-6 flex justify-between items-center">
-                <NuxtLink href="/contacto" @click="menuIsOpen = false"
+                <NuxtLink to="/contacto" @click="menuIsOpen = false"
                     class="hover:text-lightPurple text-white font-raleway text-base leading-[21px]">Contáctanos
                 </NuxtLink>
-                <NuxtLink href="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true"
+                <NuxtLink to="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true"
                     target="_blank">
                     <nuxt-icon name="linkedin" filled class="text-21px" />
                 </NuxtLink>

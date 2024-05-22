@@ -506,7 +506,7 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                             </li>
                         </ul>
                         <div class="flex max-w-[186px] justify-center mx-auto self-center mt-[32px]">
-                            <NuxtLink :href="industry.successCase.pdfPath" target="_blank"
+                            <NuxtLink :to="industry.successCase.pdfPath" target="_blank"
                                 class="flex gap-[8px] items-center p-[8px] w-full ">
                                 <span
                                     class="font-raleway font-semibold  text-base leading-[21px] text-purple shrink-0">Ver

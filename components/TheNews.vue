@@ -59,7 +59,7 @@ const articles = ref<Article[]>(data);
                         <SanityContent :blocks="article.content" />
                     </div>
                 </div>
-                <NuxtLink :href="'/novedades/noticias/' + article.slug" class="text-mora font-bold cursor-pointer">
+                <NuxtLink :to="'/novedades/noticias/' + article.slug" class="text-mora font-bold cursor-pointer">
                     Seguir
                     leyendo</NuxtLink>
             </div>
