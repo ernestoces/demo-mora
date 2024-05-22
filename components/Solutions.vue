@@ -58,19 +58,10 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                         Conoce más</NuxtLink>
                 </div>
             </div>
-            <marquee-carousel v-if="currentIndustry.highlightedClients.length > 4" class="xl:mt-[40px] mt-[24px]"
+            <marquee-carousel v-if="currentIndustry.highlightedClients.length > 2" class="xl:mt-[40px] mt-[24px]"
                 :images="currentIndustry.highlightedClients" />
-            <div v-else-if="currentIndustry.highlightedClients.length === 4"
-                class="flex gap-[88px] h-full justify-center mt-[40px]">
-                <div ref="marqueeItem" v-for="(image, index) in currentIndustry.highlightedClients"
-                    class="py-[10]  ml-[88px] ">
-                    <NuxtImg preload :key="image" :src="'./' + image + '.png'" :alt="'Image ' + (index + 1)"
-                        class="object-cover h-[26px]" />
-                </div>
-            </div>
-            <div v-else class="flex gap-[88px] h-full justify-end mt-[40px]">
-                <div ref="marqueeItem" v-for="(image, index) in currentIndustry.highlightedClients"
-                    class="py-[10]  ml-[88px] ">
+            <div v-else class="flex gap-[48px] h-full justify-center xl:justify-end mt-[40px]">
+                <div v-for="(image, index) in currentIndustry.highlightedClients" class="py-[10]">
                     <NuxtImg preload :key="image" :src="'./' + image + '.png'" :alt="'Image ' + (index + 1)"
                         class="object-cover h-[47px]" />
                 </div>
