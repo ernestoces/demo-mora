@@ -34,6 +34,11 @@ export default defineNuxtConfig({
       }
     }
   },
+  router: {
+    options: {
+      scrollBehaviorType: 'smooth'
+    }
+  },
   sanity: {
     projectId: 'sqk82n5u',
     dataset: 'production',

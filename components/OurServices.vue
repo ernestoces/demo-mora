@@ -1,4 +1,6 @@
 <script setup lang="ts">
+const { x, y } = useWindowScroll()
+
 const services = ref([
     {
         index: 0,
@@ -97,9 +99,8 @@ function handleSectionInView(payload: Payload) {
     }
     activeServiceIndex.value = payload.serviceIndex
 
-
-
 }
+
 </script>
 
 <template>
@@ -107,6 +108,8 @@ function handleSectionInView(payload: Payload) {
         <p class="text-center font-semibold font-raleway text-base leading-[21px] text-white bg-dark">Nuestros Servicios
         </p>
         <ServiceTabs @inView="handleSectionInView" v-bind:activeServiceIndex />
-        <ServiceSection @inView="handleSectionInView" :service="service" v-for="service in services" />
+        <div class="snap-y snap-proximity">
+            <ServiceSection @inView="handleSectionInView" :service="service" v-for="service in services" />
+        </div>
     </div>
 </template>

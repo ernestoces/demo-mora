@@ -100,12 +100,12 @@ if (props.service.id === 'consultoria') {
     keypointsHeading.value = "Te garantizamos:"
 } else if (props.service.id === 'healthcheck') {
     keypointsHeading.value = "Puntos Clave:"
-} 
+}
 </script>
 
 <template>
-    <div v-intersection-observer="onIntersectionObserver" ref="target"
-        class="w-full py-[56px] xl:pt-[88px] xl:pb-[104px] px-4 xl:px-[140px] "
+    <div v-intersection-observer="onIntersectionObserver" ref="el"
+        class="z-10 snap-center w-full py-[56px] xl:pt-[88px] xl:pb-[104px] px-4 xl:px-[140px] "
         :class="service.dark ? 'bg-dark' : 'bg-white '" v-bind:id="service.id">
         <div class="max-w-[1160px] mx-auto flex gap-[48px] xl:flex-row flex-col">
             <div class="flex gap-6 flex-col font-raleway text-base leading-[21px] items-start xl:max-w-[600px]">
@@ -155,7 +155,8 @@ if (props.service.id === 'consultoria') {
                 <ul class="mt-[24px] flex flex-col gap-[24px] shrink-0">
                     <li class="text-dark font-raleway font-normal pb-[24px] py-[8px] items-center justify-start border-b-2 border-[#B8A2D6] border-opacity-50 flex gap-4 xl:flex-row flex-col last:border-none"
                         v-for="item in service.highlightedServices">
-                        <nuxt-icon :name="item.icon" filled width="32px" height="32px" class="text-[56px]" />
+                        <nuxt-icon :name="item.icon" filled width="32px" height="32px"
+                            class="text-[32px] xl:text-[56px]" />
                         <p class="font-normal font-raleway text-base leading-[21px] text-center xl:text-left"
                             :class="service.dark ? 'text-white' : 'text-dark'"><span
                                 class="font-semibold xl:text-left text-center">{{
