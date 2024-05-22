@@ -34,7 +34,7 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                         <li class="capitalize cursor-pointer " v-for="(industry, index) in industries"
                             :key="industry.label" @click="currentIndustryIndex = index">
                             <h4 class="text-dark font-montserrat font-semibold text-[18px] leading-[24px] rounded-full p-[8px_20px] hover:bg-lightPurple hover:text-white"
-                                v-bind:class="{ 'bg-purple text-white': index === currentIndustryIndex }">
+                                :class="[{ ['bg-purple text-white']: index === currentIndustryIndex }]">
                                 {{ industry.label }}</h4>
                         </li>
                     </ul>
