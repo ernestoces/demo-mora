@@ -24,7 +24,7 @@
                         personas de tareas rutinarias y permitirles abordar desafíos empresariales analíticos.</span>
                 </p>
                 <div class="xl:w-[107px] xl:h-[109px] w-[108px] mx-auto h-[111px] xl:absolute xl:right-[16px] order-2">
-                    <NuxtImg :src="'./sello.png'" class="object-contain" />
+                    <NuxtImg class="object-contain w-[102px] h-[105px]" :src="'./sello.png'" />
                 </div>
             </div>
         </div>
