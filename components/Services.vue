@@ -20,8 +20,7 @@ const services = [
             <div class="xl:pt-[49px] max-w-[604px]">
                 <h2
                     class="font-montserrat text-[33px] font-bold leading-[40px] text-dark max-w-[456px] xl:text-left text-center">
-                    Servicios
-                    Personalizados para tu Empresa
+                    Servicios Personalizados para tu Empresa
                 </h2>
                 <p
                     class="text-dark mt-[24px] font-raleway font-regular text-base leading-[21px] xl:text-left text-center">
@@ -48,7 +47,7 @@ const services = [
         </div>
 
         <div class="shrink-0 xl:w-[508px] xl:h-[382px] w-full -order-1">
-            <NuxtImg :src="'./services.png'" alt="servicios" height="382" width="508" class="w-full" />
+            <NuxtImg :src="'./services.png'" alt="servicios" height="382" width="508" class="w-full  rounded-[5px]" />
         </div>
     </div>
 </template>
