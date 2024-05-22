@@ -34,9 +34,11 @@ defineProps<{
                         <NuxtImg :src="item.icon" class="object-cover" height="72px" />
                     </div>
                     <div class="flex flex-col xl:space-y-[10px] space-y-[15px]">
-                        <p class="font-semibold font-montserrat text-[18px] leading-[24px] text-center xl:text-left">{{
-                            item.heading
-                        }}
+                        <p
+                            class="font-semibold font-montserrat text-[18px] leading-[24px] text-center xl:text-left text-[#333333]">
+                            {{
+                                item.heading
+                            }}
                         </p>
                         <p
                             class="font-montserrat font-normal text-base leading-[21px] text-[#333333] text-center xl:text-left">
