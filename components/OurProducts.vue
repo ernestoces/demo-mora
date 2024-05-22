@@ -103,7 +103,7 @@ const products = ref([
         ]
     },
 ])
-const counter = useInterval(5000)
+const counter = ref(0)
 const currentSlideIndex = computed(() => counter.value % 4)
 const activeSlideDotClass = "bg-[#FF5A10] !opacity-100"
 const root = ref<HTMLElement | null>(null)
@@ -118,7 +118,13 @@ const root = ref<HTMLElement | null>(null)
         </div>
         <div class="w-[1332px] mx-auto hidden xl:block shadow-indigo-500/40">
             <div ref="root"
-                class="gap-[40px] snap-x snap-mandatory w-full shrink-0  mx-auto mt-[50px] flex items-center justify-center xl:pb-0 pb-[62px]">
+                class="gap-[40px] snap-x snap-mandatory w-full shrink-0  mx-auto mt-[50px] flex items-center justify-center xl:pb-0 pb-[62px] relative">
+                <NuxtImg
+                    class="hidden xl:block hover:cursor-pointer absolute left-0 top-[1/2] w-[40px] h-[40px] pr-[8px]"
+                    src="./flechaizquierda.png" @click="counter--" />
+                <NuxtImg
+                    class="hidden xl:block hover:cursor-pointer absolute right-0 top-[1/2] w-[40px] h-[40px] pl-[8px]"
+                    src="./flecha.png" @click="counter++" />
                 <ProductSlide :product="products[currentSlideIndex]" :key="products[currentSlideIndex].id" />
             </div>
         </div>
