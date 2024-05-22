@@ -52,7 +52,7 @@ const { data: recommendedArticles } = useSanityQuery<Article>(recomendedArticles
         </div>
         <div class="bg-white pt-[64px] xl:pb-[88px] xl:px-[140px] py-[56px] px-4">
             <div class="flex xl:flex-row flex-col xl:gap-[80px] gap-[56px] max-w-[1160px] mx-auto">
-                <div>
+                <div class=" text-dark">
                     <SanityContent :blocks="data.content" />
                 </div>
                 <div class="flex flex-col xl:w-[324px] shrink-0">
@@ -64,7 +64,7 @@ const { data: recommendedArticles } = useSanityQuery<Article>(recomendedArticles
                                 }}
                             </h4>
                             <p
-                                class="mt-[8px] font-raleway font-normal text-base leading-[21px] max-h-[126px] overflow-y-hidden">
+                                class="text-dark mt-[8px] font-raleway font-normal text-base leading-[21px] max-h-[126px] overflow-y-hidden">
                                 <SanityContent :blocks="article.content" class="text-dark" />
                             </p>
                             <NuxtLink preload :href="'/novedades/noticias/' + article.slug" class="font-bold text-mora">

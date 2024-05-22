@@ -55,8 +55,8 @@ const articles = ref<Article[]>(data);
                     <h4 class=" font-montserrat font-semibold text-[18px] leading-[24px] text-dark">
                         {{ article.title }}
                     </h4>
-                    <div class="max-h-[126px] overflow-y-hidden">
-                        <SanityContent :blocks="article.content" class="text-dark" />
+                    <div class="max-h-[126px] overflow-y-hidden text-dark">
+                        <SanityContent :blocks="article.content" />
                     </div>
                 </div>
                 <NuxtLink :href="'/novedades/noticias/' + article.slug" class="text-mora font-bold cursor-pointer">
