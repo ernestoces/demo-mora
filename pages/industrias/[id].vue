@@ -13,9 +13,9 @@ const industries = ref([
         imagePath: './bancaCover.png',
         benefits: [
             {
-                imagePath: './zoom.png',
-                title: `Consolida el Cumplimiento`,
-                description: `Accede directamente a los datos del cliente, automatiza la supervisión de transacciones y sigue los cambios normativos.`
+                imagePath: './wad.png',
+                title: `Disminuye Costos`,
+                description: `Automatiza los procesos manuales, para así aumentar la productividad y disminuir los gastos de mano de obra`
             },
             {
                 imagePath: './roi.png',
@@ -23,9 +23,9 @@ const industries = ref([
                 description: `Implementa la automatización robótica de procesos en tres meses y obtén un retorno de la inversión inmediato.`
             },
             {
-                imagePath: './buck.png',
-                title: `Disminuye Costos`,
-                description: `Automatiza los procesos manuales, para así aumentar la productividad y disminuir los gastos de mano de obra`
+                imagePath: './magnifier.png',
+                title: `Consolida el Cumplimiento`,
+                description: `Accede directamente a los datos del cliente, automatiza la supervisión de transacciones y sigue los cambios normativos.`
             },
             {
                 imagePath: './support.png',
@@ -33,12 +33,12 @@ const industries = ref([
                 description: `Accede en tiempo real a datos de clientes, acelera respuestas y detecta nuevas necesidades.`
             },
             {
-                imagePath: './buck.png',
+                imagePath: './vanguard.png',
                 title: `Reducción de Riesgos`,
                 description: `Automatiza los procesos manuales, elimina los errores de procesamiento y disminuye los riesgos operativos.`
             },
             {
-                imagePath: './buck.png',
+                imagePath: './settings.png',
                 title: `Aumenta tus Recursos:`,
                 description: `Implementa fuerza de trabajo digital para fortalecer empleados y manejar alto volumen de procesamiento.`
             },
