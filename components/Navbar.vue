@@ -34,15 +34,13 @@ const shouldChangeBackgroundsOnScroll = computed(() => location.value.pathname =
             <a href="/">
                 <NuxtImg src="/logo.png" class="w-[161px] h-[44px]" />
             </a>
-
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
                 <template v-for="link in links" :key="link.href">
-                    <NuxtLink v-if="link.label !== 'industrias'"
-                        class="hover:text-lightPurple relative flex space-x-[4px] font-raleway cursor-pointer">
+                    <NuxtLink v-if="link.label !== 'industrias'" :href="link.href"
+                        class="hover:text-lightPurple relative flex space-x-[4px] font-raleway cursor-pointer text-white">
                         {{ link.label }}
                     </NuxtLink>
-                    <li v-else :href="link.href" :class="{ ['group']: link.label === 'industrias' }"
-                        class=" relative flex space-x-[4px] font-raleway cursor-pointer">
+                    <li v-else :href="link.href" class="group relative flex space-x-[4px] font-raleway cursor-pointer">
                         <span class="hover:text-lightPurple"> {{ link.label }}</span>
                         <nuxt-icon v-if="link.label === 'industrias'" name="chevron" class="mt-1" />
                         <ul v-if="link.label === 'industrias'"
