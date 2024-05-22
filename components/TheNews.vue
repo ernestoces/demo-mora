@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import useArticles from '@/composables/useArticles';
 const news = ref([
     { image: "./seminario.png", heading: "Seminario Web: Automatización AI en la Práctica", description: "Únete a nuestro seminario web para explorar cómo la automatización con inteligencia artificial está transformando la forma en que hacemos negocios. Desde la automatización de tareas repetitivas hasta la mejora de la precisión" },
     {
