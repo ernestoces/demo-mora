@@ -21,7 +21,6 @@ const recomendedArticlesQuery = groq`*[_type == "article"][0..3] {
     content,
     title,
     "slug": slug.current,
-   
 }`
 
 const { data: recommendedArticles } = useSanityQuery<Article>(recomendedArticlesQuery)

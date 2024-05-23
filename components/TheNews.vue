@@ -32,7 +32,7 @@ const { data: articles } = await useSanityQuery<Article>(query)
 </script>
 
 <template>
-    <div v-if="articles" class="bg-white pt-[56px] xl:py-[88px] pb-[55px] px-4">
+    <div class="bg-white pt-[56px] xl:py-[88px] pb-[55px] px-4">
         <p class="font-raleway font-bold text-[33px] leading-[38px] xl:text-center text-left text-dark">Últimas
             Novedades</p>
         <p
@@ -64,8 +64,9 @@ const { data: articles } = await useSanityQuery<Article>(query)
             </div>
         </div>
 
-        <button
-            class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-mora border-2 rounded-[3px] p-[8px_22px] border-mora mx-auto block mt-[8px] xl:mt-[64px] w-full xl:max-w-[251px]">Ver
-            más noticias y eventos</button>
+        <NuxtLink to="/novedades"
+            class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-mora border-2 rounded-[3px] p-[8px_22px] border-mora mx-auto block mt-[8px] xl:mt-[64px] w-full xl:max-w-[251px]">
+            Ver
+            más noticias y eventos</NuxtLink>
     </div>
 </template>
