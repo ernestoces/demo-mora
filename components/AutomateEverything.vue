@@ -20,7 +20,7 @@
                 <iframe class="rounded-bl-3xl rounded-tr-3xl xl:w-[532px] xl:h-[300px] w-full min-h-[185px] "
                     src="https://www.youtube.com/embed/gvDIpfXI_Mg?si=j1LpvY6nZVV3txaV" title="YouTube video player"
                     frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
         </div>

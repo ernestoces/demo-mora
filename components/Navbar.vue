@@ -1,6 +1,8 @@
 <script setup lang="ts">
-import { useWindowScroll } from '@vueuse/core';
-const scroll = ref(useWindowScroll())
+import { useWindowScroll, useWindowSize } from '@vueuse/core';
+import { onMounted } from "vue"
+const { x, y } = useWindowScroll()
+const { width } = useWindowSize()
 const links = [
     { label: "home", href: "/" },
     { label: "automation anywhere", href: "/automationanywhere" },
@@ -19,18 +21,27 @@ const dropdownLinks = ref(
     ]
 )
 const location = useBrowserLocation()
-const transparentBackgroundClass = ref('!bg-transparent')
 const desktopTransparentScrollThreshold = ref(210)
-const isTransparentBackground = computed(() => scroll.value.y < desktopTransparentScrollThreshold.value && location.value.pathname === "/")
+const isTransparentBackground = computed(() => {
+    return y.value < desktopTransparentScrollThreshold.value && location.value.pathname === "/" && width.value > 600
+})
+const transparentBackgroundClass = 'bg-transparent'
+onMounted(async () => {
+    await nextTick();
+    // Force a re-evaluation of the computed property
+    // This might not be necessary as Vue should re-evaluate it after the nextTick
+    isTransparentBackground.value;
+});
+// This might not be necessary as Vue should re-evaluate it after the nextTick
 const menuIsOpen = ref(false)
 const dropdownOpen = ref(false)
 const clickedChevronClass = 'rotate-180'
 </script>
 
 <template>
-    <nav class="px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full bg-dark"
-        :class="[{ [transparentBackgroundClass]: isTransparentBackground }]">
-        <div class="max-w-[1440px] flex mx-auto justify-between">
+    <nav
+        :class="['px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full', isTransparentBackground ? transparentBackgroundClass : 'bg-dark']">
+        <div class=" max-w-[1440px] flex mx-auto justify-between">
             <NuxtLink to="/">
                 <NuxtImg src="/logo.png" class="w-[161px] h-[44px]" />
             </NuxtLink>

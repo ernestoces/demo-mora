@@ -52,7 +52,7 @@ defineProps<{
                 <iframe width="560" height="315" class="w-full xl:w-[554px] xl:h-[312px] h-[165px]"
                     src="https://www.youtube.com/embed/yTcV7_ghJHc?si=ZvUr6GfLcPF5SaPI" title="YouTube video player"
                     frameborder="0"
-                    allow="accelerometer; autoplay; clipboard-writ; encrypted-media; gyroscope; picture-in-picture; web-share"
+                    allow="accelerometer; clipboard-writ; encrypted-media; gyroscope; picture-in-picture; web-share"
                     referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
             </div>
             <div v-else class="w-full min-w-[239px]">
