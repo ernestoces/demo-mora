@@ -14,6 +14,30 @@ const branches = [
     }
 ]
 
+const successNote = ref("")
+const contactForm = ref<HTMLFormElement | null>(null)
+
+async function handleSubmit(event: Event) {
+    const form = event.target as HTMLFormElement
+    const data = new FormData(form);
+    const res = await useFetch('https://formspree.io/f/mjvnzkrd', {
+        method: 'POST',
+        body: data,
+        headers: { Accept: 'application/json' },
+    })
+    if (res) {
+        successNote.value = "Gracias! Nos pondremos en contacto contigo pronto.";
+        if (contactForm.value) {
+            contactForm.value.reset();
+        }
+        setTimeout(() => {
+            successNote.value = ""
+        }, 11000)
+    } else {
+        throw new Error('Uh-oh! There was a problem submitting your form.');
+    }
+}
+
 const inputClass = ref("bg-white border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark placeholder:font-raleway placeholder:text-base placeholder:text-[#828282] placeholder:font-normal placeholder:bg-white")
 </script>
 
@@ -68,38 +92,42 @@ const inputClass = ref("bg-white border-dark border-2 p-[10px] rounded-[2px] fon
                     </div>
                 </div>
             </div>
-            <form action="https://formspree.io/f/mjvnzkrd" method="POST"
-                class="order-1 bg-white xl:rounded-[5px] xl:px-[32px] px-4 xl:py-[40px] py-[48px] flex flex-col gap-[24px] xl:w-auto w-full">
+            <form @submit.prevent="handleSubmit" ref="contactForm"
+                class="relative order-1 bg-white xl:rounded-[5px] xl:px-[32px] px-4 xl:py-[40px] py-[48px] flex flex-col gap-[24px] xl:w-auto w-full">
                 <div class="flex flex-col gap-[4px]">
                     <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark">
                         Nombres y Apellidos
                     </label>
-                    <input placeholder="Ingresa tu nombre" :class="inputClass" />
+                    <input name="name" placeholder="Ingresa tu nombre" :class="inputClass" />
                 </div>
                 <div class="xl:flex gap-4 w-full">
                     <div class="flex flex-col gap-[4px] w-full">
                         <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark">
                             Correo electrónico
                         </label>
-                        <input placeholder="Correo electrónico" :class="inputClass" />
+                        <input name="email" placeholder="Correo electrónico" :class="inputClass" />
                     </div>
                     <div class="flex flex-col gap-[4px] w-full mt-4 xl:mt-0">
                         <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark">
                             Número de contacto
                         </label>
-                        <input placeholder="Número" :class="inputClass" />
+                        <input name="phone" placeholder="Número" :class="inputClass" />
                     </div>
                 </div>
                 <div class="flex flex-col gap-[4px] w-full">
                     <label class="font-raleway font-semibold text-[14px] leading-[18px] text-dark" for="mensaje">Deja tu
                         mensaje</label>
-                    <textarea
+                    <textarea name="message"
                         class="bg-white border-dark border-2 p-[10px] rounded-[2px] font-raleway font-semibold text-[14px] leading-[18px] text-dark placeholder:font-raleway placeholder:text-base placeholder:text-[#828282] placeholder:bg-white placeholder:font-normal"
                         id="mensaje" placeholder="Mensaje" rows="9"></textarea>
                 </div>
                 <button
                     class="w-full py-[8px] bg-mora text-white font-semibold text-base leading-[27px] -tracking-[1%] rounded-[3px]">Enviar
                     mensaje</button>
+                <p v-if="successNote"
+                    class="w-full absolute left-0 -bottom-[32px] text-center text-white font-raleway text-base leading-[21px] font-semibold">
+                    {{
+                        successNote }}</p>
             </form>
         </div>
     </div>
