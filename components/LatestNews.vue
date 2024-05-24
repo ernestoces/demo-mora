@@ -14,7 +14,6 @@ type Article = {
 };
 
 const { data: article } = useLazySanityQuery<Article>(query)
-
 </script>
 
 <template>
@@ -27,7 +26,6 @@ const { data: article } = useLazySanityQuery<Article>(query)
                         alt="highlighted news cover" />
                 </div>
                 <div class="flex flex-col  items-start">
-                    <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] text-mora">Evento</h4>
                     <h2 class="font-montserrat font-bold text-[33px] leading-[40px] text-dark mt-[8px]">{{ article.title
                         }}
                     </h2>
