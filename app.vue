@@ -1,10 +1,8 @@
 <template>
-  <div class="bg-dark">
-    <div>
-      <NuxtLoadingIndicator />
-      <Navbar />
-      <NuxtPage />
-      <FooterLinks />
-    </div>
+  <div class="bg-dark min-h-screen">
+    <NuxtLoadingIndicator />
+    <Navbar />
+    <NuxtPage />
+    <FooterLinks />
   </div>
 </template>

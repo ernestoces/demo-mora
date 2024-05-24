@@ -53,7 +53,7 @@ const { data } = useLazySanityQuery<Article>(query)
                 <li class="pb-[48px] xl:pb-0 border-b-[1px] pt-[48px] xl:pt-0 xl:border-b-0 last:border-b-0 flex flex-col first:pt-0 xl:first:pl-0 xl:last:border-0 xl:px-[41px]  xl:border-r-[1px] border-purple border-opacity-25"
                     v-for="article in data" :key="article.slug">
                     <div class="xl:w-[332px] xl:h-[189px] w-full shrink-0 ">
-                        <SanityImage preload class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
+                        <SanityImage class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
                             alt="blog cover" />
                     </div>
                     <h4 class="mt-[16px] font-montserrat font-semibold text-[18px] leading-[24px] text-dark">

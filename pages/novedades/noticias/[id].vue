@@ -49,7 +49,7 @@ const { data: recommendedArticles } = useLazySanityQuery<Article>(recomendedArti
                     </div>
                 </div>
                 <div class="shrink-0 xl:w-[485px] xl:h-[315px] pt-[48px] ">
-                    <SanityImage preload class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
+                    <SanityImage class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
                         alt="news cover" />
                 </div>
             </div>

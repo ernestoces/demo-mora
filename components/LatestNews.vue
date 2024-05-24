@@ -23,7 +23,7 @@ const { data: article } = useLazySanityQuery<Article>(query)
             <h3 class="font-montserrat font-semibold text-[22px] leading-[27px] -tracking-[1%] text-dark">Lo Último</h3>
             <div class="flex gap-[48px] xl:flex-row flex-col">
                 <div class="shrink-0 xl:w-[485px] xl:h-[315px]">
-                    <SanityImage preload class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
+                    <SanityImage class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
                         alt="highlighted news cover" />
                 </div>
                 <div class="flex flex-col  items-start">
