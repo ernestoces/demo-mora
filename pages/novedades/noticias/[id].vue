@@ -20,7 +20,7 @@ type Article = {
 const { data: article } = useLazySanityQuery<Article>(query, { slug: route.params.id })
 
 const recomendedArticlesQuery = groq`*[_type == "article"][0..3] {
-    "cover": cover.asset->url,
+    "cover": cover.asset,
     content,
     title,
     "slug": slug.current,
