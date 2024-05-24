@@ -1,5 +1,5 @@
 <script setup lang="ts">
-const query = groq`*[_type == "article"][0] {
+const query = groq`*[_type == "article"] | order(_createdAt desc) [0] {
     "cover": cover.asset,
     content,
     title,
