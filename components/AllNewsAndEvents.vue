@@ -24,21 +24,22 @@ organización, ha anunciado su última innovación: la primera`
 ]
 
 const query = groq`*[_type == "article"][0..3] {
-    "cover": cover.asset->url,
+    "cover": cover.asset,
     content,
     title,
     "slug": slug.current
 }`
 
 type Article = {
-    cover: string;
+    cover: {
+        _ref: string
+    }
     content: any
     title: string;
     slug: string;
 };
 
-const { data } = await useSanityQuery(query)
-const articles = ref<Article[]>(data);
+const { data } = useLazySanityQuery<Article>(query)
 </script>
 
 <template>
@@ -48,11 +49,11 @@ const articles = ref<Article[]>(data);
                 class="hidden xl:block font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark">
                 Todas las
                 Noticias y Eventos</h3>
-            <ul v-for="n in 3" :key="n" class="xl:mt-[48px] flex xl:flex-row flex-col px-4 ">
+            <ul class="xl:mt-[48px] flex xl:flex-row flex-col px-4 ">
                 <li class="pb-[48px] xl:pb-0 border-b-[1px] pt-[48px] xl:pt-0 xl:border-b-0 last:border-b-0 flex flex-col first:pt-0 xl:first:pl-0 xl:last:border-0 xl:px-[41px]  xl:border-r-[1px] border-purple border-opacity-25"
-                    v-for="article in articles" :key="article.slug">
+                    v-for="article in data" :key="article.slug">
                     <div class="xl:w-[332px] xl:h-[189px] w-full shrink-0 ">
-                        <NuxtImg preload class="object-cover rounded-[3px] w-full" :src="article.cover"
+                        <SanityImage preload class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
                             alt="blog cover" />
                     </div>
                     <h4 class="mt-[16px] font-montserrat font-semibold text-[18px] leading-[24px] text-dark">

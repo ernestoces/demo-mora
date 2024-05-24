@@ -1,29 +1,30 @@
 <script setup lang="ts">
 const query = groq`*[_type == "article"][0] {
-    "cover": cover.asset->url,
+    "cover": cover.asset,
     content,
     title,
     "slug": slug.current
 }`
 
 type Article = {
-    cover: string;
+    cover: { _ref: string };
     content: any
     title: string;
     slug: string;
 };
 
-const { data: article } = await useSanityQuery<Article>(query)
+const { data: article } = useLazySanityQuery<Article>(query)
 
 </script>
 
 <template>
-    <div v-show="article" class="bg-white xl:px-[140px] px-4 xl:pt-[88px] pt-[56px] pb-[72px]">
+    <div v-if="article" class="bg-white xl:px-[140px] px-4 xl:pt-[88px] pt-[56px] pb-[72px]">
         <div class="flex flex-col xl:gap-[47px] gap-[32px] max-w-[1160px] mx-auto">
             <h3 class="font-montserrat font-semibold text-[22px] leading-[27px] -tracking-[1%] text-dark">Lo Último</h3>
             <div class="flex gap-[48px] xl:flex-row flex-col">
                 <div class="shrink-0 xl:w-[485px] xl:h-[315px]">
-                    <NuxtImg :src="article.cover" alt="highlighted news cover" />
+                    <SanityImage preload class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
+                        alt="highlighted news cover" />
                 </div>
                 <div class="flex flex-col  items-start">
                     <h4 class="font-montserrat font-semibold text-[18px] leading-[24px] text-mora">Evento</h4>
@@ -43,5 +44,4 @@ const { data: article } = await useSanityQuery<Article>(query)
             </div>
         </div>
     </div>
-
 </template>

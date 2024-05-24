@@ -1,34 +1,21 @@
 <script setup lang="ts">
-const news = ref([
-    { image: "./seminario.png", heading: "Seminario Web: Automatización AI en la Práctica", description: "Únete a nuestro seminario web para explorar cómo la automatización con inteligencia artificial está transformando la forma en que hacemos negocios. Desde la automatización de tareas repetitivas hasta la mejora de la precisión" },
-    {
-        image: "./negocios.png", heading: `Cómo la Automatización Inteligente
-prepara a los negocios`, description: `La Automatización Inteligente, combinando la potencia de la inteligencia artificial, el aprendizaje automático y la automatización de procesos, permite a
-las empresas optimizar sus operaciones, liberar recursos y tomar`
-    },
-    {
-        image: "./ai.png", heading: `¿Qué revela la fusión de la IA y RPA
-sobre el futuro de la`, description: `Hoy en día, hacer las cosas de manera eficiente es clave en los negocios. Al
-combinar la Inteligencia Artificial (IA) con la Automatización Robótica de
-Procesos (RPA), las empresas están logrando grandes avances.`
-    },
-])
-
 const query = groq`*[_type == "article"][0..3] {
-    "cover": cover.asset->url,
+    "cover": cover.asset,
     content,
     title,
     "slug": slug.current
 }`
 
 type Article = {
-    cover: string;
+    cover: {
+        _ref: string
+    };
     content: any
     title: string;
     slug: string;
 };
 
-const { data: articles } = await useSanityQuery<Article>(query)
+const { data: articles } = useLazySanityQuery<Article>(query)
 </script>
 
 <template>
@@ -48,7 +35,8 @@ const { data: articles } = await useSanityQuery<Article>(query)
             <div v-for="article in articles"
                 class="xl:pr-[41px] pb-[48px] xl:pb-0 last-of-type:pr-0 last-of-type:border-none xl:border-r-[1px]  xl:border-b-0 border-b-[1px] border-purple border-opacity-50 ">
                 <div>
-                    <NuxtImg :src="article.cover" alt="" class="w-full xl:w-[332px] xlh-[189px]" />
+                    <SanityImage class="w-full xl:w-[332px] xlh-[189px]" :asset-id="article.cover._ref"
+                        alt="blog cover" />
                 </div>
                 <div class="mt-[16px] flex flex-col gap-[8px] max-w-[332px] w-full">
                     <h4 class=" font-montserrat font-semibold text-[18px] leading-[24px] text-dark">
