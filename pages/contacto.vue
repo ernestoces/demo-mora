@@ -20,7 +20,7 @@ const contactForm = ref<HTMLFormElement | null>(null)
 async function handleSubmit(event: Event) {
     const form = event.target as HTMLFormElement
     const data = new FormData(form);
-    const res = await useFetch('https://formspree.io/f/mjvnzkrd', {
+    const res = await useFetch("https://formspree.io/f/mvoenwaq", {
         method: 'POST',
         body: data,
         headers: { Accept: 'application/json' },
