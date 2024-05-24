@@ -23,7 +23,7 @@ organización, ha anunciado su última innovación: la primera`
     },
 ]
 
-const query = groq`*[_type == "article"] {
+const query = groq`*[_type == "article"] | order(_createdAt desc){
     "cover": cover.asset,
     content,
     title,
