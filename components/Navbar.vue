@@ -18,24 +18,22 @@ const dropdownLinks = ref(
         { label: "retail", href: "/industrias/retail" },
     ]
 )
-const location = ref(useBrowserLocation())
+const location = useBrowserLocation()
 const transparentBackgroundClass = ref('!bg-transparent')
-const defaultClass = ref("px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full bg-dark")
-const scrollThreshold = 210
+const desktopTransparentScrollThreshold = ref(210)
+const isTransparentBackground = computed(() => scroll.value.y < desktopTransparentScrollThreshold.value && location.value.pathname === "/")
 const menuIsOpen = ref(false)
 const dropdownOpen = ref(false)
 const clickedChevronClass = 'rotate-180'
-const pageDoesntStartWithATranslucidBackground = ref(0)
-const pagesWithOpaqueBackground = ["/"]
-const shouldApplyTransparentBackground = computed(() => location.value.pathname === "/" && scroll.value.y < scrollThreshold)
 </script>
 
 <template>
-    <nav :class="[{ [transparentBackgroundClass]: shouldApplyTransparentBackground }, defaultClass]">
+    <nav class="px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full bg-dark"
+        :class="[{ [transparentBackgroundClass]: isTransparentBackground }]">
         <div class="max-w-[1440px] flex mx-auto justify-between">
-            <a href="/">
+            <NuxtLink to="/">
                 <NuxtImg src="/logo.png" class="w-[161px] h-[44px]" />
-            </a>
+            </NuxtLink>
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
                 <template v-for="link in links" :key="link.href">
                     <NuxtLink v-if="link.label !== 'industrias'" :to="link.href"
