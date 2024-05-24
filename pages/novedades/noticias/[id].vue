@@ -28,6 +28,19 @@ const recomendedArticlesQuery = groq`*[_type == "article"][0..3] {
 
 const { data: recommendedArticles } = useLazySanityQuery<Article>(recomendedArticlesQuery)
 
+const serializers = {
+    marks: {
+        internalLink: (props: any) => {
+            return h('a', {
+                style: {
+                    color: 'red', // Direct inline style for testing
+                    textDecoration: 'underline'
+                },
+                href: props.mark.href
+            }, props.children);
+        }
+    }
+}
 </script>
 
 <template>
@@ -55,8 +68,8 @@ const { data: recommendedArticles } = useLazySanityQuery<Article>(recomendedArti
         </div>
         <div class="bg-white pt-[64px] xl:pb-[88px] xl:px-[140px] py-[56px] px-4">
             <div class="flex xl:flex-row flex-col xl:gap-[80px] gap-[56px] max-w-[1160px] mx-auto">
-                <div class="flex flex-col gap-[24px] text-dark">
-                    <SanityContent :blocks="article.content" />
+                <div class="content flex flex-col gap-[24px] text-dark">
+                    <SanityContent :blocks="article.content" :serializers="serializers" />
                 </div>
                 <div class="flex flex-col xl:w-[324px] shrink-0">
                     <h3 class="font-montserrat font-semibold text-[22px] leading-[26px]">Recomendaciones</h3>
@@ -84,15 +97,15 @@ const { data: recommendedArticles } = useLazySanityQuery<Article>(recomendedArti
     </article>
 </template>
 
-<style scoped>
+<style>
 html,
 body,
 * {
     color: '#18131E'
 }
 
-p {
-    display: flex;
-    flex-direction: column;
+.content p>a {
+    text-decoration: underline;
+    @apply text-mora;
 }
 </style>
