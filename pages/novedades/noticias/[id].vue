@@ -64,7 +64,8 @@ const { data: recommendedArticles } = useLazySanityQuery<Article>(recomendedArti
                         <div class="w-full" v-for="article in recommendedArticles">
                             <SanityImage class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
                                 alt="news cover" />
-                            <h4 class="mt-4 font-montserrat font-semibold text-[18px] leading-[24px]">{{ article.title
+                            <h4 class="text-dark mt-4 font-montserrat font-semibold text-[18px] leading-[24px]">{{
+                                article.title
                                 }}
                             </h4>
                             <div
