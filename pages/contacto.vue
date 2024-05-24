@@ -60,9 +60,9 @@ const inputClass = ref("bg-white border-dark border-2 p-[10px] rounded-[2px] fon
                         <p class="font-raleway text-[18px] leading-[21px] text-white">
                             {{ branch.country }}
                         </p>
-                        <ul class="flex flex-col xl:gap-[16px]">
+                        <ul class="flex flex-col xl:gap-[16px] gap-[8px]">
                             <li class="flex gap-2 xl:flex-row flex-col">
-                                <div class="flex gap-[6px]">
+                                <div class="flex gap-[6px] items-center xl:items-normal">
                                     <nuxt-icon filled class="text-[24px]" name="email" />
                                     <span
                                         class="font-raleway font-semibold text-base leading-[21px] text-white">Email</span>
@@ -71,7 +71,7 @@ const inputClass = ref("bg-white border-dark border-2 p-[10px] rounded-[2px] fon
                                     }}</span>
                             </li>
                             <li class="flex xl:gap-2 gap-1 xl:flex-row flex-col">
-                                <div class="flex gap-[6px]">
+                                <div class="flex gap-[6px] items-center xl:items-normal">
                                     <nuxt-icon filled class="text-[24px]" name="phone" />
                                     <span
                                         class="font-raleway font-semibold text-base leading-[21px] text-white">Teléfono</span>
@@ -80,7 +80,7 @@ const inputClass = ref("bg-white border-dark border-2 p-[10px] rounded-[2px] fon
                                     }}</span>
                             </li>
                             <li class="flex gap-2 xl:flex-row flex-col">
-                                <div class="flex gap-[6px]">
+                                <div class="flex gap-[6px] items-center xl:items-normal">
                                     <nuxt-icon filled class="text-[24px]" name="marker" />
                                     <span
                                         class="font-raleway font-semibold text-base leading-[21px] text-white">Oficinas</span>
