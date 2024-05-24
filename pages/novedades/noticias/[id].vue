@@ -43,7 +43,6 @@ const { data: recommendedArticles } = useLazySanityQuery<Article>(recomendedArti
                         class="font-montserrat font-semibold xl:text-[50px] text-[33px] xl:leading-[60px] leading-[40px] text-white ">
                         {{ article?.title }}</h1>
                     <div class="flex gap-[24px]">
-                        <p class="font-raleway font-normal text-[18px] leading-[21px] text-white">Juan Perez</p>
                         <NuxtTime class="font-raleway font-normal text-[18px] leading-[21px] text-lightPurple"
                             day="numeric" month="long" year="numeric" :datetime="article._createdAt" />
                     </div>
