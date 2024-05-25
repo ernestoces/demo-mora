@@ -50,7 +50,8 @@ defineProps<{
             </ul>
             <div v-if="product.image.includes('youtube')">
                 <div class="xl:w-[542px] xl:h-[307px] shrink-0 w-full mt-[10px] xl:-mt-[12px]">
-                    <CldVideoPlayer width="1920" height="1080" src="xq1ahsacsi1nmxsbcwbv" pictureInPictureToogle />
+                    <CldVideoPlayer :showLogo="false" width="1920" height="1080" src="xq1ahsacsi1nmxsbcwbv"
+                        pictureInPictureToogle />
                 </div>
             </div>
             <div v-else class="w-full min-w-[239px]">

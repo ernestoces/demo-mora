@@ -24,7 +24,7 @@ const colors = ref({
             </div>
             <div
                 class="xl:w-[542px] xl:h-[307px] shrink-0 w-full mt-[10px] xl:-mt-[12px] rounded-tr-[17px] rounded-bl-[17px] overflow-clip">
-                <CldVideoPlayer :colors="colors" :hideContextMenu="true" width="1920" height="1080"
+                <CldVideoPlayer :showLogo="false" :colors="colors" :hideContextMenu="true" width="1920" height="1080"
                     src="gnc3qmz8pp15cqztzl6m" />
             </div>
         </div>
