@@ -1,28 +1,4 @@
 <script setup lang="ts">
-const postCategory = [
-    {
-        id: "como-la-automatizacion",
-        title: "Cómo la Automatización Inteligente prepara a los negocios",
-        content: `La Automatización Inteligente, combinando la potencia de la inteligencia
-artificial, el aprendizaje automático y la automatización de procesos, permite a
-las empresas optimizar sus operaciones, liberar recursos y tomar`
-    },
-    {
-        id: "que-revela-la-fusion",
-        title: "¿Qué revela la fusión de la IA y RPA sobre el futuro de la",
-        content: `Hoy en día, hacer las cosas de manera eficiente es clave en los negocios. Al
-combinar la Inteligencia Artificial (IA) con la Automatización Robótica de
-Procesos (RPA), las empresas están logrando grandes avances`
-    },
-    {
-        id: "nueva-tecnologia",
-        title: "Nueva tecnología de Automation Anywhere está revolucionando...",
-        content: `Automation Anywhere, líder mundial en automatización de procesos
-empresariales que integra la inteligencia artificial en todos los aspectos de una
-organización, ha anunciado su última innovación: la primera`
-    },
-]
-
 const query = groq`*[_type == "article"] | order(_createdAt desc){
     "cover": cover.asset,
     content,
@@ -79,5 +55,9 @@ const { data } = useLazySanityQuery<Article>(query)
 <style>
 .newsPreview:nth-child(n+3) {
     border: none
+}
+
+.newsPreview:nth-child(1) {
+    display: none;
 }
 </style>
