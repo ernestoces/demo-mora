@@ -1,3 +1,9 @@
+<script setup lang="ts">
+const colors = ref({
+    base: "#ffffff2e",
+})
+</script>
+
 <template>
     <div class="flex flex-col max-w-[1160px] mx-auto justify-start">
         <NuxtImg src="./logoaa.png"
@@ -16,11 +22,10 @@
                     automatización inteligentes para identificar, transformar y ampliar los procesos empresariales.
                 </p>
             </div>
-            <div class="xl:w-[542px] xl:h-[307px] shrink-0 w-full mt-[10px] xl:-mt-[12px]">
-                <video>
-                    <source src="https://res.cloudinary.com/dkzaozc1s/video/upload/v1716667359/gnc3qmz8pp15cqztzl6m.mp4"
-                        type="video/mp4">
-                </video>
+            <div
+                class="xl:w-[542px] xl:h-[307px] shrink-0 w-full mt-[10px] xl:-mt-[12px] rounded-tr-[17px] rounded-bl-[17px] overflow-clip">
+                <CldVideoPlayer :colors="colors" :hideContextMenu="true" width="1920" height="1080"
+                    src="gnc3qmz8pp15cqztzl6m" />
             </div>
         </div>
     </div>

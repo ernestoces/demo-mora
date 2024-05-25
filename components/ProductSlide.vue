@@ -49,10 +49,9 @@ defineProps<{
                 </li>
             </ul>
             <div v-if="product.image.includes('youtube')">
-                <video>
-                    <source src="https://res.cloudinary.com/dkzaozc1s/video/upload/v1716667450/xq1ahsacsi1nmxsbcwbv.mp4"
-                        type="video/mp4">
-                </video>
+                <div class="xl:w-[542px] xl:h-[307px] shrink-0 w-full mt-[10px] xl:-mt-[12px]">
+                    <CldVideoPlayer width="1920" height="1080" src="xq1ahsacsi1nmxsbcwbv" pictureInPictureToogle />
+                </div>
             </div>
             <div v-else class="w-full min-w-[239px]">
                 <NuxtImg :src="product.image" alt="" class="object-cover " />

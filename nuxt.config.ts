@@ -11,7 +11,7 @@ export default defineNuxtConfig({
         wght: '200..900'
       },
     }
-  }], "@nuxtjs/sanity", "@nuxt/image", "nuxt-marquee", "@nuxt/ui"],
+  }], "@nuxtjs/sanity", "@nuxt/image", "nuxt-marquee", "@nuxt/ui", "@nuxtjs/cloudinary"],
   tailwindcss: {
     config: {
       theme: {
@@ -33,6 +33,9 @@ export default defineNuxtConfig({
         }
       }
     }
+  },
+  cloudinary: {
+    cloudName: 'dkzaozc1s',
   },
   router: {
     options: {

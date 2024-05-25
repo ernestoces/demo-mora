@@ -12,6 +12,7 @@
   "dependencies": {
     "@nuxt/image": "^1.7.0",
     "@nuxt/ui": "^2.16.0",
+    "@nuxtjs/cloudinary": "^3.0.0-rc.1",
     "@nuxtjs/sanity": "^1.11.3",
     "@twicpics/components": "^0.29.1",
     "@vueuse/components": "^10.9.0",
