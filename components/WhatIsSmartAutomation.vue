@@ -2,7 +2,7 @@
     <div class="bg-dark py-[56px] xl:py-[88px] px-3 xl:px-[140px] ">
         <div class="max-w-[1160px] flex xl:flex-row flex-col gap-[48px] mx-auto">
             <div class="xl:w-[500px] xl:h-[368px] shrink-0 w-full">
-                <NuxtImg preload :src="'./automation.png'" alt="people discussing over a laptop"
+                <NuxtImg :src="'./automation.png'" alt="people discussing over a laptop"
                     class="rounded-[5px] object-cover xl:object-center object-left-top" />
             </div>
             <div class="flex flex-col">

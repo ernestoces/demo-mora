@@ -22,7 +22,7 @@ const logoClass = computed(() => {
 
 <template>
     <div>
-        <NuxtImg :class="logoClass" :width="desktopWidth + 'px'" :height="desktopHeight + 'px'" preload
+        <NuxtImg :class="logoClass" :width="desktopWidth + 'px'" :height="desktopHeight + 'px'"
             :src="'./' + logo.name + '.png'" class="object-cover" :alt="logo.name" />
     </div>
 </template>

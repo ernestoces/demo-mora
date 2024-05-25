@@ -14,15 +14,15 @@ const modalOpen = ref(false)
                 tu transformación empresarial.</p>
         </div>
         <div class="xl:mt-[48px] mt-[32px] shrink-0 px-4">
-            <NuxtImg @click="modalOpen = true" preload :src="'./howitworks.png'" alt="diagram of process" width="907"
+            <NuxtImg @click="modalOpen = true" :src="'./howitworks.png'" alt="diagram of process" width="907"
                 height="592" class="object-cover mx-auto cursor-pointer" />
         </div>
         <div>
             <UModal v-model="modalOpen" fullscreen class="z-[9999999] bg-white">
                 <div class="xl:w-[1440px] w-full mx-auto py-[56px] px-4 flex flex-col items-start">
                     <p class="mt-[24px] mb-[8px] font-montserrat leading-[41px] text-[24px] font-semibold text-center text-[#133A65] cursor-pointer"
-                        @click="modalOpen = false">Regresar</p>
-                    <NuxtImg preload :src="'./platform.png'" class="object-cover" alt="process diagram" />
+                        @click="() => modalOpen = false">Regresar</p>
+                    <NuxtImg :src="'./platform.png'" class="object-cover" alt="process diagram" />
                 </div>
             </UModal>
         </div>

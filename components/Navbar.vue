@@ -1,6 +1,4 @@
 <script setup lang="ts">
-import { useWindowScroll, useWindowSize } from '@vueuse/core';
-import { onMounted } from "vue"
 const { x, y } = useWindowScroll()
 const { width } = useWindowSize()
 const links = [
@@ -63,7 +61,7 @@ const clickedChevronClass = 'rotate-180'
                     </li>
                 </template>
             </ul>
-            <NuxtLink to="/contacto" preload
+            <NuxtLink to="/contacto"
                 class="hidden xl:block bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">
                 Contacto</NuxtLink>
             <button @click="menuIsOpen = true" class="ml-left xl:hidden">
@@ -94,7 +92,7 @@ const clickedChevronClass = 'rotate-180'
         </div>
         <div v-if="dropdownOpen && !link.href" class="mt-[24px]">
             <div class="pl-4 flex flex-col gap-4">
-                <NuxtLink @click="menuIsOpen = false" preload :to="dropdownLink.href"
+                <NuxtLink @click="menuIsOpen = false" :to="dropdownLink.href"
                     class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
                     v-for="dropdownLink in dropdownLinks">
                     {{ dropdownLink.label }}

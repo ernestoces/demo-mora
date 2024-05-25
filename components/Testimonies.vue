@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { useScroll } from '@vueuse/core'
 const testimonies = ref([
     {
         icon: "enaexColored",

@@ -42,7 +42,7 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
             </div>
             <div class="flex xl:flex-row flex-col xl:gap-[48px] gap-[24px] xl:mt-[40px] mt-[24px]">
                 <div class="max-w-[591px] max-h-[352px] w-full shrink-0 ">
-                    <NuxtImg preload class="object-cover" :src="currentIndustry.cover" width="591" height="352"
+                    <NuxtImg class="object-cover" :src="currentIndustry.cover" width="591" height="352"
                         alt="image of a selected industry in action" />
                 </div>
                 <div :class="[{ [centerAligned]: currentIndustryIndex === 0 }]"
@@ -62,7 +62,7 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
                 :images="currentIndustry.highlightedClients" />
             <div v-else class="flex gap-[48px] h-full justify-center xl:justify-end mt-[40px]">
                 <div v-for="(image, index) in currentIndustry.highlightedClients" class="py-[10]">
-                    <NuxtImg preload :key="image" :src="'./' + image + '.png'" :alt="'Image ' + (index + 1)"
+                    <NuxtImg :key="image" :src="'./' + image + '.png'" :alt="'Image ' + (index + 1)"
                         class="object-cover h-[47px]" />
                 </div>
             </div>

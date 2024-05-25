@@ -49,11 +49,10 @@ defineProps<{
                 </li>
             </ul>
             <div v-if="product.image.includes('youtube')">
-                <iframe width="560" height="315" class="w-full xl:w-[554px] xl:h-[312px] h-[165px]"
-                    src="https://www.youtube.com/embed/yTcV7_ghJHc?si=ZvUr6GfLcPF5SaPI" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer; clipboard-writ; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <video>
+                    <source src="https://res.cloudinary.com/dkzaozc1s/video/upload/v1716667450/xq1ahsacsi1nmxsbcwbv.mp4"
+                        type="video/mp4">
+                </video>
             </div>
             <div v-else class="w-full min-w-[239px]">
                 <NuxtImg :src="product.image" alt="" class="object-cover " />

@@ -17,11 +17,10 @@
                 </p>
             </div>
             <div class="xl:w-[542px] xl:h-[307px] shrink-0 w-full mt-[10px] xl:-mt-[12px]">
-                <iframe class="rounded-bl-3xl rounded-tr-3xl xl:w-[532px] xl:h-[300px] w-full min-h-[185px] "
-                    src="https://www.youtube.com/embed/gvDIpfXI_Mg?si=j1LpvY6nZVV3txaV" title="YouTube video player"
-                    frameborder="0"
-                    allow="accelerometer clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-                    referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+                <video>
+                    <source src="https://res.cloudinary.com/dkzaozc1s/video/upload/v1716667359/gnc3qmz8pp15cqztzl6m.mp4"
+                        type="video/mp4">
+                </video>
             </div>
         </div>
     </div>
