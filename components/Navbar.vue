@@ -6,7 +6,7 @@ const { width } = useWindowSize()
 const links = [
     { label: "home", href: "/" },
     { label: "automation anywhere", href: "/automationanywhere" },
-    { label: "industrias", href: "/#industrias" },
+    { label: "industrias", href: null },
     { label: "servicios", href: "/servicios" },
     { label: "nosotros", href: "/nosotros" },
     { label: "novedades", href: "/novedades" },
@@ -47,7 +47,7 @@ const clickedChevronClass = 'rotate-180'
             </NuxtLink>
             <ul class="hidden xl:flex space-x-[48px] text-white capitalize mx-auto items-center z-10">
                 <template v-for="link in links" :key="link.href">
-                    <NuxtLink v-if="link.label !== 'industrias'" :to="link.href"
+                    <NuxtLink v-if="link.href" :to="link.href"
                         class="hover:text-lightPurple relative flex space-x-[4px] font-raleway cursor-pointer text-white">
                         {{ link.label }}
                     </NuxtLink>
@@ -62,7 +62,6 @@ const clickedChevronClass = 'rotate-180'
                         </ul>
                     </li>
                 </template>
-
             </ul>
             <NuxtLink to="/contacto" preload
                 class="hidden xl:block bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">
@@ -70,6 +69,8 @@ const clickedChevronClass = 'rotate-180'
             <button @click="menuIsOpen = true" class="ml-left xl:hidden">
                 <nuxt-icon filled name="hamburger" class="text-[32px]  m-0" />
             </button>
+
+            <!-- MOBILE NEMU -->
             <div ref="menu" v-if="menuIsOpen"
                 class="flex flex-col py-[8px] px-[16px] absolute h-screen w-full top-0 left-0 right-0 bottom-0 bg-dark">
                 <button @click="menuIsOpen = false" class="text-white self-end">
@@ -78,37 +79,38 @@ const clickedChevronClass = 'rotate-180'
                 <ul class="mt-4 flex flex-col gap-[32px]">
                     <li v-for="link in links" class="flex flex-col">
                         <div class="flex items-center gap-[4px]">
-                            <NuxtLink v-if="link.href !== '/#industrias'" @click="menuIsOpen = false"
+                            <NuxtLink v-if="link.href" @click="menuIsOpen = false"
                                 class="text-white capitalize font-raleway text-base font-normal leading-[18px] hover:text-lightPurple "
-                                :to="link.href">{{ link.label }} </NuxtLink>
-                    <li v-else
+                                :to="link.href">{{ link.label }}
+                            </NuxtLink>
+                            <div v-else @click="dropdownOpen = !dropdownOpen" class="flex gap-2">
+                    <li
                         class="cursor-pointer text-white capitalize font-raleway text-base font-normal leading-[18px] hover:text-lightPurple ">
                         {{ link.label }}
                     </li>
-                    <nuxt-icon @click="dropdownOpen = !dropdownOpen" class="cursor-pointer"
-                        v-if="link.href === '/#industrias'" name="chevronDown" filled
+                    <nuxt-icon class="cursor-pointer" v-if="!link.href" name="chevronDown" filled
                         :class="{ [clickedChevronClass]: dropdownOpen }" />
             </div>
-            <div v-if="dropdownOpen && link.href === '/#industrias'" class="mt-[24px]">
-                <div class="pl-4 flex flex-col gap-4">
-                    <NuxtLink @click="menuIsOpen = false" preload :to="dropdownLink.href"
-                        class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
-                        v-for="dropdownLink in dropdownLinks">
-                        {{ dropdownLink.label }}
-                    </NuxtLink>
-                </div>
-            </div>
-            </li>
-            </ul>
-            <div class="mt-auto p-6 flex justify-between items-center">
-                <NuxtLink to="/contacto" @click="menuIsOpen = false"
-                    class="hover:text-lightPurple text-white font-raleway text-base leading-[21px]">Contáctanos
-                </NuxtLink>
-                <NuxtLink to="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true"
-                    target="_blank">
-                    <nuxt-icon name="linkedin" filled class="text-21px" />
+        </div>
+        <div v-if="dropdownOpen && !link.href" class="mt-[24px]">
+            <div class="pl-4 flex flex-col gap-4">
+                <NuxtLink @click="menuIsOpen = false" preload :to="dropdownLink.href"
+                    class="cursor-pointer text-white hover:text-lightPurple  capitalize font-raleway text-base leading-[21px]"
+                    v-for="dropdownLink in dropdownLinks">
+                    {{ dropdownLink.label }}
                 </NuxtLink>
             </div>
+        </div>
+        </li>
+        </ul>
+        <div class="mt-auto p-6 flex justify-between items-center">
+            <NuxtLink to="/contacto" @click="menuIsOpen = false"
+                class="hover:text-lightPurple text-white font-raleway text-base leading-[21px]">Contáctanos
+            </NuxtLink>
+            <NuxtLink to="https://www.linkedin.com/company/automation-chile-peru/?viewAsMember=true" target="_blank">
+                <nuxt-icon name="linkedin" filled class="text-21px" />
+            </NuxtLink>
+        </div>
         </div>
         </div>
     </nav>
