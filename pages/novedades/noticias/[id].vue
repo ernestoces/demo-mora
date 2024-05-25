@@ -79,13 +79,13 @@ const serializers = {
                                 alt="news cover" />
                             <h4 class="text-dark mt-4 font-montserrat font-semibold text-[18px] leading-[24px]">{{
                                 article.title
-                                }}
+                            }}
                             </h4>
                             <div
                                 class="flex-col gap-[12px] text-dark mt-[8px] font-raleway font-normal text-base leading-[21px] max-h-[126px] overflow-y-hidden">
                                 <SanityContent :blocks="article.content" />
                             </div>
-                            <NuxtLink :to="'/novedades/noticias/' + article.slug" class="font-bold text-mora">
+                            <NuxtLink preload :to="'/novedades/noticias/' + article.slug" class="font-bold text-mora">
                                 Seguir
                                 leyendo</NuxtLink>
                         </div>
