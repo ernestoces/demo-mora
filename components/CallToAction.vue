@@ -9,7 +9,8 @@ defineProps<{
     <div v-if="!light"
         class="xl:h-[468px] w-full mx-auto xl:bg-center bg-right-bottom bg-no-repeat bg-black relative overflow-hidden">
         <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
-            <source src="~/assets/video/video.mp4" type="video/mp4">
+            <source src="https://res.cloudinary.com/dkzaozc1s/video/upload/v1716659110/video_avfy4w.mp4"
+                type="video/mp4">
             Your browser does not support the video tag.
         </video>
         <div class="xl:p-[148px_246px] relative z-10 p-[112px_24px]">
