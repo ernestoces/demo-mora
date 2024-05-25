@@ -1,9 +1,9 @@
 <script setup lang="ts">
-const transformations = [
+const transformations = ref([
     { icon: "cloud", heading: `Una plataforma conectada e inteligente.`, description: `Una única plataforma basada en IA que abarca desde la detección hasta la orquestación, la gestión corporativa y mucho más.` },
     { icon: "remote", heading: `Integrado en su tecnología y sus equipos.`, description: `Conectores para sistemas y aplicaciones centrales, y automatización integrada en el lugar en el que trabajan sus equipos.` },
     { icon: "deploy", heading: `Escalabilidad de confianza.`, description: `Acelere la innovación con una arquitectura nativa en la nube y un ecosistema hecho para el éxito.` },
-]
+])
 const modalOpen = ref(false)
 </script>
 

@@ -105,7 +105,7 @@ const products = ref([
 ])
 const counter = ref(0)
 const currentSlideIndex = computed(() => counter.value % 4)
-const activeSlideDotClass = "bg-[#FF5A10] !opacity-100"
+const activeSlideDotClass = ref("bg-[#FF5A10] !opacity-100")
 const root = ref<HTMLElement | null>(null)
 </script>
 <template>
