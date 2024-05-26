@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { vElementVisibility } from '@vueuse/components'
+
 type Service = {
     id: string,
     name: string,
@@ -97,7 +99,6 @@ function expandDetail(selectedIndex: number) {
     currentTrainingDetailsIndex.value = selectedIndex + 1
 }
 
-
 const collapsedTrainingDetailsIndex = ref(0)
 const highlightedItemsClass = 'self-center xl:self-start'
 let keypointsHeading = ref("")
@@ -108,10 +109,14 @@ if (props.service.id === 'consultoria') {
 } else if (props.service.id === 'healthcheck') {
     keypointsHeading.value = "Puntos Clave:"
 }
+
+const productSlide = ref(null)
+const targetIsVisible = useElementVisibility(productSlide)
+
 </script>
 
 <template>
-    <div ref="el" class="z-10 snap-center w-full py-[56px] xl:pt-[88px] xl:pb-[104px] px-4 xl:px-[140px] "
+    <div ref="productSlide" class="z-10 snap-center w-full py-[56px] xl:pt-[88px] xl:pb-[104px] px-4 xl:px-[140px] "
         :class="service.dark ? 'bg-dark' : 'bg-white '" v-bind:id="service.id">
         <div class="max-w-[1160px] mx-auto flex gap-[48px] items-start xl:flex-row flex-col">
             <div class="flex gap-6 flex-col font-raleway text-base leading-[21px] items-start xl:max-w-[600px]">

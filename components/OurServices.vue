@@ -1,4 +1,6 @@
 <script setup lang="ts">
+import { vIntersectionObserver } from '@vueuse/components'
+
 const services = ref([
     {
         index: 0,
@@ -96,6 +98,21 @@ interface SelectTabArgs {
 function selectTab({ serviceIndex: index }: SelectTabArgs) {
     activeServiceIndex.value = index
 }
+
+const serviceList = ref(null)
+const { x, y } = useScroll(serviceList)
+const serviceSlideHeight = ref(522)
+function onIntersectionObserver(entries: IntersectionObserverEntry[]) {
+    entries.forEach(entry => {
+        if (entry.isIntersecting) {
+            const index = entry.target.getAttribute('data-index');
+            console.log(`Element at index ${index} is intersecting`);
+            if (index) {
+                selectTab({ serviceIndex: parseInt(index) })
+            }
+        }
+    });
+}
 </script>
 
 <template>
@@ -103,8 +120,10 @@ function selectTab({ serviceIndex: index }: SelectTabArgs) {
         <p class="text-center font-semibold font-raleway text-base leading-[21px] text-white bg-dark">Nuestros Servicios
         </p>
         <ServiceTabs @onTabClick="selectTab" v-bind:activeServiceIndex />
-        <div class="snap-y snap-proximity pt-[200px] -mt-[200px]">
-            <ServiceSection :service="service" v-for="service in services" />
+        <div ref="serviceList" class="snap-y snap-proximity pt-[200px] -mt-[200px]">
+            <ServiceSection :data-index="index"
+                v-intersection-observer="[onIntersectionObserver, { root: serviceList, threshold: 1 }]"
+                :service="service" v-for="(service, index) in services" />
         </div>
     </div>
 </template>
