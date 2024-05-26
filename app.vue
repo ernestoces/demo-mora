@@ -1,8 +1,10 @@
 <template>
-  <div class="min-h-screen">
+  <div>
     <NuxtLoadingIndicator />
     <Navbar />
-    <NuxtPage />
+    <div class="min-h-[68vh] h-full bg-dark">
+      <NuxtPage />
+    </div>
     <FooterLinks />
   </div>
 </template>

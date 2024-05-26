@@ -19,7 +19,7 @@ const { data } = useLazySanityQuery<Article>(query)
 </script>
 
 <template>
-    <div class="bg-white xl:px-[140px] pb-[88px]">
+    <div class="bg-white xl:px-[140px] pb-[88px]" v-if="data">
         <div class="max-w-[1160px] mx-auto">
             <h3
                 class="hidden xl:block font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark">
