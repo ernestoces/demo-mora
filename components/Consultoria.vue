@@ -1,15 +1,8 @@
 <script setup lang="ts">
-const emit = defineEmits({
-    inView(payload: { serviceIndex: number }) {
-        return true
-    }
-})
+
 const target = ref<HTMLElement | null>(null)
 const targetIsVisible = useElementVisibility(target)
 
-watch(targetIsVisible, () => {
-    emit("inView", { serviceIndex: 0 })
-})
 
 const tools = [
     { icon: "growth", title: "Modelos Sostenibles y Escalables para la Robotización" },

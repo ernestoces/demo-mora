@@ -1,5 +1,4 @@
 <script setup lang="ts">
-import { vIntersectionObserver } from '@vueuse/components'
 type Service = {
     id: string,
     name: string,
@@ -18,17 +17,7 @@ const props = defineProps<{
     service: Service,
 }>()
 
-const emit = defineEmits({
-    inView(payload: { serviceIndex: number }) {
-        return true
-    }
-})
 
-function onIntersectionObserver([{ isIntersecting }]: IntersectionObserverEntry[]) {
-    if (isIntersecting) {
-        emit("inView", { serviceIndex: props.service.index })
-    }
-}
 
 const initialTrainingDetails = [
     {
@@ -122,8 +111,7 @@ if (props.service.id === 'consultoria') {
 </script>
 
 <template>
-    <div v-intersection-observer="onIntersectionObserver" ref="el"
-        class="z-10 snap-center w-full py-[56px] xl:pt-[88px] xl:pb-[104px] px-4 xl:px-[140px] "
+    <div ref="el" class="z-10 snap-center w-full py-[56px] xl:pt-[88px] xl:pb-[104px] px-4 xl:px-[140px] "
         :class="service.dark ? 'bg-dark' : 'bg-white '" v-bind:id="service.id">
         <div class="max-w-[1160px] mx-auto flex gap-[48px] items-start xl:flex-row flex-col">
             <div class="flex gap-6 flex-col font-raleway text-base leading-[21px] items-start xl:max-w-[600px]">

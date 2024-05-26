@@ -1,6 +1,4 @@
 <script setup lang="ts">
-const { x, y } = useWindowScroll()
-
 const services = ref([
     {
         index: 0,
@@ -88,28 +86,25 @@ const services = ref([
     },
 ])
 
-type Payload = {
-    serviceIndex: number
-}
+
 
 const activeServiceIndex = ref(0)
-function handleSectionInView(payload: Payload) {
-    if (payload.serviceIndex < 2) {
-        activeServiceIndex.value = payload.serviceIndex - 1
-    }
-    activeServiceIndex.value = payload.serviceIndex
 
+interface SelectTabArgs {
+    serviceIndex: number
 }
-
+function selectTab({ serviceIndex: index }: SelectTabArgs) {
+    activeServiceIndex.value = index
+}
 </script>
 
 <template>
     <div class="bg-dark scroll-smooth">
         <p class="text-center font-semibold font-raleway text-base leading-[21px] text-white bg-dark">Nuestros Servicios
         </p>
-        <ServiceTabs @inView="handleSectionInView" v-bind:activeServiceIndex />
-        <div class="snap-y snap-proximity">
-            <ServiceSection @inView="handleSectionInView" :service="service" v-for="service in services" />
+        <ServiceTabs @onTabClick="selectTab" v-bind:activeServiceIndex />
+        <div class="snap-y snap-proximity pt-[200px] -mt-[200px]">
+            <ServiceSection :service="service" v-for="service in services" />
         </div>
     </div>
 </template>
