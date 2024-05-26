@@ -1,6 +1,7 @@
 <script setup lang="ts">
 const { x, y } = useWindowScroll()
 const { width } = useWindowSize()
+const route = useRoute()
 const links = [
     { label: "home", href: "/" },
     { label: "automation anywhere", href: "/automationanywhere" },
@@ -18,19 +19,15 @@ const dropdownLinks = ref(
         { label: "retail", href: "/industrias/retail" },
     ]
 )
-const location = useBrowserLocation()
-const desktopTransparentScrollThreshold = ref(210)
+const mobileWidthThreshold = ref(420)
+const isInHomeRouteButNotOnMobile = computed(() => route.fullPath === "/" && width?.value > mobileWidthThreshold?.value)
+const heroScrollMark = ref(420)
+const scrollingThroughHero = computed(() => y.value < heroScrollMark.value)
 const isTransparentBackground = computed(() => {
-    return y.value < desktopTransparentScrollThreshold.value && location.value.pathname === "/" && width.value > 600
+    return scrollingThroughHero?.value && isInHomeRouteButNotOnMobile?.value
 })
-const transparentBackgroundClass = 'bg-transparent'
-onMounted(async () => {
-    await nextTick();
-    // Force a re-evaluation of the computed property
-    // This might not be necessary as Vue should re-evaluate it after the nextTick
-    isTransparentBackground.value;
-});
-// This might not be necessary as Vue should re-evaluate it after the nextTick
+const transparentBackgroundClass = ref('bg-transparent')
+const darkBackgroundClass = ref('bg-dark')
 const menuIsOpen = ref(false)
 const dropdownOpen = ref(false)
 const clickedChevronClass = 'rotate-180'
@@ -38,7 +35,7 @@ const clickedChevronClass = 'rotate-180'
 
 <template>
     <nav
-        :class="['px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full', isTransparentBackground ? transparentBackgroundClass : 'bg-dark']">
+        :class="['px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full', isTransparentBackground ? transparentBackgroundClass : darkBackgroundClass]">
         <div class=" max-w-[1440px] flex mx-auto justify-between">
             <NuxtLink to="/">
                 <NuxtImg src="/logo.png" class="w-[161px] h-[44px]" />

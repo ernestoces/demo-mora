@@ -1,5 +1,5 @@
 <template>
-  <div class="bg-dark min-h-screen">
+  <div class="min-h-screen">
     <NuxtLoadingIndicator />
     <Navbar />
     <NuxtPage />
