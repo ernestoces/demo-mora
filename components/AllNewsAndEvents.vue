@@ -30,8 +30,8 @@ const { data } = useLazySanityQuery<Article>(query)
                 <li class="newsPreview basis-1/3 grow-0 shrink-0  pb-[48px] xl:pb-0 border-b-[1px] pt-[48px] xl:pt-0 xl:border-b-0 last:border-b-0 flex flex-col  pl-0 xl:last:border-0 xl:px-[41px] xl:pr-[41px]  xl:border-r-[1px] border-b-purple border-r-purple border-opacity-25 "
                     v-for="article in data" :key="article.slug">
 
-                    <div class=" xl:h-[189px] w-full shrink-0 ">
-                        <SanityImage class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
+                    <div class="imageContainer rounded-[5px]  w-full shrink-0">
+                        <SanityImage class="object-cover rounded-[2%] w-full" :asset-id="article.cover._ref"
                             alt="blog cover" />
                     </div>
                     <h4
@@ -39,7 +39,7 @@ const { data } = useLazySanityQuery<Article>(query)
                         {{
                             article.title }}</h4>
                     <p
-                        class="xl:max-w-[324px]  font-normal font-raleway text-base text-dark leading-[21px] h-[126px] overflow-y-hidden inline-flex flex-col">
+                        class=" xl:max-w-[324px]  font-normal font-raleway text-base text-dark leading-[21px] h-[126px] overflow-y-hidden inline-flex flex-col">
                         <SanityContent :blocks="article.content" />
                         <span>...</span>
                     </p>
@@ -64,5 +64,9 @@ const { data } = useLazySanityQuery<Article>(query)
 
 .newsPreview:nth-child(4n+3) {
     border-right: none
+}
+
+.imageContainer img {
+    border-radius: 5px
 }
 </style>

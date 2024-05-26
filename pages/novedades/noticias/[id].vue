@@ -61,7 +61,7 @@ const serializers = {
                     </div>
                 </div>
                 <div class="shrink-0 xl:w-[485px] xl:h-[315px] pt-[48px] ">
-                    <SanityImage class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
+                    <SanityImage class="object-cover rounded-[5px] w-full" :asset-id="article.cover._ref"
                         alt="news cover" />
                 </div>
             </div>
@@ -75,11 +75,11 @@ const serializers = {
                     <h3 class="font-montserrat font-semibold text-[22px] leading-[26px]">Recomendaciones</h3>
                     <div class="mt-[23px] flex flex-col space-y-[48px]">
                         <div class="w-full" v-for="article in recommendedArticles">
-                            <SanityImage class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
+                            <SanityImage class="object-cover rounded-[5px] w-full" :asset-id="article.cover._ref"
                                 alt="news cover" />
                             <h4 class="text-dark mt-4 font-montserrat font-semibold text-[18px] leading-[24px]">{{
                                 article.title
-                            }}
+                                }}
                             </h4>
                             <div
                                 class="flex-col gap-[12px] text-dark mt-[8px] font-raleway font-normal text-base leading-[21px] max-h-[126px] overflow-y-hidden">
