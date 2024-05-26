@@ -1,6 +1,7 @@
 <script setup lang="ts">
+const navbarRef = ref(null)
 const { x, y } = useWindowScroll()
-const { width } = useWindowSize()
+const { width } = useElementSize(navbarRef)
 const route = useRoute()
 const links = [
     { label: "home", href: "/" },
@@ -19,22 +20,23 @@ const dropdownLinks = ref(
         { label: "retail", href: "/industrias/retail" },
     ]
 )
-const mobileWidthThreshold = ref(420)
-const isInHomeRouteButNotOnMobile = computed(() => route.fullPath === "/" && width?.value > mobileWidthThreshold?.value)
+const mobileWidthThreshold = ref(520)
+const isOnHomePath = computed(() => route.fullPath === "/")
+const isOnDesktop = computed(() => (width?.value > mobileWidthThreshold?.value))
 const heroScrollMark = ref(420)
-const scrollingThroughHero = computed(() => y.value < heroScrollMark.value)
+const scrollingThroughHero = computed(() => y?.value < heroScrollMark?.value)
 const isTransparentBackground = computed(() => {
-    return scrollingThroughHero?.value && isInHomeRouteButNotOnMobile?.value
+    return scrollingThroughHero?.value && isOnHomePath?.value && isOnDesktop?.value
 })
 const transparentBackgroundClass = ref('bg-transparent')
 const darkBackgroundClass = ref('bg-dark')
 const menuIsOpen = ref(false)
 const dropdownOpen = ref(false)
-const clickedChevronClass = 'rotate-180'
+const clickedChevronClass = ref('rotate-180')
 </script>
 
 <template>
-    <nav
+    <nav ref="navbarRef"
         :class="['px-[16px] xl:px-[56px] sticky top-0 py-3 z-[1000] w-full', isTransparentBackground ? transparentBackgroundClass : darkBackgroundClass]">
         <div class=" max-w-[1440px] flex mx-auto justify-between">
             <NuxtLink to="/">
