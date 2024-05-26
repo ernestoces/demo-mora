@@ -42,7 +42,7 @@ const currentIndustry = computed(() => industries.value[currentIndustryIndex.val
             </div>
             <div class="flex xl:flex-row flex-col xl:gap-[48px] gap-[24px] xl:mt-[40px] mt-[24px]">
                 <div class="max-w-[591px] max-h-[352px] w-full shrink-0 ">
-                    <NuxtImg class="object-cover" :src="currentIndustry.cover" width="591" height="352"
+                    <NuxtImg class="object-cover rounded-[5px]" :src="currentIndustry.cover" width="591" height="352"
                         alt="image of a selected industry in action" />
                 </div>
                 <div :class="[{ [centerAligned]: currentIndustryIndex === 0 }]"
