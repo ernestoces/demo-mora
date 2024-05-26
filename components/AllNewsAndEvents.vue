@@ -26,8 +26,8 @@ const { data } = useLazySanityQuery<Article>(query)
                 Todas las
                 Noticias y Eventos</h3>
             <ul
-                class="xl:mt-[48px] divide-x grid xl:grid-cols-3 grid-cols-1 px-4 xl:max-w-[1160px] xl:flex-wrap gap-y-[56px] xl:gap-y-[72px]">
-                <li class="newsPreview basis-1/3 grow-0 shrink-0  pb-[48px] xl:pb-0 border-b-[1px] pt-[48px] xl:pt-0 xl:border-b-0 last:border-b-0 flex flex-col  pl-0 xl:last:border-0 xl:px-[41px] xl:pr-[41px]  xl:border-r-[1px] border-purple border-opacity-25"
+                class="xl:mt-[48px] xl:divide-x grid xl:grid-cols-3 grid-cols-1 px-4 xl:max-w-[1160px] xl:flex-wrap gap-y-[56px] xl:gap-y-[72px]">
+                <li class="newsPreview basis-1/3 grow-0 shrink-0  pb-[48px] xl:pb-0 border-b-[1px] pt-[48px] xl:pt-0 xl:border-b-0 last:border-b-0 flex flex-col  pl-0 xl:last:border-0 xl:px-[41px] xl:pr-[41px]  xl:border-r-[1px] border-b-purple border-r-purple border-opacity-25 "
                     v-for="article in data" :key="article.slug">
 
                     <div class=" xl:h-[189px] w-full shrink-0 ">
