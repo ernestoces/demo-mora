@@ -39,7 +39,7 @@ const industries = ref([
             },
             {
                 imagePath: './settings.png',
-                title: `Aumenta tus Recursos:`,
+                title: `Aumenta tus Recursos`,
                 description: `Implementa fuerza de trabajo digital para fortalecer empleados y manejar alto volumen de procesamiento.`
             },
         ],
