@@ -61,7 +61,7 @@ const clickedChevronClass = ref('rotate-180')
                 </template>
             </ul>
             <NuxtLink to="/contacto"
-                class="hidden xl:block bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">
+                class="hidden xl:block bg-mora rounded-[3px] py-[8px] px-[22px] text-white font-raleway font-semibold text-base leading-[27px] ">
                 Contacto</NuxtLink>
             <button @click="menuIsOpen = true" class="ml-left xl:hidden">
                 <nuxt-icon filled name="hamburger" class="text-[32px]  m-0" />

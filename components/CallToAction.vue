@@ -18,7 +18,7 @@ defineProps<{
                 class="font-montserrat font-bold text-[33px] leading-[40px] text-white text-left xl:text-center max-w-[949px] mx-auto">
             </h2>
             <NuxtLink to="/contacto"
-                class=" text-center xl:max-w-[224px] w-full font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-white bg-mora rounded-[3px] p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] block mx-auto mt-[48px]">
+                class=" text-center xl:max-w-[224px] w-full font-raleway font-semibold text-base leading-[27px]  text-white bg-mora rounded-[3px] p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] block mx-auto mt-[48px]">
                 ¡Contáctanos
                 Ahora!</NuxtLink>
         </div>
@@ -29,7 +29,7 @@ defineProps<{
                 class="font-montserrat font-bold text-[33px] leading-[40px] text-[#133a65] text-center max-w-[949px] mx-auto">
             </h2>
             <NuxtLink to="/contacto"
-                class="w-full xl:w-auto font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-white bg-[#FF5A10] rounded-full p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] inline-block mx-auto mt-[48px] text-center">
+                class="w-full xl:w-auto font-raleway font-semibold text-base leading-[27px]  text-white bg-[#FF5A10] rounded-full p-[8px_22px] drop-shadow-[1px_1px_3px_0px_rgba(66,53,100,0.38)] inline-block mx-auto mt-[48px] text-center">
                 Contáctanos
                 Ahora</NuxtLink>
         </div>

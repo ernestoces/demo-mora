@@ -443,7 +443,7 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                     <NuxtImg width="40px" height="40px" :src="benefit.imagePath" />
                     <div class="flex flex-col gap-2">
                         <h3 v-html="benefit.title"
-                            class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark text-center xl:text-left" />
+                            class="font-montserrat font-semibold text-[22px] leading-[26px]  text-dark text-center xl:text-left" />
                         <p v-html="benefit.description"
                             class="font-raleway font-normal text-base leading-[21px] text-dark text-center xl:text-left" />
                     </div>
@@ -460,7 +460,7 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                     class="cool-border rounded-[5px] p-[24px] flex flex-col xl:gap-[24px] gap-[26px] xl:min-w-[280px] w-full"
                     v-for="service in industry?.services">
                     <h3 v-html="service.title"
-                        class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-white" />
+                        class="font-montserrat font-semibold text-[22px] leading-[26px]  text-white" />
                     <p v-html="service.description"
                         class="font-raleway font-normal text-base leading-[21px] text-white" />
                 </li>
@@ -483,7 +483,7 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                             class="rounded-[5px]" />
                     </div>
                     <div class="flex flex-col xl:gap-4 gap-[24px]">
-                        <h3 class="xl:block hidden font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark"
+                        <h3 class="xl:block hidden font-montserrat font-semibold text-[22px] leading-[26px]  text-dark"
                             v-text="industry?.successCase.company" />
                         <NuxtImg :src="industry?.successCase.logo.path" class="xl:hidden block object-cover"
                             width="100px" />
@@ -498,7 +498,7 @@ const tripleColumnClass = ref('xl:!grid-cols-3')
                                 </div>
                                 <div class="flex flex-col gap-[2px] w-full"
                                     :class="[{ ['xl:items-center ']: industry.successCase.results.length === 3 }]">
-                                    <h3 class="font-semibold text-[22px] font-montserrat leading-[26px] -tracking-[1%] text-dark"
+                                    <h3 class="font-semibold text-[22px] font-montserrat leading-[26px]  text-dark"
                                         v-text="result.title" />
 
                                     <p class="font-montserrat font-normal text-base leading-[17px] text-dark"

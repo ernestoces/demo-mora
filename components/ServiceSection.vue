@@ -121,7 +121,7 @@ const targetIsVisible = useElementVisibility(productSlide)
         <div class="max-w-[1160px] mx-auto flex gap-[48px] items-start xl:flex-row flex-col">
             <div class="flex gap-6 flex-col font-raleway text-base leading-[21px] items-start xl:max-w-[600px]">
                 <h3 :class="service.dark ? 'text-white' : 'text-dark'"
-                    class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%]  xl:text-center text-left text-dark">
+                    class="font-montserrat font-semibold text-[22px] leading-[26px]   xl:text-center text-left text-dark">
                     {{ service.name }}</h3>
                 <p class="font-raleway text-base leading-[21px]" :class="service.dark ? 'text-white' : 'text-dark'"
                     v-html="service.description"></p>

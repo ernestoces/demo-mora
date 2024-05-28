@@ -16,7 +16,7 @@
             <template #footer>
                 <div>
                     <button
-                        class="font-raleway font-semibold text-base leading-[27px] w-full xl:w-auto -tracking-[1%] text-mora py-[8px] px-[22px] rounded-[3px] border-2 border-mora mx-auto block">Conoce
+                        class="font-raleway font-semibold text-base leading-[27px] w-full xl:w-auto  text-mora py-[8px] px-[22px] rounded-[3px] border-2 border-mora mx-auto block">Conoce
                         más de nuestros servicios</button>
                 </div>
             </template>

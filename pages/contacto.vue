@@ -122,7 +122,7 @@ const inputClass = ref("bg-white border-dark border-2 p-[10px] rounded-[2px] fon
                         id="mensaje" placeholder="Mensaje" rows="9"></textarea>
                 </div>
                 <button
-                    class="w-full py-[8px] bg-mora text-white font-semibold text-base leading-[27px] -tracking-[1%] rounded-[3px]">Enviar
+                    class="w-full py-[8px] bg-mora text-white font-semibold text-base leading-[27px]  rounded-[3px]">Enviar
                     mensaje</button>
                 <p v-if="successNote"
                     class="w-full absolute left-0 -bottom-[32px] text-center text-white font-raleway text-base leading-[21px] font-semibold">

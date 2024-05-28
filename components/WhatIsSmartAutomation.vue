@@ -25,16 +25,14 @@
                         <p class="text-center font-raleway text-base leading-[21px] text-white">Inteligencia Artificial
                         </p>
                     </li>
-                    <small
-                        class="font-montserrat font-semibold text-[22px] leading-[26px]  -tracking-[1%] text-white">+</small>
+                    <small class="font-montserrat font-semibold text-[22px] leading-[26px]   text-white">+</small>
                     <li
                         class="xl:py-0 flex xl:flex-col items-center gap-[8px] xl:bg-transparent bg-[#372B4780] py-4 w-full justify-center">
                         <nuxt-icon name="cursor" filled class="text-[30px]" />
                         <p class="text-center font-raleway text-base leading-[21px] text-white">Tecnología de
                             Automatización</p>
                     </li>
-                    <small
-                        class="font-montserrat font-semibold text-[22px] leading-[26px]  -tracking-[1%] text-white">=</small>
+                    <small class="font-montserrat font-semibold text-[22px] leading-[26px]   text-white">=</small>
                     <li
                         class="xl:py-0 flex xl:flex-col items-center gap-[8px] xl:bg-transparent bg-[#372B4780] py-4 w-full justify-center">
                         <nuxt-icon name="smile" filled class="text-[30px]" />
@@ -46,7 +44,7 @@
         </div>
         <div class="flex justify-center">
             <button
-                class="xl:w-auto w-full drop-shadow-sm  mt-[48px] text-white font-raleway font-semibold text-base leading-[27px] -tracking-[1%] py-[8px] xl:px-[22px] px-[18px] bg-mora rounded-[3px]">Conocer
+                class="xl:w-auto w-full drop-shadow-sm  mt-[48px] text-white font-raleway font-semibold text-base leading-[27px]  py-[8px] xl:px-[22px] px-[18px] bg-mora rounded-[3px]">Conocer
                 más de
                 Automation Anywhere</button>
         </div>

@@ -19,7 +19,7 @@ const { data: article } = useLazySanityQuery<Article>(query)
 <template>
     <div v-if="article" class="bg-white xl:px-[140px] px-4 xl:pt-[88px] pt-[56px] pb-[72px]">
         <div class="flex flex-col xl:gap-[47px] gap-[32px] max-w-[1160px] mx-auto">
-            <h3 class="font-montserrat font-semibold text-[22px] leading-[27px] -tracking-[1%] text-dark">Lo Último</h3>
+            <h3 class="font-montserrat font-semibold text-[22px] leading-[27px]  text-dark">Lo Último</h3>
             <div class="flex gap-[48px] xl:flex-row flex-col">
                 <div class="shrink-0 xl:w-[485px] xl:h-[315px]">
                     <SanityImage class="object-cover rounded-[3px] w-full" :asset-id="article.cover._ref"
@@ -35,7 +35,7 @@ const { data: article } = useLazySanityQuery<Article>(query)
                     </p>
                     <NuxtLink :to="'/novedades/noticias/' + article.slug"
                         class="flex gap-[8px] items-center border-mora border-[3px] rounded-[3px] p-[8px_22px] mt-[32px] xl:w-auto w-full justify-center">
-                        <span class="text-mora font-raleway font-semibold text-base leading-[27px] -tracking-[1%]">Ver
+                        <span class="text-mora font-raleway font-semibold text-base leading-[27px] ">Ver
                             más</span><nuxt-icon name="chevronRight" filled />
                     </NuxtLink>
                 </div>

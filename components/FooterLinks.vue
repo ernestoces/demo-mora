@@ -64,12 +64,12 @@ const links = [
         </div>
         <div
             class="border-t-white border-opacity-60 border-t-[1px] flex xl:flex-row flex-col gap-[48px] xl:mx-[66px] mx-[16px] justify-between xl:p-[16px_0_32px] p-[16px_16px_56px] items-center xl:items-normal">
-            <p class="text-white font-montserrat text-base xl:font-semibold font-medium leading-[24px] -tracking-[1%]">©
+            <p class="text-white font-montserrat text-base xl:font-semibold font-medium leading-[24px] ">©
                 Mora Group
                 Technology
                 2024</p>
             <a href="https://andromedacasadigital.netlify.app/" target="_blank"
-                class="group text-white font-montserrat text-base font-regular leading-[24px] -tracking-[1%]">Designed
+                class="group text-white font-montserrat text-base font-regular leading-[24px] ">Designed
                 by
                 <span class="font-semibold text-lightPurple cursor-pointer group-hover:underline">Andrómeda</span></a>
         </div>

@@ -23,8 +23,7 @@ const highlightedServices = [
     <div class="w-full  bg-white  pt-[88px] pb-[104px] px-[140px] ">
         <div class="max-w-[1440px] mx-auto flex gap-[48px]">
             <div class="flex gap-6 flex-col font-raleway text-base leading-[21px] items-start">
-                <h3
-                    class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%]  text-center text-dark">
+                <h3 class="font-montserrat font-semibold text-[22px] leading-[26px]   text-center text-dark">
                     Servicio de Healthcheck Especializado</h3>
                 <p>Nuestro servicio de Healthcheck <span class="font-bold">mejora la eficiencia y estabilidad de los
                         programas RPA</span>

@@ -21,7 +21,7 @@ const highlightedServices = [
     <div ref="target" class=" bg-white py-[88px] px-[140px]">
         <div class="flex gap-[48px] max-w-[1440px] mx-auto">
             <div class="text-dark flex flex-col items-start ">
-                <h3 class="font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-center">
+                <h3 class="font-montserrat font-semibold text-[22px] leading-[26px]  text-center">
                     Consultoría RPA</h3>
                 <p class="font-raleway font-normal text-base leading-[21px] mt-[24px]">Nuestra consultoría RPA está
                     diseñada

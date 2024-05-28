@@ -21,8 +21,7 @@ const { data } = useLazySanityQuery<Article>(query)
 <template>
     <div class="bg-white xl:px-[140px] pb-[88px]" v-if="data">
         <div class="max-w-[1160px] mx-auto">
-            <h3
-                class="hidden xl:block font-montserrat font-semibold text-[22px] leading-[26px] -tracking-[1%] text-dark">
+            <h3 class="hidden xl:block font-montserrat font-semibold text-[22px] leading-[26px]  text-dark">
                 Todas las
                 Noticias y Eventos</h3>
             <ul

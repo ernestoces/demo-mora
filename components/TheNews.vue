@@ -57,7 +57,7 @@ const { data: articles } = useLazySanityQuery<Article>(query)
             </ul>
 
             <NuxtLink to="/novedades"
-                class="font-raleway font-semibold text-base leading-[27px] -tracking-[1%] text-mora border-2 rounded-[3px] p-[8px_22px] border-mora mx-auto block mt-[8px] xl:mt-[64px] w-full xl:max-w-[251px]">
+                class="font-raleway font-semibold text-base leading-[27px]  text-mora border-2 rounded-[3px] p-[8px_22px] border-mora mx-auto block mt-[8px] xl:mt-[64px] w-full xl:max-w-[251px]">
                 Ver
                 más noticias y eventos</NuxtLink>
         </div>
