@@ -1,9 +1,9 @@
 <template>
     <div
         class="xl:-mt-[70px] -mt-[92px] xl:h-[710px] pb-[56px] min-h-[590px] w-full mx-auto xl:bg-center bg-right-bottom bg-no-repeat bg-black relative overflow-hidden">
-        <video autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
-            <source src="https://res.cloudinary.com/dkzaozc1s/video/upload/v1716659110/video_avfy4w.mp4"
-                type="video/mp4">
+        <video allowfullscreen autoplay muted loop playsinline class="absolute top-0 left-0 w-full h-full object-cover">
+            <source autoplay loop allowfullscreen playsinline muted
+                src="https://res.cloudinary.com/dkzaozc1s/video/upload/v1716659110/video_avfy4w.mp4" type="video/mp4">
             Your browser does not support the video tag.
         </video>
 
