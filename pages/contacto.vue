@@ -10,7 +10,7 @@ const branches = [
         country: "Perú",
         email: "contacto.peru@automationanywhere.com",
         phone: "+51980261884",
-        location: "Av. Rivera Navarrete 395 of. 1602 - San Isidro, Perú"
+        location: "Av. Rivera Navarrete 395 of. 1692 - San Isidro, Perú"
     }
 ]
 
