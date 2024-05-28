@@ -3,12 +3,12 @@ const countries = [
     {
         name: "Perú",
         email: "contacto.peru@automationanywhere.com",
-        phone: "+51 987 654 321"
+        phone: "+51980261884"
     },
     {
         name: "Chile",
         email: "contacto.chile@automationanywhere.com",
-        phone: "+56 2 2267897"
+        phone: "+56937829614"
     },
 ]
 

@@ -3,13 +3,13 @@ const branches = [
     {
         country: "Chile",
         email: "contacto.chile@automationanywhere.com",
-        phone: "+56 2 2267897",
+        phone: "+56937829614",
         location: "Monjitas 392, Of. 1601 - Santiago, Chile."
     },
     {
         country: "Perú",
         email: "contacto.peru@automationanywhere.com",
-        phone: "+51 987 654 321",
+        phone: "+51980261884",
         location: "Av. Rivera Navarrete 395 of. 1602 - San Isidro, Perú"
     }
 ]
