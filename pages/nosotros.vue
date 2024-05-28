@@ -10,8 +10,7 @@
                         ¡Únete a la Automatización!
                     </h2>
                     <p class="font-raleway font-normal text-[18px] leading-[21px] xl:text-left text-center text-dark">
-                        Estas son
-                        algunas de las compañías que confían en nuestros servicios.</p>
+                        Ellos confían en nosotros</p>
                 </div>
             </template>
             <template #footer>
