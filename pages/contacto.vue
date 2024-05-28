@@ -50,10 +50,10 @@ const inputClass = ref("bg-white border-dark border-2 p-[10px] rounded-[2px] fon
                     <h1 class="max-w-[541px] text-white font-montserrat font-bold text-[50px] leading-[61px]">Contacta
                         con <p class="text-mora">Nosotros</p>
                     </h1>
-                    <p class="xl:mt-[24px] mt-[40px] font-raleway text-[18px] leading-[21px] text-white">Descubre cómo
-                        podemos
-                        ayudar a
-                        tu empresa y agenda una demostración de nuestros producto. Estaremos en contacto.</p>
+                    <p class="xl:mt-[24px] mt-[40px] font-raleway text-[18px] leading-[21px] text-white">Mantente al día
+                        con las últimas noticias de la industria, artículos interesantes y próximos eventos. Descubre
+                        nuestro contenido inspirador y únete a nosotros para influir en el futuro de la automatización y
+                        la tecnología.</p>
                 </div>
                 <div class="flex flex-col gap-[40px] xl:order-1 order-2 px-4 xl:px-0">
                     <div v-for="branch in branches" class="flex flex-col gap-[24px] xl:first:pt-[32px]">
